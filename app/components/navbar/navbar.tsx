@@ -10,10 +10,17 @@ const Navbar = () => {
             <Image
              src="/logo.png"
              alt="Djangobnb logo"
-              width={100}
-              height={100}
+             width={180}
+             height={38}
            />
           </Link>
+
+          <div className="flex space-x-6">
+              Search Filter
+          </div>
+          <div className="flex items-center space-x-6">
+             Add property
+          </div>
          </div>
        </div>
     </nav>

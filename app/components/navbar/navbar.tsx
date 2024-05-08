@@ -1,4 +1,5 @@
-import Link from "next/link"
+import Link from "next/link";
+import Image from "next/image";
 
 const Navbar = () => {
   return (
@@ -6,7 +7,12 @@ const Navbar = () => {
        <div className="max-w-[1500px] mx-auto px-6">
          <div className="flex justify-between items-center">
           <Link href="/">
-            DjangoBnb
+            <Image
+             src="/logo.png"
+             alt="Djangobnb logo"
+              width={100}
+              height={100}
+           />
           </Link>
          </div>
        </div>

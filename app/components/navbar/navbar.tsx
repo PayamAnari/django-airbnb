@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import SearchFilters from "./Searchfilters"
+import SearchFilters from "./SearchFilters";
 
 const Navbar = () => {
   return (

@@ -12,6 +12,10 @@ const ReservationSidebar = () => {
            <option>5</option>
          </select>
       </div>
+
+      <div className="w-full mb-6 py-6 text-center text-white bg-airbnb hover:bg-airbnb-dark rounded-xl ">
+        Book
+      </div>
     </aside>
   );
 }

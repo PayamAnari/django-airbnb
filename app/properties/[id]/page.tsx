@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import ReservationSidebar from "@/app/components/properties/ReservationSidebar";
 
 const PropertyDetailPage = () => {
   return (
@@ -13,7 +13,7 @@ const PropertyDetailPage = () => {
                 />
             </div>
 
-            <div className="mt-4 grid grid-cols-1 md:grid-cols-5 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
               <div className="py-6 pr-6 col-span-3">
                   <h1 className="mb-4 text-4xl">Property Name</h1>
                   <span className="mb-6 block text-lg text-gray-600">
@@ -38,9 +38,7 @@ const PropertyDetailPage = () => {
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur exercitationem error ex! Consequuntur cum unde deserunt id magnam voluptatibus eum esse, quidem dolorum. Nihil sapiente tenetur eligendi, ipsam fugit qui?
                   </p>
               </div>
-              <div className="">
-                  right side
-              </div>
+              <ReservationSidebar />
             </div>
     </main>
   )

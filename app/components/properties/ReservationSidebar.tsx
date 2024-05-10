@@ -1,8 +1,8 @@
 const ReservationSidebar = () => {
   return (
-    <div>
-      <h2>Reservation Sidebar</h2>
-    </div>
+    <aside className="mt-6 p-6 col-span-2 rounded-xl border border-gray-300 shadow-xl">
+      <h2 className="mb-5 text-2xl">$200 per night</h2>
+    </aside>
   );
 }
 

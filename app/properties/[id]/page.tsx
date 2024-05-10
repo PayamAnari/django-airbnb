@@ -30,7 +30,13 @@ const PropertyDetailPage = () => {
                                 className="rounded-full"
                                 alt="The user name"
                             />
+
+                            <p><strong>John Doe</strong> is your host</p>
                   </div>
+                  <hr />
+                  <p className="mt-6 text-lg">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur exercitationem error ex! Consequuntur cum unde deserunt id magnam voluptatibus eum esse, quidem dolorum. Nihil sapiente tenetur eligendi, ipsam fugit qui?
+                  </p>
               </div>
               <div className="">
                   right side

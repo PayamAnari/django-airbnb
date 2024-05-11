@@ -10,9 +10,14 @@ const LandlordDetailPage = () => {
               src="/profile_pic_1.jpg"
               width={200}
               height={200}
-              alt="Landlrod name"
+              alt="Landlord name"
               className="rounded-full"
             />
+
+            <h1 className="mt-6 text-2xl">
+              Landlord Name
+            </h1>
+            contact button
           </div>
         </aside>
 

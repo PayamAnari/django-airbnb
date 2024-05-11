@@ -26,6 +26,10 @@ const MyReservationsPage = () => {
 
                <p className="mb-2"><strong>Number of nights:</strong> 7</p>
                <p className="mb-2"><strong>Total price:</strong> $220</p>
+
+               <div className="mt-6 inline-block cursor-pointer py-4 px-6 bg-airbnb hover:bg-airbnb-dark transition text-white rounded-xl">
+               Go to property
+               </div>
             </div>
         </div>
     

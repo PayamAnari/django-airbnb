@@ -1,4 +1,7 @@
 import Image from "next/image";
+import ContactButton from "@/app/components/ContactButton";
+import PropertyList from "@/app/components/properties/PropertyList";
+
 
 const LandlordDetailPage = () => {
   return (
@@ -17,12 +20,13 @@ const LandlordDetailPage = () => {
             <h1 className="mt-6 text-2xl">
               Landlord Name
             </h1>
-            contact button
+            
+            <ContactButton />
           </div>
         </aside>
 
         <div className="col-span-3 pl-0 md:pl-6">
-           properties
+           <PropertyList />
         </div>
       </div>
     </main>

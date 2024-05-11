@@ -18,6 +18,12 @@ const MyReservationsPage = () => {
                />
                </div>
             </div>
+            <div className="col-span-3 space-y-2">
+               <h2 className="mb-4 text-xl">Property Name</h2>
+
+               <p><strong>Check in date:</strong> 15/04/2024</p>
+               <p><strong>Check out date:</strong> 05/09/2024</p>
+            </div>
         </div>
       </div>
     </main>

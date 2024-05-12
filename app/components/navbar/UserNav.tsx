@@ -21,7 +21,10 @@ const UserNav = () => {
 
        {isOpen && (
           <div className="w-[220px] absolute top-[60px] right-0 bg-white border rounded-xl shadow-md flex flex-col cursor-pointer">
-            <MenuLink />
+            <MenuLink
+               label="Log in"
+               onClick={onClick}
+            />
           </div>
        )}
     </div>

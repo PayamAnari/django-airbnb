@@ -1,3 +1,5 @@
+import CustomButton from "../forms/CustomButton";
+
 const ConversationDetail = () => {
   return (
    <div>
@@ -19,6 +21,10 @@ const ConversationDetail = () => {
           type="text"
           placeholder="Type a message"
           className="w-full p-2 bg-gray-200 rounded-xl"
+        />
+
+        <CustomButton 
+          label="Send"
         />
     </div>
 

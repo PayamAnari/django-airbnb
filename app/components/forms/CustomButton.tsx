@@ -1,14 +1,19 @@
 interface CustomButtonProps {
     label: string;
+    className?: string;
+    onClick: () => void;
 }
 
 
 const CustomButton: React.FC<CustomButtonProps> = ({
-  label
+  label,
+  className,
+  onClick
 }) => {
   return (
     <div 
-    className="w-full py-4 bg-airbnb hover:bg-airbnb-dark text-white text-center rounded-xl transition cursor-pointer">
+    onClick={onClick}
+    className={`w-full py-4 bg-airbnb hover:bg-airbnb-dark text-white text-center rounded-xl transition cursor-pointer`}>
       {label}
    </div>
   )

@@ -28,6 +28,7 @@ const UserNav = () => {
             <MenuLink
                label="Log in"
                onClick={() => {console.log("Clicked")
+               setIsOpen(false);
                loginModal.open()
                }}
                

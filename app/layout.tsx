@@ -16,6 +16,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const content = (
+    <p>Yo yo</p>
+  )
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -25,6 +28,8 @@ export default function RootLayout({
         </div>
         <Modal 
         label="Modal test"
+        content={content}
+        isOpen={false}
         />
       </body>
     </html>

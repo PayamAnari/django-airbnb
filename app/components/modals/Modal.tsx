@@ -1,6 +1,11 @@
-const Modal = () => {
-  return (
+"use client";
 
+
+const Modal: React.FC = () => {
+  return (
+     <div>
+      gfds
+     </div>
   )
 }
 

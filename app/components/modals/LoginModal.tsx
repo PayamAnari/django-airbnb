@@ -18,6 +18,10 @@ const LoginModal = () => {
        <input placeholder="Your password" type="password" 
       className="w-full h-[54px] px-4 border border-gray-300 rounded-xl" />
 
+      <div className="p-5 bg-airbnb text-white rounded-xl opacity-70">
+         Error message
+      </div>
+
       <CustomButton 
       label="Submit"
       onClick={() => console.log("Clicked")}

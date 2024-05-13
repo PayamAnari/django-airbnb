@@ -7,7 +7,7 @@ import CustomButton from "../forms/CustomButton";
 
 
 const SignupModal = () => {
-  const loginModal = useSignupModal()
+  const signupModal = useSignupModal()
 
   const content = (
     <>
@@ -16,6 +16,8 @@ const SignupModal = () => {
       <input placeholder="Your email address" type="e-mail" 
       className="w-full h-[54px] px-4 border border-gray-300 rounded-xl" />
        <input placeholder="Your password" type="password" 
+      className="w-full h-[54px] px-4 border border-gray-300 rounded-xl" />
+      <input placeholder="Repeat password" type="password" 
       className="w-full h-[54px] px-4 border border-gray-300 rounded-xl" />
 
       <div className="p-5 bg-airbnb text-white rounded-xl opacity-70">
@@ -32,9 +34,9 @@ const SignupModal = () => {
   )
   return (
     <Modal
-       isOpen={loginModal.isOpen}
-       close={loginModal.close}
-       label="Log in"
+       isOpen={signupModal.isOpen}
+       close={signupModal.close}
+       label="Signup"
        content={content}
        />
   )

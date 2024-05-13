@@ -23,7 +23,9 @@ export default function RootLayout({
         <div className="pt-32">
         {children}
         </div>
-        <Modal />
+        <Modal 
+        label="Modal test"
+        />
       </body>
     </html>
   );

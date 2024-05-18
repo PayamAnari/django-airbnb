@@ -6,8 +6,11 @@ import PropertyListItem from "./PropertyListItem";
 
 
 const PropertyList = () => {
+  const [properties, setProperties] = useState([]);
+
+
   const getProperties = async () => {
-    const url = "http://localhost:8080/api/properties";
+    const url = "http://localhost:8000/api/properties/";
     
     await fetch(url, {
       method: "GET",
@@ -15,6 +18,8 @@ const PropertyList = () => {
     .then(response => response.json())
     .then((json) => {
       console.log("json", json);
+
+      setProperties(json.data);
     })
     .catch((error) => {
       console.error("Error:", error);

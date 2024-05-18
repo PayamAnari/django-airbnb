@@ -6,6 +6,7 @@ import PropertyListItem from "./PropertyListItem";
 
 export type PropertyType = {
      id: string;
+     
 }
 
 
@@ -39,6 +40,7 @@ const PropertyList = () => {
         return (
           <PropertyListItem 
             key={property.id}
+            property={property}
           />
         )
     })}

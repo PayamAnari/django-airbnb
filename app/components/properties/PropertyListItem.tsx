@@ -1,6 +1,14 @@
 import Image from "next/image";
+import { PropertyType } from "./PropertyList";
 
-const PropertyListItem = () => {
+interface PropertyProps {
+  property: PropertyType;
+
+}
+
+const PropertyListItem: React.FC<PropertyProps> = ({
+    property
+}) => {
   return (
      <div className="cursor-pointer">
         <div className="relative overflow-hidden aspect-square rounded-xl">

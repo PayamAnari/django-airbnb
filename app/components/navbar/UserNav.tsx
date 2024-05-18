@@ -29,7 +29,7 @@ const UserNav = () => {
           <div className="w-[220px] absolute top-[60px] right-0 bg-white rounded-xl shadow-md border border-gray-300 flex flex-col cursor-pointer">
             <MenuLink
                label="Log in"
-               onClick={() => {console.log("Clicked")
+               onClick={() => {
                setIsOpen(false);
                loginModal.open()
                }}
@@ -38,7 +38,7 @@ const UserNav = () => {
 
             <MenuLink
                label="Sign up"
-               onClick={() => {console.log("Clicked")
+               onClick={() => {
                 setIsOpen(false);
                 signupModal.open()
               }}

@@ -6,7 +6,10 @@ import PropertyListItem from "./PropertyListItem";
 
 export type PropertyType = {
      id: string;
-     
+     title: string;
+     image: string;
+     price_per_night: number;
+
 }
 
 

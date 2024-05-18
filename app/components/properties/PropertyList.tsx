@@ -4,9 +4,13 @@
 import { useEffect, useState } from "react";
 import PropertyListItem from "./PropertyListItem";
 
+export type PropertyType = {
+     id: string;
+}
+
 
 const PropertyList = () => {
-  const [properties, setProperties] = useState([]);
+  const [properties, setProperties] = useState<PropertyType[]>([]);
 
 
   const getProperties = async () => {
@@ -31,9 +35,14 @@ const PropertyList = () => {
   }, []);
   return (
     <>
-     <PropertyListItem />
-     <PropertyListItem />
-     <PropertyListItem />
+    {properties.map((property) => {
+        return (
+          <PropertyListItem 
+            key={property.id}
+          />
+        )
+    })}
+  
     </>
   )
 }

@@ -19,27 +19,14 @@ const PropertyList = () => {
 
 
   const getProperties = async () => {
-    const url = "http://localhost:8000/api/properties/";
-    
-    await fetch(url, {
-      method: "GET",
-    })
-    .then(response => response.json())
-    .then((json) => {
-      console.log("json", json);
-
-      setProperties(json.data);
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    })
+    const tmpProperties = await apiService.get("/api/properties/");
+    setProperties(tmpProperties.data);    
   };
 
   useEffect(() => {
-    apiService.get("/api/properties/")
-
     getProperties();
   }, []);
+
   return (
     <>
     {properties.map((property) => {

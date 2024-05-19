@@ -22,14 +22,19 @@ const SignupModal = () => {
     <form className="space-y-4">
       <input onChange={(e) => setEmail(e.target.value)} placeholder="Your email address" type="e-mail" 
       className="w-full h-[54px] px-4 border border-gray-300 rounded-xl" />
-       <input onChange={(e) => setEmail(e.target.value)} placeholder="Your password" type="password" 
+       <input onChange={(e) => setPassword1(e.target.value)} placeholder="Your password" type="password" 
       className="w-full h-[54px] px-4 border border-gray-300 rounded-xl" />
-      <input onChange={(e) => setEmail(e.target.value)} placeholder="Repeat password" type="password" 
+      <input onChange={(e) => setPassword2(e.target.value)} placeholder="Repeat password" type="password" 
       className="w-full h-[54px] px-4 border border-gray-300 rounded-xl" />
-
-      <div className="p-5 bg-airbnb text-white rounded-xl opacity-70">
-         Error message
-      </div>
+      
+      {errors.map((error, index) => {
+        return (
+          <div className="p-5 bg-airbnb text-white rounded-xl opacity-70">
+          Error message
+       </div>
+        )
+      })}
+      
 
       <CustomButton 
       label="Submit"

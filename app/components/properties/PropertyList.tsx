@@ -36,7 +36,7 @@ const PropertyList = () => {
   };
 
   useEffect(() => {
-    apiService.get()
+    apiService.get("hello")
 
     getProperties();
   }, []);

@@ -24,16 +24,18 @@ const SignupModal = () => {
       password2: password2
     }
 
-    const response = await apiService.post("/api/auth/register/", formData);
+    const response = await apiService.post("/api/auth/register/", JSON.stringify(formData));
 
     if(response.access) {
       signupModal.close();
       router.push("/");
     } else {
       const tmpErrors: string[] = Object.values(response).map((error: any) => {
-        return error[0];
+        return error;
       
       })
+
+      setErrors(tmpErrors);
     }
   }
 
@@ -64,7 +66,7 @@ const SignupModal = () => {
 
       <CustomButton 
       label="Submit"
-      onClick={() => console.log("Clicked")}
+      onClick={submitSignup}
       />
 
     </form>

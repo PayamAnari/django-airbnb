@@ -2,22 +2,29 @@
 
 import Modal from "./Modal";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import useSignupModal from "@/app/hooks/useSignUpModal";
 import CustomButton from "../forms/CustomButton";
 
 
 const SignupModal = () => {
+  const router = useRouter();
   const signupModal = useSignupModal()
+  const [email, setEmail] = useState("");
+  const [password1, setPassword1] = useState("");
+  const [password2, setPassword2] = useState("");
+  const [errors, setErrors] = useState<string[]>([]); 
+
 
   const content = (
     <>
     <h2 className="mb-6 text-2xl">Welcome to Djangobnb, please signup</h2>
     <form className="space-y-4">
-      <input placeholder="Your email address" type="e-mail" 
+      <input onChange={(e) => setEmail(e.target.value)} placeholder="Your email address" type="e-mail" 
       className="w-full h-[54px] px-4 border border-gray-300 rounded-xl" />
-       <input placeholder="Your password" type="password" 
+       <input onChange={(e) => setEmail(e.target.value)} placeholder="Your password" type="password" 
       className="w-full h-[54px] px-4 border border-gray-300 rounded-xl" />
-      <input placeholder="Repeat password" type="password" 
+      <input onChange={(e) => setEmail(e.target.value)} placeholder="Repeat password" type="password" 
       className="w-full h-[54px] px-4 border border-gray-300 rounded-xl" />
 
       <div className="p-5 bg-airbnb text-white rounded-xl opacity-70">

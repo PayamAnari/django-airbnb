@@ -15,10 +15,29 @@ const LoginModal = () => {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState<string[]>([]);
 
+  const submitLogin = async () => {
+    const formdata = {
+      email: email,
+      password: password
+    }
+
+    const response = await apiService.post("/api/auth/login/", JSON.stringify(formdata));
+     
+    if (response.access) {
+      handleLogin(response.user.pk, response.access, response.refresh);
+      loginModal.close();
+      router.push("/");
+    
+    }
+
+  }
+
   const content = (
     <>
     <h2 className="mb-6 text-2xl">Welcome to Djangobnb, please log in</h2>
-    <form className="space-y-4">
+    <form 
+      action={submitLogin}   
+      className="space-y-4">
       <input onChange={(e) => setEmail(e.target.value)} placeholder="Your email address" type="e-mail" 
       className="w-full h-[54px] px-4 border border-gray-300 rounded-xl" />
        <input onChange={(e) => setPassword(e.target.value)} placeholder="Your password" type="password" 
@@ -38,7 +57,7 @@ const LoginModal = () => {
 
       <CustomButton 
       label="Submit"
-      onClick={() => console.log("Clicked")}
+      onClick={submitLogin}
       />
 
     </form>

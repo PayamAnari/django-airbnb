@@ -29,7 +29,7 @@ const SignupModal = () => {
 
     if(response.access) {
 
-      handleLogin(response.user.pk, response.access, response.refresh);
+      handleLogin(response.user.id, response.access, response.refresh);
 
       signupModal.close();
       router.push("/");

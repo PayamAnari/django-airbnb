@@ -2,12 +2,18 @@
 
 import Modal from "./Modal";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import useLoginModal from "@/app/hooks/useLoginModal";
 import CustomButton from "../forms/CustomButton";
-
+import { handleLogin } from "@/app/lib/actions";
+import apiService from "@/app/services/apiService";
 
 const LoginModal = () => {
+  const router = useRouter();
   const loginModal = useLoginModal()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState<string>[]([]);
 
   const content = (
     <>

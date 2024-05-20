@@ -4,6 +4,7 @@ import { useState } from "react";
 import MenuLink from "./MenuLink";
 import useLoginModal from "@/app/hooks/useLoginModal";
 import useSignupModal from "@/app/hooks/useSignUpModal";
+import LogoutButton from "../LogoutButton";
 
 
 const UserNav = () => {

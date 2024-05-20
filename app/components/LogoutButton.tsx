@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import MenuLink from "./navbar/MenuLink";
 
 
-const LogoutButton = () => {
+const LogoutButton: React.FC = () => {
   const router = useRouter()
 
   const submitLogout = async () => {

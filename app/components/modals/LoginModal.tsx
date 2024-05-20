@@ -28,6 +28,8 @@ const LoginModal = () => {
       loginModal.close();
       router.push("/");
     
+    } else {
+      setErrors(response.non_fields_errors)
     }
 
   }

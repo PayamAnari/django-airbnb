@@ -35,7 +35,9 @@ const UserNav: React.FC<UserNavProps> = ({
           <div className="w-[220px] absolute top-[60px] right-0 bg-white rounded-xl shadow-md border border-gray-300 flex flex-col cursor-pointer">
             {userId ? (
               <LogoutButton />
-            )}
+            ) : (
+              <>
+          
             <MenuLink
                label="Log in"
                onClick={() => {
@@ -52,6 +54,8 @@ const UserNav: React.FC<UserNavProps> = ({
                 signupModal.open()
               }}
             />
+              </>
+            )}
           </div>
        )}
     </div>

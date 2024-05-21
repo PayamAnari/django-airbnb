@@ -6,6 +6,9 @@ import useLoginModal from "@/app/hooks/useLoginModal";
 import useSignupModal from "@/app/hooks/useSignUpModal";
 import LogoutButton from "../LogoutButton";
 
+interface UserNavProps {
+  userId?: string | null;
+}
 
 const UserNav = () => {
   const loginModal = useLoginModal();

@@ -18,19 +18,19 @@ const Categories: React.FC<CategoriesProps> = ({
     <div 
         className={`pb-4 flex flex-col items-center space-y-2 border-b-2 border-white opacity-60 hover:border-gray-200 hover:opacity-100`}>
         <Image
-            src="/icn_category_beach.jpeg"
+            src="/nature.jpeg"
             alt="Category - Beach"
             width={20}
             height={20}
         />
 
-        <span className='text-xs'>All</span>
+        <span className='text-xs'>National Parks</span>
     </div>
     
     <div 
         className={`pb-4 flex flex-col items-center space-y-2 border-b-2  opacity-60 hover:border-gray-200 hover:opacity-100`}>
         <Image
-            src="/icn_category_beach.jpeg"
+            src="/beach.jpeg"
             alt="Category - Beach"
             width={20}
             height={20}
@@ -42,19 +42,19 @@ const Categories: React.FC<CategoriesProps> = ({
     <div 
         className={`pb-4 flex flex-col items-center space-y-2 border-b-2  opacity-60 hover:border-gray-200 hover:opacity-100`}>
         <Image
-            src="/icn_category_beach.jpeg"
+            src="/design.jpeg"
             alt="Category - Beach"
             width={20}
             height={20}
         />
 
-        <span className='text-xs'>Villas</span>
+        <span className='text-xs'>Design</span>
     </div>
 
     <div 
         className={`pb-4 flex flex-col items-center space-y-2 border-b-2 opacity-60 hover:border-gray-200 hover:opacity-100`}>
         <Image
-            src="/icn_category_beach.jpeg"
+            src="/cabns.jpeg"
             alt="Category - Beach"
             width={20}
             height={20}
@@ -66,14 +66,47 @@ const Categories: React.FC<CategoriesProps> = ({
     <div
         className={`pb-4 flex flex-col items-center space-y-2 border-b-2 opacity-60 hover:border-gray-200 hover:opacity-100`}>
         <Image
-            src="/icn_category_beach.jpeg"
+            src="/tiny homes.jpeg"
             alt="Category - Beach"
             width={20}
             height={20}
         />
 
-          <span className='text-xs'>Tiny homes</span>
-      </div>
+        <span className='text-xs'>Tiny homes</span>
+    </div>
+    <div
+        className={`pb-4 flex flex-col items-center space-y-2 border-b-2 opacity-60 hover:border-gray-200 hover:opacity-100`}>
+        <Image
+            src="/luxe.jpeg"
+            alt="Category - Beach"
+            width={20}
+            height={20}
+        />
+
+        <span className='text-xs'>Luxe</span>
+    </div>
+    <div
+        className={`pb-4 flex flex-col items-center space-y-2 border-b-2 opacity-60 hover:border-gray-200 hover:opacity-100`}>
+        <Image
+            src="/countryside.jpeg"
+            alt="Category - Beach"
+            width={20}
+            height={20}
+        />
+
+        <span className='text-xs'>Countryside</span>
+    </div>
+    <div
+        className={`pb-4 flex flex-col items-center space-y-2 border-b-2 opacity-60 hover:border-gray-200 hover:opacity-100`}>
+        <Image
+            src="/camping.jpeg"
+            alt="Category - Beach"
+            width={20}
+            height={20}
+        />
+
+        <span className='text-xs'>Camping</span>
+     </div>
     </div>
     </>
   )

@@ -11,7 +11,7 @@ import Categories from "./addproperty/Categories";
 const AddPropertyModal = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [dataCategory, setDataCategory] = useState("");
-  const addPorpertyModal = useAddPropertyModal();
+  const addPropertyModal = useAddPropertyModal();
 
   const setCategory = (category: string) => {
     setDataCategory(category)
@@ -43,8 +43,8 @@ const AddPropertyModal = () => {
   return (
     <>
        <Modal 
-        isOpen={addPorpertyModal.isOpen}
-        close={addPorpertyModal.close}
+        isOpen={addPropertyModal.isOpen}
+        close={addPropertyModal.close}
         label="Add Property"
         content={content}
        

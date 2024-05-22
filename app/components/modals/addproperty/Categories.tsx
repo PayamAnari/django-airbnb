@@ -9,7 +9,9 @@ const Categories: React.FC<CategoriesProps> = ({
 }) => {
   return (
     <>
-    
+    <div className="pt-3 cursor-pointer pb-6 item_center space-x-12">
+      gfds
+    </div>
     </>
   )
 }

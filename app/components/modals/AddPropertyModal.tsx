@@ -5,6 +5,7 @@ import Modal from "./Modal";
 import { useState } from "react"
 import useAddPropertyModal from "@/app/hooks/useAddPropertyModal";
 import CustomButton from "../forms/CustomButton";
+import Categories from "./addproperty/Categories";
 
 
 const AddPropertyModal = () => {
@@ -16,6 +17,11 @@ const AddPropertyModal = () => {
     {currentStep === 1 ? (
        <>
        <h2 className="mb-6 text-2xl">Choose category</h2>
+
+       <Categories 
+          dataCategory={dataCategory}
+          setCategory={() => {}}
+       />
 
        <CustomButton
          label="Next"

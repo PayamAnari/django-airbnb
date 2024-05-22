@@ -10,7 +10,12 @@ import Categories from "./addproperty/Categories";
 
 const AddPropertyModal = () => {
   const [currentStep, setCurrentStep] = useState(1);
+  const [dataCategory, setDataCategory] = useState("");
   const addPorpertyModal = useAddPropertyModal();
+
+  const setCategory = (category: string) => {
+    setDataCategory(category)
+  }
 
   const content = (
     <>
@@ -20,7 +25,7 @@ const AddPropertyModal = () => {
 
        <Categories 
           dataCategory={dataCategory}
-          setCategory={() => {}}
+          setCategory={(category) => setCategory(category)}
        />
 
        <CustomButton

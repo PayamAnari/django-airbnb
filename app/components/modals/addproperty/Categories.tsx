@@ -16,7 +16,7 @@ const Categories: React.FC<CategoriesProps> = ({
 
     <div 
         onClick={() => setCategory("National Parks")}
-        className={`pb-4 flex flex-col items-center space-y-2 border-b-2 border-white opacity-60 hover:border-gray-200 hover:opacity-100`}>
+        className={`pb-4 flex flex-col items-center space-y-2 border-b-2  ${dataCategory == "National Parks" ? "border-gray-800" : "border-white"} opacity-60 hover:border-gray-200 hover:opacity-100`}>
         <Image
             src="/nature.jpeg"
             alt="Category - Beach"

@@ -28,6 +28,7 @@ const Categories: React.FC<CategoriesProps> = ({
     </div>
     
     <div 
+        onClick={() => setCategory("Beach")}
         className={`pb-4 flex flex-col items-center space-y-2 border-b-2  opacity-60 hover:border-gray-200 hover:opacity-100`}>
         <Image
             src="/beach.jpeg"

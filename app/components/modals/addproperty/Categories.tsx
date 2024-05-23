@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 
-
 interface CategoriesProps {
   dataCategory: string;
   setCategory: (category: string) => void;
@@ -16,6 +15,7 @@ const Categories: React.FC<CategoriesProps> = ({
     <div className="pt-3 cursor-pointer flex pb-6 item_center space-x-12">
 
     <div 
+        onClick={() => setCategory("National Parks")}
         className={`pb-4 flex flex-col items-center space-y-2 border-b-2 border-white opacity-60 hover:border-gray-200 hover:opacity-100`}>
         <Image
             src="/nature.jpeg"

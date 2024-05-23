@@ -68,7 +68,7 @@ const Categories: React.FC<CategoriesProps> = ({
 
     <div
         onClick={() => setCategory("Tiny homes")}
-        className={`pb-4 flex flex-col items-center space-y-2 border-b-2 opacity-60 hover:border-gray-200 hover:opacity-100`}>
+        className={`pb-4 flex flex-col items-center space-y-2 border-b-2 ${dataCategory == "Tiny homes" ? "border-gray-800" : "border-white"} opacity-60 hover:border-gray-200 hover:opacity-100`}>
         <Image
             src="/tiny homes.jpeg"
             alt="Category - Beach"
@@ -80,7 +80,7 @@ const Categories: React.FC<CategoriesProps> = ({
     </div>
     <div
         onClick={() => setCategory("Luxe")}
-        className={`pb-4 flex flex-col items-center space-y-2 border-b-2 opacity-60 hover:border-gray-200 hover:opacity-100`}>
+        className={`pb-4 flex flex-col items-center space-y-2 border-b-2 ${dataCategory == "Luxe" ? "border-gray-800" : "border-white"} opacity-60 hover:border-gray-200 hover:opacity-100`}>
         <Image
             src="/luxe.jpeg"
             alt="Category - Beach"

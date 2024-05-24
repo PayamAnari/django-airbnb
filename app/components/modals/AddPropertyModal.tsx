@@ -13,10 +13,10 @@ const AddPropertyModal = () => {
   const [dataCategory, setDataCategory] = useState("");
   const [dataTitle, setDataTitle] = useState("");
   const [dataDescription, setDataDescription] = useState("");
-  const [dataPrice, setDataPrice] = useState(0);
-  const [dataBedrooms, setDataBedrooms] = useState(0);
-  const [dataBathrooms, setDataBathrooms] = useState(0);
-  const [dataGuests, setDataGuests] = useState(0);
+  const [dataPrice, setDataPrice] = useState("");
+  const [dataBedrooms, setDataBedrooms] = useState("");
+  const [dataBathrooms, setDataBathrooms] = useState("");
+  const [dataGuests, setDataGuests] = useState("");
 
 
   const addPropertyModal = useAddPropertyModal();
@@ -91,7 +91,17 @@ const AddPropertyModal = () => {
                 <input
                   type="number"
                   value={dataPrice}
-                  onChange={(e) => setDataPrice(parseInt(e.target.value))}
+                  onChange={(e) => setDataPrice(e.target.value)}
+                  className="w-full p-4 border border-gray-600 rounded-xl"
+                  />
+
+             </div>
+             <div className="flex flex-col space-y-2">
+                <label>Bedrooms</label>
+                <input
+                  type="number"
+                  value={dataBedrooms}
+                  onChange={(e) => setDataBedrooms(e.target.value)}
                   className="w-full p-4 border border-gray-600 rounded-xl"
                   />
 

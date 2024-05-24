@@ -144,6 +144,19 @@ const AddPropertyModal = () => {
 
     ) : currentStep == 4 ? (
       <>
+        <h2 className="mb-6 text-2xl">Location</h2>
+
+        <CustomButton
+         label="Previous"
+         className="mb-2 bg-gray-700 hover:bg-gray-500"
+         onClick={() => setCurrentStep(2)}
+       />
+
+         <CustomButton
+         label="Next"
+         onClick={() => setCurrentStep(4)}
+       />
+
       </>
     ) : (
       <p>fdsd</p>

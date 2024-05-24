@@ -141,6 +141,10 @@ const AddPropertyModal = () => {
          onClick={() => setCurrentStep(4)}
        />
       </>
+
+    ) : currentStep == 4 ? (
+      <>
+      </>
     ) : (
       <p>fdsd</p>
     )

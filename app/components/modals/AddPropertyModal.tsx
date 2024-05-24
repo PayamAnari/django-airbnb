@@ -86,6 +86,17 @@ const AddPropertyModal = () => {
 
          <h2 className="mb-6 text-2xl">Details</h2>
 
+         <div className="flex flex-col space-y-2">
+                <label>Price per night</label>
+                <input
+                  type="number"
+                  value={dataPrice}
+                  onChange={(e) => setDataPrice(parseInt(e.target.value))}
+                  className="w-full p-4 border border-gray-600 rounded-xl"
+                  />
+
+             </div>
+
            <CustomButton
          label="Previous"
          className="mb-2 bg-gray-700 hover:bg-gray-500"

@@ -48,7 +48,19 @@ const AddPropertyModal = () => {
                   type="text"
                   value={dataTitle}
                   onChange={(e) => setDataTitle(e.target.value)}
+                  className="w-full p-4 border border-gray-600 rounded-full"
                   />
+
+             </div>
+             <div className="flex flex-col space-y-2">
+                <label>Description</label>
+                <textarea
+                  value={dataTitle}
+                  onChange={(e) => setDataDescription(e.target.value)}
+                  className="w-full p-4 border border-gray-600 rounded-full"
+                  >
+
+                  </textarea>
 
              </div>
          </div>

@@ -11,7 +11,9 @@ import Categories from "./addproperty/Categories";
 const AddPropertyModal = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [dataCategory, setDataCategory] = useState("");
+  const [dataTitle, setDataTitle] = useState("");
   const addPropertyModal = useAddPropertyModal();
+  const [dataDescription, setDataDescription] = useState("");
 
   const setCategory = (category: string) => {
     setDataCategory(category)
@@ -39,7 +41,7 @@ const AddPropertyModal = () => {
 
          <CustomButton
          label="Previous"
-         className="mb-2 bg-black hover:bg-gray-800"
+         className="mb-2 bg-gray-700 hover:bg-gray-500"
          onClick={() => setCurrentStep(1)}
        />
 

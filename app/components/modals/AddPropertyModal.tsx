@@ -34,7 +34,9 @@ const AddPropertyModal = () => {
        />
        </>
     ) : (
-      <p>Step 2</p>
+      <>
+         <h2 className="mb-6 text-2xl">Describe your place</h2>
+      </>
     )
   }
    </>

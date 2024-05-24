@@ -48,16 +48,16 @@ const AddPropertyModal = () => {
                   type="text"
                   value={dataTitle}
                   onChange={(e) => setDataTitle(e.target.value)}
-                  className="w-full p-4 border border-gray-600 rounded-full"
+                  className="w-full p-4 border border-gray-600 rounded-xl"
                   />
 
              </div>
              <div className="flex flex-col space-y-2">
                 <label>Description</label>
                 <textarea
-                  value={dataTitle}
+                  value={dataDescription}
                   onChange={(e) => setDataDescription(e.target.value)}
-                  className="w-full p-4 border border-gray-600 rounded-full"
+                  className="w-full h-[200px] p-4 border border-gray-600 rounded-xl"
                   >
 
                   </textarea>
@@ -74,6 +74,19 @@ const AddPropertyModal = () => {
          <CustomButton
          label="Next"
          onClick={() => setCurrentStep(3)}
+       />
+      </>
+    ) : currentStep === 3 ? (
+      <>
+           <CustomButton
+         label="Previous"
+         className="mb-2 bg-gray-700 hover:bg-gray-500"
+         onClick={() => setCurrentStep(2)}
+       />
+
+         <CustomButton
+         label="Next"
+         onClick={() => setCurrentStep(4)}
        />
       </>
     ) : (

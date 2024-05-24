@@ -33,10 +33,12 @@ const AddPropertyModal = () => {
          onClick={() => setCurrentStep(2)}
        />
        </>
-    ) : (
+    ) : currentStep == 2 ? (
       <>
          <h2 className="mb-6 text-2xl">Describe your place</h2>
       </>
+    ) : (
+      <p>fdsd</p>
     )
   }
    </>

@@ -13,6 +13,11 @@ const AddPropertyModal = () => {
   const [dataCategory, setDataCategory] = useState("");
   const [dataTitle, setDataTitle] = useState("");
   const [dataDescription, setDataDescription] = useState("");
+  const [dataPrice, setDataPrice] = useState(0);
+  const [dataBedrooms, setDataBedrooms] = useState(0);
+  const [dataBathrooms, setDataBathrooms] = useState(0);
+  const [dataGuests, setDataGuests] = useState(0);
+
 
   const addPropertyModal = useAddPropertyModal();
 
@@ -78,6 +83,9 @@ const AddPropertyModal = () => {
       </>
     ) : currentStep === 3 ? (
       <>
+
+         <h2 className="mb-6 text-2xl">Details</h2>
+
            <CustomButton
          label="Previous"
          className="mb-2 bg-gray-700 hover:bg-gray-500"

@@ -107,6 +107,28 @@ const AddPropertyModal = () => {
 
              </div>
 
+             <div className="flex flex-col space-y-2">
+                <label>Bathrooms</label>
+                <input
+                  type="number"
+                  value={dataBathrooms}
+                  onChange={(e) => setDataBathrooms(e.target.value)}
+                  className="w-full p-4 border border-gray-600 rounded-xl"
+                  />
+
+             </div>
+
+             <div className="flex flex-col space-y-2">
+                <label>guests</label>
+                <input
+                  type="number"
+                  value={dataGuests}
+                  onChange={(e) => setDataGuests(e.target.value)}
+                  className="w-full p-4 border border-gray-600 rounded-xl"
+                  />
+
+             </div>
+
            <CustomButton
          label="Previous"
          className="mb-2 bg-gray-700 hover:bg-gray-500"

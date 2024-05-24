@@ -85,7 +85,7 @@ const AddPropertyModal = () => {
       <>
 
          <h2 className="mb-6 text-2xl">Details</h2>
-
+        <div className="pt-3 pb-6 space-y-4">
          <div className="flex flex-col space-y-2">
                 <label>Price per night</label>
                 <input
@@ -119,7 +119,7 @@ const AddPropertyModal = () => {
              </div>
 
              <div className="flex flex-col space-y-2">
-                <label>guests</label>
+                <label>Maximum number og guests</label>
                 <input
                   type="number"
                   value={dataGuests}
@@ -127,6 +127,7 @@ const AddPropertyModal = () => {
                   className="w-full p-4 border border-gray-600 rounded-xl"
                   />
 
+             </div>
              </div>
 
            <CustomButton

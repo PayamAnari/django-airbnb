@@ -12,8 +12,10 @@ const AddPropertyModal = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [dataCategory, setDataCategory] = useState("");
   const [dataTitle, setDataTitle] = useState("");
-  const addPropertyModal = useAddPropertyModal();
   const [dataDescription, setDataDescription] = useState("");
+
+  const addPropertyModal = useAddPropertyModal();
+
 
   const setCategory = (category: string) => {
     setDataCategory(category)
@@ -38,6 +40,18 @@ const AddPropertyModal = () => {
     ) : currentStep == 2 ? (
       <>
          <h2 className="mb-6 text-2xl">Describe your place</h2>
+
+         <div className="pt-3 pb-6 space-y-4">
+             <div className="flex flex-col space-y-2">
+                <label>Title</label>
+                <input
+                  type="text"
+                  value={dataTitle}
+                  onChange={(e) => setDataTitle(e.target.value)}
+                  />
+
+             </div>
+         </div>
 
          <CustomButton
          label="Previous"

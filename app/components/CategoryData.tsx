@@ -19,6 +19,12 @@ const CategoryData = [
   { image: '/caves.jpeg', title: 'Caves'},
   { image: '/yurts.jpeg', title: 'Yurts'},
   { image: '/new.jpeg', title: 'New'},
+  { image: '/ryokans.jpeg', title: 'Ryokans'},
+  { image: '/grand.jpeg', title: 'Grand pianos'},
+  { image: '/barns.jpeg', title: 'Barns'},
+  { image: '/arctic.jpeg', title: 'Arctic'},
+  { image: '/golfing.jpeg', title: 'Golfing'},
+  { image: '/desert.jpeg', title: 'Desert'},
 ];
 
 

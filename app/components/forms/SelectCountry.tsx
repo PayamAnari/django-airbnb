@@ -18,10 +18,13 @@ const SelectCountry: React.FC<SelectCountryProps> = ({
   value,
   onChange
 }) => {
+  const { getAll } = useCountries();
    return (
     <>
     <Select 
+      isClearable
       placeholder="Select country"
+      options={getAll()}
     />
     </>
    )

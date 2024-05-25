@@ -6,6 +6,7 @@ import { useState } from "react"
 import useAddPropertyModal from "@/app/hooks/useAddPropertyModal";
 import CustomButton from "../forms/CustomButton";
 import Categories from "./addproperty/Categories";
+import SelectCountry from "../forms/SelectCountry";
 
 
 const AddPropertyModal = () => {
@@ -147,7 +148,7 @@ const AddPropertyModal = () => {
         <h2 className="mb-6 text-2xl">Location</h2>
 
         <div className="pt-3 pb-6 space-y-4">
-          
+          <SelectCountry />
         </div>
 
         <CustomButton

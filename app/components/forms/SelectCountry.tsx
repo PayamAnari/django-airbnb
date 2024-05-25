@@ -18,5 +18,12 @@ const SelectCountry: React.FC<SelectCountryProps> = ({
   value,
   onChange
 }) => {
-  
+   return (
+    <>
+    gfds
+    </>
+   )
 }
+
+
+export default SelectCountry;

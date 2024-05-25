@@ -146,15 +146,19 @@ const AddPropertyModal = () => {
       <>
         <h2 className="mb-6 text-2xl">Location</h2>
 
+        <div className="pt-3 pb-6 space-y-4">
+          
+        </div>
+
         <CustomButton
          label="Previous"
          className="mb-2 bg-gray-700 hover:bg-gray-500"
-         onClick={() => setCurrentStep(2)}
+         onClick={() => setCurrentStep(3)}
        />
 
          <CustomButton
          label="Next"
-         onClick={() => setCurrentStep(4)}
+         onClick={() => setCurrentStep(5)}
        />
 
       </>

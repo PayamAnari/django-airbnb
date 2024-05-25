@@ -1,5 +1,5 @@
 import Carousel from "./Carousel";
-import CategoryData from "./CategoryData";
+import CategoryData from "./forms/CategoryData";
 
 const Categories = () => {
 

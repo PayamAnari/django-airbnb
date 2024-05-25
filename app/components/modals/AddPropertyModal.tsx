@@ -168,7 +168,24 @@ const AddPropertyModal = () => {
 
       </>
     ) : (
-      <p>fdsd</p>
+     <>
+      <h2 className="mb-6 text-2xl">Image</h2>
+      <div className="pt-3 pb-6 space-y-4">
+
+      </div>
+
+
+      <CustomButton
+         label="Previous"
+         className="mb-2 bg-gray-700 hover:bg-gray-500"
+         onClick={() => setCurrentStep(3)}
+       />
+
+         <CustomButton
+         label="Next"
+         onClick={() => setCurrentStep(5)}
+       />
+     </>
     )
   }
    </>

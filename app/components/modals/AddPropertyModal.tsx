@@ -169,21 +169,28 @@ const AddPropertyModal = () => {
       </>
     ) : (
      <>
+
       <h2 className="mb-6 text-2xl">Image</h2>
       <div className="pt-3 pb-6 space-y-4">
-
+         <div className="py-4 px-6 bg-gray-600 text-white rounded-full">
+           <input
+             type="file"
+             accept="image/*"
+             onChange={setImage}
+             />
+         </div>
       </div>
 
 
       <CustomButton
          label="Previous"
          className="mb-2 bg-gray-700 hover:bg-gray-500"
-         onClick={() => setCurrentStep(3)}
+         onClick={() => setCurrentStep(4)}
        />
 
          <CustomButton
-         label="Next"
-         onClick={() => setCurrentStep(5)}
+         label="Submit"
+         onClick={() => console.log("submit")}
        />
      </>
     )

@@ -19,6 +19,7 @@ const AddPropertyModal = () => {
   const [dataBathrooms, setDataBathrooms] = useState("");
   const [dataGuests, setDataGuests] = useState("");
   const [dataCountry, setDataCountry] = useState<SelectCountryValue>();
+  const [dataImage, setDataImage] = useState<File | null>(null);
 
 
   const addPropertyModal = useAddPropertyModal();
@@ -26,6 +27,11 @@ const AddPropertyModal = () => {
 
   const setCategory = (category: string) => {
     setDataCategory(category)
+  }
+
+  const setImage = (event: ChangeEvent<HTMLInputElement>) => {
+     if (event.target.files && event.target.files.length > 0) {
+        const tmpImage = event.target.files[0];
   }
 
   const content = (

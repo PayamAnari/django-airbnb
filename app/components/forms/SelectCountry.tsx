@@ -20,7 +20,9 @@ const SelectCountry: React.FC<SelectCountryProps> = ({
 }) => {
    return (
     <>
-    gfds
+    <Select 
+      placeholder="Select country"
+    />
     </>
    )
 }

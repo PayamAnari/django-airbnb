@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Modal from "./Modal";
-import { useState } from "react"
+import { ChangeEvent, useState } from "react"
 import useAddPropertyModal from "@/app/hooks/useAddPropertyModal";
 import CustomButton from "../forms/CustomButton";
 import Categories from "./addproperty/Categories";
@@ -32,7 +32,10 @@ const AddPropertyModal = () => {
   const setImage = (event: ChangeEvent<HTMLInputElement>) => {
      if (event.target.files && event.target.files.length > 0) {
         const tmpImage = event.target.files[0];
+
+        setDataImage(tmpImage);
   }
+}
 
   const content = (
     <>
@@ -185,6 +188,17 @@ const AddPropertyModal = () => {
              onChange={setImage}
              />
          </div>
+         {dataImage && (
+           <div className="w-[200px] h-[150px] relative">
+             <Image
+                 fill
+                 alt="Uploaded image"
+                 src={URL.createObjectURL(dataImage)}
+                 className="w-full h-full object-cover rounded-xl"
+              />
+           </div>
+
+         )}
       </div>
 
 

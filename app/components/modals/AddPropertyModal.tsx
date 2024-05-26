@@ -256,7 +256,7 @@ const submitForm = async () => {
 
          <CustomButton
          label="Submit"
-         onClick={() => console.log("submit")}
+         onClick={submitForm}
        />
      </>
     )

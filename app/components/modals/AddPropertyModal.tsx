@@ -37,6 +37,20 @@ const AddPropertyModal = () => {
   }
 }
 
+const submitForm = async () => {
+    
+    if (
+      dataCategory &&
+      dataTitle &&
+      dataDescription &&
+      dataPrice &&
+      dataCountry &&
+      dataImage 
+    ) {
+        const formData = new FormData();
+    }
+}
+
   const content = (
     <>
     {currentStep === 1 ? (
@@ -200,6 +214,14 @@ const AddPropertyModal = () => {
 
          )}
       </div>
+
+      {/* {errors.map((error, index) => {
+        return (
+          <div className="p-5 mb-4 bg-airbnb text-white rounded-xl">
+             {error}
+          </div>
+        )
+      })} */}
 
 
       <CustomButton

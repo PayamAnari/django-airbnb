@@ -63,6 +63,12 @@ const submitForm = async () => {
         formData.append("image", dataImage);
 
         const response = await apiService.post("/api/properties/create/", formData);
+
+        if (response.success) {
+          console.log("Property added successfully");
+          router.push("/?added=true");
+          addPropertyModal.close();
+        }
     }
 }
 

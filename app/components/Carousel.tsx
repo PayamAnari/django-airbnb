@@ -74,7 +74,7 @@ const Carousel: React.FC<CarouselProps> = ({ data, setCategory, dataCategory }) 
       <button
         onClick={handleNext}
         disabled={currentIndex === maxIndex}
-        className={`absolute right-0 z-10 px-2 py-1 bg-gray-100 hover:bg-gray-200 transitions border border-gray-200 shadow-lg rounded-full ${currentIndex === maxIndex && 'opacity-50'}`}
+        className={`absolute right-0  px-2 py-1 bg-gray-100 hover:bg-gray-200 transitions border border-gray-200 shadow-lg rounded-full ${currentIndex === maxIndex && 'opacity-50'}`}
       >
         {'>'}
       </button>

@@ -12,6 +12,7 @@ import { useRouter } from "next/navigation";
 
 
 const AddPropertyModal = () => {
+  const [errors, setErrors] = useState<string[]>([]);
   const [currentStep, setCurrentStep] = useState(1);
   const [dataCategory, setDataCategory] = useState("");
   const [dataTitle, setDataTitle] = useState("");
@@ -22,6 +23,7 @@ const AddPropertyModal = () => {
   const [dataGuests, setDataGuests] = useState("");
   const [dataCountry, setDataCountry] = useState<SelectCountryValue>();
   const [dataImage, setDataImage] = useState<File | null>(null);
+  
 
 
   const addPropertyModal = useAddPropertyModal();
@@ -239,13 +241,13 @@ const submitForm = async () => {
          )}
       </div>
 
-      {/* {errors.map((error, index) => {
+      {errors.map((error, index) => {
         return (
           <div className="p-5 mb-4 bg-airbnb text-white rounded-xl">
              {error}
           </div>
         )
-      })} */}
+      })}
 
 
       <CustomButton

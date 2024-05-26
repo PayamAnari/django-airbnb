@@ -54,7 +54,7 @@ const submitForm = async () => {
         formData.append("category", dataCategory);
         formData.append("title", dataTitle);
         formData.append("description", dataDescription);
-        formData.append("price per night", dataPrice);
+        formData.append("price_per_night", dataPrice);
         formData.append("bedrooms", dataBedrooms);
         formData.append("bathrooms", dataBathrooms);
         formData.append("guests", dataGuests);

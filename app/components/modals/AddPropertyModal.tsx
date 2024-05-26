@@ -68,6 +68,9 @@ const submitForm = async () => {
           console.log("Property added successfully");
           router.push("/?added=true");
           addPropertyModal.close();
+        } else {
+          console.log("Error");
+
         }
     }
 }

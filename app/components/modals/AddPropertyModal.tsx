@@ -7,6 +7,8 @@ import useAddPropertyModal from "@/app/hooks/useAddPropertyModal";
 import CustomButton from "../forms/CustomButton";
 import Categories from "./addproperty/Categories";
 import SelectCountry, { SelectCountryValue} from "../forms/SelectCountry";
+import apiService from "@/app/services/apiService";
+import { useRouter } from "next/navigation";
 
 
 const AddPropertyModal = () => {
@@ -23,6 +25,7 @@ const AddPropertyModal = () => {
 
 
   const addPropertyModal = useAddPropertyModal();
+  const router = useRouter();
 
 
   const setCategory = (category: string) => {
@@ -58,6 +61,8 @@ const submitForm = async () => {
         formData.append("country", dataCountry.label);
         formData.append("country_code", dataCountry.value);
         formData.append("image", dataImage);
+
+        const response = await apiService.post("/api/properties/create/", formData);
     }
 }
 

@@ -48,6 +48,16 @@ const submitForm = async () => {
       dataImage 
     ) {
         const formData = new FormData();
+        formData.append("category", dataCategory);
+        formData.append("title", dataTitle);
+        formData.append("description", dataDescription);
+        formData.append("price per night", dataPrice);
+        formData.append("bedrooms", dataBedrooms);
+        formData.append("bathrooms", dataBathrooms);
+        formData.append("guests", dataGuests);
+        formData.append("country", dataCountry.label);
+        formData.append("country_code", dataCountry.value);
+        formData.append("image", dataImage);
     }
 }
 

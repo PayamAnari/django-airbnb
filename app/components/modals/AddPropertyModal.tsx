@@ -73,6 +73,10 @@ const submitForm = async () => {
         } else {
           console.log("Error");
 
+          const tmpErrors : string[] = Object.values(response).map((error: any) => {
+             return error;
+          })
+
         }
     }
 }

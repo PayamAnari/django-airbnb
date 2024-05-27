@@ -25,7 +25,7 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
       </div>
 
       <div className="w-full mb-6 py-6 text-center text-white bg-airbnb hover:bg-airbnb-dark rounded-xl ">
-        Book
+        Reserve
       </div>
 
       <div className="mb-4 flex justify-between align-center">
@@ -33,7 +33,7 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
          <p>$800</p>
       </div>
       <div className="mb-4 flex justify-between align-center">
-         <p>Djangobnb fee</p>
+         <p>Airbnb service fee</p>
          <p>$40</p>
       </div>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import MenuLink from "./MenuLink";
 import useLoginModal from "@/app/hooks/useLoginModal";
 import useSignupModal from "@/app/hooks/useSignUpModal";
@@ -15,10 +15,24 @@ const UserNav: React.FC<UserNavProps> = ({
  }) => {
   const loginModal = useLoginModal();
   const signupModal = useSignupModal();
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
-    <div className="p-2 relative inline-block border rounded-full">
+    <div className="p-2 relative inline-block border rounded-full" ref={menuRef}>
        <button 
        onClick={() => setIsOpen(!isOpen)}
        className="flex items-center">

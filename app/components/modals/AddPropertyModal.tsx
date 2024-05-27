@@ -5,7 +5,7 @@ import Modal from "./Modal";
 import { ChangeEvent, useState } from "react"
 import useAddPropertyModal from "@/app/hooks/useAddPropertyModal";
 import CustomButton from "../forms/CustomButton";
-import Categories from "./addproperty/Categories";
+import Categories from "../addproperty/Categories";
 import SelectCountry, { SelectCountryValue} from "../forms/SelectCountry";
 import apiService from "@/app/services/apiService";
 import { useRouter } from "next/navigation";
@@ -75,7 +75,10 @@ const submitForm = async () => {
 
           const tmpErrors : string[] = Object.values(response).map((error: any) => {
              return error;
+
           })
+
+          setErrors(tmpErrors)
 
         }
     }
@@ -247,7 +250,9 @@ const submitForm = async () => {
 
       {errors.map((error, index) => {
         return (
-          <div className="p-5 mb-4 bg-airbnb text-white rounded-xl">
+          <div 
+          key={index}
+          className="p-5 mb-4 bg-airbnb text-white rounded-xl opacity-80">
              {error}
           </div>
         )

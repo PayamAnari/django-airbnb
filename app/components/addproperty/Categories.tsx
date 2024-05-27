@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Carousel from "../../Carousel";
-import CategoryData from "../../forms/CategoryData";
+import Carousel from "../Carousel";
+import CategoryData from "../forms/CategoryData";
 
 interface CategoriesProps {
   dataCategory: string;

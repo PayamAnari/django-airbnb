@@ -10,7 +10,7 @@ const PropertyDetailPage = async ({params}: { params: {id: string}}) => {
          <div className="w-full h-[64vh] mb-4 overflow-hidden rounded-xl relative">
                 <Image
                     fill
-                    src="/beach_1.jpg"
+                    src={property.image_url}
                     className="object-cover w-full h-full"
                     alt="Beach house"
                 />
@@ -26,19 +26,24 @@ const PropertyDetailPage = async ({params}: { params: {id: string}}) => {
                   <hr />
 
                   <div className="py-6 flex items-center space-x-4">
-                  <Image
-                                src="/profile_pic_1.jpg"
-                                width={50}
-                                height={50}
-                                className="rounded-full"
-                                alt="The user name"
-                            />
 
-                            <p><strong>John Doe</strong> is your host</p>
+                    {property.landlord.avatar_url && (
+                       <Image
+                       src={property.landlord.avatar_url}
+                       width={50}
+                       height={50}
+                       className="rounded-full"
+                       alt="The user name"
+                   />
+
+                    )}
+                 
+
+                        <p><strong>{property.landlord.name}</strong> is your host</p>
                   </div>
                   <hr />
                   <p className="mt-6 text-lg">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur exercitationem error ex! Consequuntur cum unde deserunt id magnam voluptatibus eum esse, quidem dolorum. Nihil sapiente tenetur eligendi, ipsam fugit qui?
+                    {property.description}
                   </p>
               </div>
               <ReservationSidebar />

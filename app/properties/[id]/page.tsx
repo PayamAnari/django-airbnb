@@ -47,7 +47,9 @@ const PropertyDetailPage = async ({params}: { params: {id: string}}) => {
                     {property.description}
                   </p>
               </div>
-              <ReservationSidebar />
+              <ReservationSidebar 
+                property={property}
+              />
             </div>
     </main>
   )

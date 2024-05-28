@@ -1,4 +1,4 @@
-"user client"
+"use client"
 
 import { useState, useEffect } from "react";
 import { Range } from "react-date-range" ;
@@ -57,8 +57,8 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
       </div>
 
       <div className="mb-4 flex justify-between align-center">
-         <p>$200 * 4 nights</p>
-         <p>$800</p>
+         <p>${property.price_per_night} * {nights} nights</p>
+         <p>${property.price_per_night * nights}</p>
       </div>
       <div className="mb-4 flex justify-between align-center">
          <p>Airbnb service fee</p>

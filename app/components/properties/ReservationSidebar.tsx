@@ -46,6 +46,9 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
          value={guests}
          onChange={(e) => setGuests(e.target.value)}
          className="w-full -ml-1 text-xm">
+            {guestsRange.map((guest) => (
+              <option key={guest} value={guest}>{guest}</option>
+            ))}
          </select>
       </div>
 

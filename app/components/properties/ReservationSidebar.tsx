@@ -13,6 +13,7 @@ const initialDateRange = {
 
 export type Property = {
   id: string;
+  guests: number;
   price_per_night: number;
 }
 
@@ -29,8 +30,12 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
 
   const [fee, setFee] = useState<number>(0);
   const [nights, setNights] = useState<number>(1);
-  const [totlaPrice, setTotalPrice] = useState<number>(0);
+  const [totalPrice, setTotalPrice] = useState<number>(0);
   const [dateRange, setDateRange] = useState<Range>(initialDateRange);
+  const [minDate, setMinDate] = useState<Date>(new Date());
+  const [guests, setGuests] = useState<string>("1");
+
+  const guestsRange = Array.from({length: property.guests}, (_, index) => index + 1);
 
   return (
     <aside className="mt-6 p-6 col-span-2 rounded-xl border border-gray-300 shadow-xl">

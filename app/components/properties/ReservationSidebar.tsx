@@ -1,4 +1,4 @@
-"use client"
+"user client"
 
 import { useState, useEffect } from "react";
 import { Range } from "react-date-range" ;
@@ -22,8 +22,16 @@ interface ReservationSidebarProps {
 }
 
 const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
-  property
+  property,
+  userId
 }) => {
+  const loginModal = useLoginModal();
+
+  const [fee, setFee] = useState<number>(0);
+  const [nights, setNights] = useState<number>(1);
+  const [totlaPrice, setTotalPrice] = useState<number>(0);
+  const [dateRange, setDateRange] = useState<Range>(initialDateRange);
+
   return (
     <aside className="mt-6 p-6 col-span-2 rounded-xl border border-gray-300 shadow-xl">
       <h2 className="mb-5 text-2xl">${property.price_per_night} per night</h2>

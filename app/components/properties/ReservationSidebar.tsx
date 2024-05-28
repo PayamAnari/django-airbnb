@@ -5,6 +5,12 @@ import { Range } from "react-date-range" ;
 import apiService from "@/app/services/apiService";
 import useLoginModal from "@/app/hooks/useLoginModal";
 
+const initialDateRange = {
+   startDate: new Date(),
+   endDate: new Date(),
+    key: 'selection'
+}
+
 export type Property = {
   id: string;
   price_per_night: number;

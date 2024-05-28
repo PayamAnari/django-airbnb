@@ -1,3 +1,10 @@
+"use client"
+
+import { useState, useEffect } from "react";
+import { Range } from "react-date-range" ;
+import apiService from "@/app/services/apiService";
+import useLoginModal from "@/app/hooks/useLoginModal";
+
 export type Property = {
   id: string;
   price_per_night: number;

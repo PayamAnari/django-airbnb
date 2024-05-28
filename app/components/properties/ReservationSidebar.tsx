@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Range } from "react-date-range" ;
 import apiService from "@/app/services/apiService";
 import useLoginModal from "@/app/hooks/useLoginModal";
+import { differenceInDays, eachDayOfInterval } from "date-fns";
 
 const initialDateRange = {
    startDate: new Date(),
@@ -37,6 +38,11 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
 
   const guestsRange = Array.from({length: property.guests}, (_, index) => index + 1);
 
+  useEffect (() => {
+
+  },[dateRange])
+
+
   return (
     <aside className="mt-6 p-6 col-span-2 rounded-xl border border-gray-300 shadow-xl">
       <h2 className="mb-5 text-2xl">${property.price_per_night} per night</h2>
@@ -62,14 +68,14 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
       </div>
       <div className="mb-4 flex justify-between align-center">
          <p>Airbnb service fee</p>
-         <p>$40</p>
+         <p>${fee}</p>
       </div>
 
       <hr />
 
       <div className="mt-4 flex justify-between align-center font-bold">
         <p>Total</p>
-        <p>$840</p>
+        <p>${totalPrice}</p>
       </div>
 
     </aside>

@@ -6,7 +6,7 @@ import { getUserId } from "@/app/lib/actions";
 
 const PropertyDetailPage = async ({params}: { params: {id: string}}) => {
   const property = await apiService.get(`/api/properties/${params.id}`);
-  const userId = getUserId();
+  const userId = await getUserId();
 
 
 

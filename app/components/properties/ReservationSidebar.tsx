@@ -52,9 +52,9 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
         const _fee = (property.price_per_night / 100) * 5;
         setFee(_fee);
         setTotalPrice(property.price_per_night + _fee);
+        setNights(1)
       }
     }
-
 
   },[dateRange])
 

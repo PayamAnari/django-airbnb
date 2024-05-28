@@ -39,6 +39,14 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
   const guestsRange = Array.from({length: property.guests}, (_, index) => index + 1);
 
   useEffect (() => {
+    if (dateRange.startDate && dateRange.endDate) {
+      const dayCount = differenceInDays(dateRange.endDate, dateRange.startDate);
+      
+      if (dayCount && property.price_per_night) {
+        const fee = ((dayCount * property.price_per_night) / 100) * 5;
+      }
+    }
+
 
   },[dateRange])
 

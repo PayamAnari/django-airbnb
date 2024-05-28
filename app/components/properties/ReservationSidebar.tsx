@@ -17,6 +17,7 @@ export type Property = {
 }
 
 interface ReservationSidebarProps {
+  userId: string | null
   property: Property
 }
 

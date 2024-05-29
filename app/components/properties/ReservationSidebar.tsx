@@ -48,6 +48,14 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
         formData.append("end_date", format(dateRange.endDate, "yyyy-MM-dd"));
         formData.append("number_of_nights", nights.toString());
         formData.append("total_price", totalPrice.toString());
+
+        const response = await apiService.post(`/api/properties/${property.id}/book/`, formData);
+
+        if (response.success) {
+          console.log("Booking successful");
+        } else {
+          console.log("Booking failed");
+        }
       }
 
     } else {

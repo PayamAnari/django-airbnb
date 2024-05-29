@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Range } from "react-date-range" ;
 import apiService from "@/app/services/apiService";
 import useLoginModal from "@/app/hooks/useLoginModal";
-import { differenceInDays, eachDayOfInterval } from "date-fns";
+import { differenceInDays, eachDayOfInterval, format } from "date-fns";
 import DatePicker from "../forms/calendar";
 
 const initialDateRange = {
@@ -41,6 +41,14 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
 
   const performBooking = async () => {
     if (userId) {
+      if (dateRange.startDate && dateRange.endDate) {
+        const formData = new FormData();
+        formData.append("guests", guests);
+        formData.append("start_date", format(dateRange.startDate, "yyyy-MM-dd"));
+        formData.append("end_date", format(dateRange.endDate, "yyyy-MM-dd"));
+        formData.append("number_of_nights", nights.toString());
+        formData.append("total_price", totalPrice.toString());
+      }
 
     } else {
       loginModal.open();

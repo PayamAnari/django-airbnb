@@ -39,6 +39,15 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
 
   const guestsRange = Array.from({length: property.guests}, (_, index) => index + 1);
 
+  const performBooking = async () => {
+    if (userId) {
+
+    } else {
+      loginModal.open();
+    }
+  }
+  
+  
   const _setDateRange = (selection: any) => {
     const newStartDate = new Date(selection.startDate);
     const newEndDate = new Date(selection.endDate);

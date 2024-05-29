@@ -93,9 +93,13 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
 
         dates = [...dates, ...range];
     })
+
+    setBookedDates(dates);
   }
 
   useEffect (() => {
+    getReservations();
+
     if (dateRange.startDate && dateRange.endDate) {
       const dayCount = differenceInDays(dateRange.endDate, dateRange.startDate);
       
@@ -122,6 +126,7 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
 
       <DatePicker
       value={dateRange}
+      bookedDates={bookedDates}
       onChange={(value) => _setDateRange(value.selection)}
       />
 

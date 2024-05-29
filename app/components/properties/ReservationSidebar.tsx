@@ -79,6 +79,19 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
     })
   }
 
+  const getReservations = async () => {
+    const reservations = await apiService.get(`/api/properties/${property.id}/reservations/`);
+
+    let dates: Date[] = [];
+
+    reservations.forEach((reservation: any) => {
+       const range = eachDayOfInterval({
+          start: new Date(reservation.start_date),
+          end: new Date(reservation.end_date)
+        });
+    })
+  }
+
   useEffect (() => {
     if (dateRange.startDate && dateRange.endDate) {
       const dayCount = differenceInDays(dateRange.endDate, dateRange.startDate);
@@ -121,7 +134,9 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
          </select>
       </div>
 
-      <div className="w-full mb-6 py-6 text-center text-white bg-airbnb hover:bg-airbnb-dark rounded-xl ">
+      <div 
+      onClick={performBooking}
+      className="w-full mb-6 py-6 text-center text-white bg-airbnb hover:bg-airbnb-dark rounded-xl ">
         Reserve
       </div>
 

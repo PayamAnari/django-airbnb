@@ -1,5 +1,6 @@
 import Image from "next/image";
 import apiService from "../services/apiService";
+import Link from "next/Link";
 
 
 const MyReservationsPage = async () => {
@@ -31,9 +32,11 @@ const MyReservationsPage = async () => {
                <p className="mb-2"><strong>Number of nights:</strong> {reservation.number_of_nights}</p>
                <p className="mb-2"><strong>Total price:</strong> ${reservation.total_price}</p>
 
-               <div className="mt-6 inline-block cursor-pointer py-4 px-6 bg-airbnb hover:bg-airbnb-dark transition text-white rounded-xl">
+               <Link 
+               href={`/properties/${reservation.property.id}`}
+               className="mt-6 inline-block cursor-pointer py-4 px-6 bg-airbnb hover:bg-airbnb-dark transition text-white rounded-xl">
                Go to property
-               </div>
+               </Link>
             </div>
         </div>
        })}

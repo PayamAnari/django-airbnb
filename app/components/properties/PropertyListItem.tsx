@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 
 interface PropertyProps {
   property: PropertyType;
+  makeFavorite?: (is_favorite: boolean) => void; 
 
 }
 

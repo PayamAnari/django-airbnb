@@ -20,7 +20,8 @@ interface PropertyListProps {
 }
 
 const PropertyList: React.FC<PropertyListProps> = ({
-  landlord_id
+  landlord_id,
+  favorites
 }) => {
   const [properties, setProperties] = useState<PropertyType[]>([]);
  
@@ -46,6 +47,8 @@ const PropertyList: React.FC<PropertyListProps> = ({
     let url = '/api/properties/';
     if (landlord_id) {
       url += `?landlord_id=${landlord_id}`;
+    } else if (favorites) {
+      url += '?is_favorite=true';
     }
     const tmpProperties = await apiService.get(url);
 

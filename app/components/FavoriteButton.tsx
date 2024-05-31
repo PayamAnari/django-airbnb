@@ -17,7 +17,6 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({
   const toggleFavorite = async (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
     const response = await apiService.post(`/api/properties/${id}/toggle_favorite/`, {});
-
     markFavorite(response.is_favorite);
   }
 

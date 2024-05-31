@@ -26,7 +26,7 @@ const PropertyList: React.FC<PropertyListProps> = ({
   const markFavorite = (id: string, is_favorite: boolean) => {
     const tmpProperties = properties.map((property: PropertyType) => {
 
-      if (property.id === id) {
+      if (property.id == id) {
         property.is_favorite = is_favorite;
 
         if (is_favorite) {
@@ -53,8 +53,9 @@ const PropertyList: React.FC<PropertyListProps> = ({
         property.is_favorite = true
       } else {
         property.is_favorite = false
-
       }
+
+      return property;
     }));    
   };
 

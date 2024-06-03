@@ -40,9 +40,25 @@ const LandlordDetailPage = async ({ params }: { params: { id: string }}) => {
         </aside>
         
           <div className="col-span-1 mt-0 lg:mt-10 md:col-span-2 pl-0 md:pl-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="flex gap-2 ">
+              <Image 
+                src="/email.png"
+                width={24}
+                height={24}
+                alt="Email"
+                />
                 <p>Email: {landlord.email}</p>
+              </div>
+              <div className="flex gap-2 ">
+              <Image 
+                src="/birth.png"
+                width={24}
+                height={24}
+                alt="birthday"
+                />
                 <p>Born in: {landlord.birthday}</p>
+              </div>
                 <p>My work: {landlord.work}</p>
                 <p>Telephone: {landlord.telephone}</p>
                 <p>Address: {landlord.address}</p>

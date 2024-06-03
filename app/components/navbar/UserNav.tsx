@@ -52,7 +52,7 @@ const UserNav: React.FC<UserNavProps> = ({
             {userId ? (
               <>
                 <MenuLink
-                 label="Inobx"
+                 label="Inbox"
                  onClick={() =>{
                    setIsOpen(false);
                    router.push("/inbox")

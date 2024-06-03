@@ -31,7 +31,7 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({
         viewBox="0 0 24 24" 
         strokeWidth={1.5} 
         stroke={is_favorite ? "#FF0000" : "#FFFFFF"} 
-        style={{ width: '32px', height: '32px' }}
+        style={{ width: '26px', height: '26px' }}
       >
         <path 
           strokeLinecap="round" 

@@ -29,6 +29,18 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
     fetchData();
   }, [params.id]);
 
+ 
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await apiService.put(`/api/auth/${params.id}/profile/`, formData);
+      router.push(`/landlords/${params.id}`);
+    } catch (error) {
+      console.error('Failed to update profile', error);
+    }
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -37,19 +49,23 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleFileUpload = async (e) => {
+    const file = e.target.files[0]; 
+    const formData = new FormData();
+    formData.append('avatar', file); 
+    
     try {
-      await apiService.put(`/api/auth/${params.id}/profile/`, formData);
-      router.push(`/landlord/${params.id}`);
+      const response = await apiService.uploadProfilePhoto(`/api/auth/${params.id}/upload-profile/`, formData);
+      
+      setLandlord((prevLandlord) => ({
+        ...prevLandlord,
+        avatar_url: response.avatar_url,
+      }));
     } catch (error) {
-      console.error('Failed to update profile', error);
+      console.error('Failed to upload avatar', error);
     }
   };
-
-  const handleFileUpload = async () => {
-
-  };
+  
 
   return (
     <main className="max-w-[1500px] mx-auto px-7 p-6 rounded-lg">
@@ -57,24 +73,45 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
         <aside className="col-span-1 mb-4">
           <p className="text-2xl mb-6">Profile {landlord.name}</p>
           <div className="flex flex-col max-w-[350px] h-[220px] mx-auto items-center p-4 rounded-2xl bg-white border border-gray-300 shadow-2xl">
-            {landlord.avatar_url ? (
-            <Image
-              src={landlord.avatar_url}
-              width={140}
-              height={140}
-              alt="Landlord name"
-              className="rounded-full"
-            />
-            ):(
-              <input
-              id="avatar"
-              type="file"
-              accept="image/*"
-              className="hidden"
-              onChange={() => handleFileUpload()}
-              />
-              
-            )}
+          <input
+  id="avatar"
+  type="file"
+  accept="image/*"
+  className="hidden"
+  onChange={(e) => handleFileUpload(e)}
+/>
+<label htmlFor="avatar" className="cursor-pointer">
+  {landlord.avatar_url ? (
+    <Image
+      src={landlord.avatar_url}
+      width={140}
+      height={140}
+      alt="Landlord name"
+      className="rounded-full"
+    />
+  ) : (
+    <div className="w-24 h-24 bg-gray-200 rounded-full flex justify-center items-center">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-12 w-12 text-gray-400 hover:text-gray-600"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fillRule="evenodd"
+          d="M15 7a3 3 0 11-6 0 3 3 0 016 0zM7 9a1 1 0 011-1h4a1 1 0 010 2H8a1 1 0 01-1-1z"
+          clipRule="evenodd"
+        />
+        <path
+          fillRule="evenodd"
+          d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.414a1 1 0 01-.707-.293l-2.293-2.293A1 1 0 0011.414 1H8.586a1 1 0 00-.707.293L5.586 3.586A1 1 0 015.5 4H4zm8 2h2v2h-2V7zm0 4h2v2h-2v-2z"
+          clipRule="evenodd"
+        />
+      </svg>
+    </div>
+  )}
+</label>
+
             <div className="flex flex-col">
               <h1 className="text-3xl font-bold">{landlord.name}</h1>
               <p className="text-md text-center font-bold">Guest</p>

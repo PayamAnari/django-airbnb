@@ -102,6 +102,34 @@ const apiService = {
         });
     });
   },
+
+  uploadProfilePhoto: async function (
+    url: string,
+    data: FormData,
+  ): Promise<any> {
+    console.log('uploadProfilePhoto', url, data);
+
+    const token = await getAccessToken();
+
+    return new Promise((resolve, reject) => {
+      fetch(`${process.env.NEXT_PUBLIC_API_HOST}${url}`, {
+        method: 'POST',
+        body: data,
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          console.log('Response:', json);
+
+          resolve(json);
+        })
+        .catch((error) => {
+          reject(error);
+        });
+    });
+  },
 };
 
 export default apiService;

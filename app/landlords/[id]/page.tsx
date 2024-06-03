@@ -18,19 +18,19 @@ const LandlordDetailPage = async ({ params }: { params: { id: string }}) => {
 
   return (
     <main className="max-w-[1500px] mx-auto px-7 p-6 rounded-lg ">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 bg-gray-200 px-12 py-8 mt-2">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 bg-gray-200 px-12 py-8 ">
         <aside className="col-span-1 mb-4">
-          <p className="text-2xl mb-6 -ml-6">{isOwnProfile ? "Profile" : "Meet Your host"}</p>
+          <p className="text-2xl mb-2 -ml-4">{isOwnProfile ? "Profile" : "Meet Your host"}</p>
           <div className="flex flex-col max-w-[350px] h-[220px] mx-auto items-center p-4 rounded-2xl bg-white border border-gray-300 shadow-2xl">
           <Image
               src={landlord.avatar_url}
-              width={140}
-              height={140}
+              width={80}
+              height={80}
               alt="Landlord name"
               className="rounded-full"
             />
             <div className="flex flex-col">
-            <h1 className="text-3xl font-bold">
+            <h1 className="text-2xl font-bold mt-2">
               {landlord.name}
             </h1>
             <p className="text-md text-center font-bold">Guest</p>
@@ -39,8 +39,8 @@ const LandlordDetailPage = async ({ params }: { params: { id: string }}) => {
           </div>
         </aside>
         
-          <div className="col-span-1 md:col-span-2 pl-0 md:pl-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="col-span-1 mt-0 lg:mt-10 md:col-span-2 pl-0 md:pl-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 <p>Email: {landlord.email}</p>
                 <p>Born in: {landlord.birthday}</p>
                 <p>My work: {landlord.work}</p>

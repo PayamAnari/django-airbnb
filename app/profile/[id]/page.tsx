@@ -74,19 +74,19 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
           <p className="text-xl mb-6">Edit Profile {landlord.name}</p>
           <div className="flex flex-col max-w-[350px] h-[220px] mx-auto items-center p-4 rounded-2xl bg-white border border-gray-300 shadow-2xl">
           <input
-  id="avatar"
-  type="file"
-  accept="image/*"
-  className="hidden"
-  onChange={(e) => handleFileUpload(e)}
-/>
-<label htmlFor="avatar" className="cursor-pointer">
-  {landlord.avatar_url ? (
+              id="avatar"
+              type="file"
+              accept="image/*"
+              className="hidden"
+              onChange={(e) => handleFileUpload(e)}
+           />
+            <label htmlFor="avatar" className="cursor-pointer">
+      {landlord.avatar_url ? (
     <Image
       src={landlord.avatar_url}
-      width={140}
-      height={140}
-      alt="Landlord name"
+      width={80}
+      height={80}
+      alt="Landlord image"
       className="rounded-full"
     />
   ) : (
@@ -113,7 +113,7 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
 </label>
 
             <div className="flex flex-col">
-              <h1 className="text-3xl font-bold">{landlord.name}</h1>
+              <h1 className="text-2xl font-bold mt-2">{landlord.name}</h1>
               <p className="text-md text-center font-bold">Guest</p>
             </div>
           </div>

@@ -20,7 +20,7 @@ const LandlordDetailPage = async ({ params }: { params: { id: string }}) => {
     <main className="max-w-[1500px] mx-auto px-7 p-6 rounded-lg ">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 bg-gray-200 px-12 py-8 mt-2">
         <aside className="col-span-1 mb-4">
-          <p className="text-2xl mb-6 -ml-6">Meet Your Host</p>
+          <p className="text-2xl mb-6 -ml-6">{isOwnProfile ? "Profile" : "Meet Your host"}</p>
           <div className="flex flex-col max-w-[350px] h-[220px] mx-auto items-center p-4 rounded-2xl bg-white border border-gray-300 shadow-2xl">
           <Image
               src={landlord.avatar_url}
@@ -53,7 +53,7 @@ const LandlordDetailPage = async ({ params }: { params: { id: string }}) => {
                  
                 {isOwnProfile && (
             <Link href={`/profile/${params.id}`}>
-              <button className="mt-4 px-2 py-2 text-sm bg-transparent hover:bg-gray-300 text-black border border-black rounded-lg">
+              <button className="mt-4 px-2 py-2 text-sm bg-transparent hover:bg-white text-black border border-black rounded-lg">
                 Edit Profile
               </button>
             </Link>

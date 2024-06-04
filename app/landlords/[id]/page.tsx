@@ -4,7 +4,6 @@ import ContactButton from "@/app/components/ContactButton";
 import apiService from "@/app/services/apiService";
 import { getUserId } from "@/app/lib/actions";
 import  Link  from "next/link";
-import { formatDistanceToNow } from 'date-fns';
 
 
 
@@ -13,14 +12,13 @@ const LandlordDetailPage = async ({ params }: { params: { id: string }}) => {
   const landlord = await apiService.get(`/api/auth/${params.id}`)
   const userId = await getUserId();
   const isOwnProfile = userId === params.id;
-  const formatDate = (date) => formatDistanceToNow(new Date(date), { addSuffix: true });
 
 
   return (
     <main className="max-w-[1500px] mx-auto px-7 p-6 rounded-lg ">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 bg-gray-200 px-12 py-8 ">
         <aside className="col-span-1 mb-4">
-          <p className="text-2xl mb-2 -ml-4">{isOwnProfile ? "Profile" : "Meet Your host"}</p>
+          <p className="text-2xl mb-4 -ml-4">{isOwnProfile ? `About ${landlord.name}` : "Meet Your host"}</p>
           <div className="flex gap-10 max-w-[350px] h-[220px] mx-auto justify-center p-4 rounded-2xl bg-white border border-gray-300 shadow-2xl">
           
             <div className="flex flex-col">

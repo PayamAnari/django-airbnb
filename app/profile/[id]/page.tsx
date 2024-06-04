@@ -6,6 +6,7 @@ import Image from 'next/image';
 import apiService from '@/app/services/apiService';
 import { getUserId } from '@/app/lib/actions';
 
+
 const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
   const router = useRouter();
   const [landlord, setLandlord] = useState<any>({});
@@ -71,8 +72,8 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
     <main className="max-w-[1500px] mx-auto px-7 p-6 rounded-lg">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 bg-gray-200 px-6 py-6">
         <aside className="col-span-1 mb-4">
-          <p className="text-xl mb-6">Edit Profile {landlord.name}</p>
-          <div className="flex flex-col max-w-[350px] h-[220px] mx-auto items-center p-4 rounded-2xl bg-white border border-gray-300 shadow-2xl">
+          <p className="text-xl mb-6">Welcome {landlord.name}</p>
+          <div className="flex gap-10 max-w-[350px] h-[220px] mx-auto justify-center p-4 rounded-2xl bg-white border border-gray-300 shadow-2xl">
           <input
               id="avatar"
               type="file"
@@ -87,7 +88,7 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
       width={80}
       height={80}
       alt="Landlord image"
-      className="rounded-full"
+      className="rounded-full mt-6"
     />
   ) : (
     <div className="w-24 h-24 bg-gray-200 rounded-full flex justify-center items-center">
@@ -108,14 +109,21 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
           clipRule="evenodd"
         />
       </svg>
-    </div>
-  )}
-</label>
 
-            <div className="flex flex-col">
-              <h1 className="text-2xl font-bold mt-2">{landlord.name}</h1>
-              <p className="text-md text-center font-bold">Guest</p>
-            </div>
+     
+    </div>
+    
+  )}
+
+</label>
+       
+        
+
+            <div className="flex- flex-col mt-20">
+            <h1>{formatDate(landlord.date_joined)}</h1>
+            <p className="text-sm">on Airbnb</p>
+            </div> 
+            
           </div>
         </aside>
 
@@ -185,7 +193,7 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
                 onChange={handleChange}
                 className="px-4 py-2 border border-gray-300 rounded-lg"
               />
-              <button type="submit" className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg">
+              <button type="submit" className="mt-4 px-4 py-2 bg-airbnb hover:bg-airbnb-dark text-white rounded-lg">
                 Save Changes
               </button>
             </form>

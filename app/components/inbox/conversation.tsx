@@ -17,7 +17,8 @@ const Conversation: React.FC<ConversationProps> = ({
 
   return (
     <div className="px-6 py-4 cursor-pointer border border-gray-300 rounded-xl shadow-lg">
-    <p className="mb-6 text-xl cursor-pointer"
+    <p className="mb-6 text-xl"
+      onClick={() => router.push(`/landlords/${otherUser?.id}`)}
     >
       {otherUser?.name}
     </p>

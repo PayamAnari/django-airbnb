@@ -29,13 +29,13 @@ const LandlordDetailPage = async ({ params }: { params: { id: string }}) => {
               alt="Landlord name"
               className="rounded-full"
             />
-            <h1 className="text-2xl font-bold mt-2">
+            <h1 className="text-2xl text-center font-bold mt-2">
               {landlord.name}
             </h1>
             <p className="text-md text-center font-bold">Guest</p>
             </div>
             <div className="flex- flex-col mt-16">
-            <h1>{formatDate(landlord.date_joined)}</h1>
+            <h1 className="font-bold">{formatDate(landlord.date_joined)}</h1>
             <p className="text-sm">on Airbnb</p>
             </div>
           </div>

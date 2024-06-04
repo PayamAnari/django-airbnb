@@ -91,6 +91,7 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
       alt="Landlord image"
       className="rounded-full mt-6"
     />
+  
   ) : (
     <div className="w-24 h-24 bg-gray-200 rounded-full flex justify-center items-center">
       <svg
@@ -111,7 +112,7 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
         />
       </svg>
 
-     
+
     </div>
     
   )}
@@ -119,7 +120,7 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
 </label>
        
             <div className="flex- flex-col mt-20">
-            <h1>{formatDate(landlord.date_joined)}</h1>
+            <h1 className="font-bold">{formatDate(landlord.date_joined)}</h1>
             <p className="text-sm">on Airbnb</p>
             </div> 
             

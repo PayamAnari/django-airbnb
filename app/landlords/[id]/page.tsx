@@ -21,21 +21,25 @@ const LandlordDetailPage = async ({ params }: { params: { id: string }}) => {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 bg-gray-200 px-12 py-8 ">
         <aside className="col-span-1 mb-4">
           <p className="text-2xl mb-2 -ml-4">{isOwnProfile ? "Profile" : "Meet Your host"}</p>
-          <div className="flex flex-col max-w-[350px] h-[220px] mx-auto items-center p-4 rounded-2xl bg-white border border-gray-300 shadow-2xl">
-          <Image
+          <div className="flex gap-10 max-w-[350px] h-[220px] mx-auto justify-center p-4 rounded-2xl bg-white border border-gray-300 shadow-2xl">
+          
+            <div className="flex flex-col">
+            <Image
               src={landlord.avatar_url}
               width={80}
               height={80}
               alt="Landlord name"
               className="rounded-full"
             />
-            <div className="flex flex-col">
             <h1 className="text-2xl font-bold mt-2">
               {landlord.name}
             </h1>
             <p className="text-md text-center font-bold">Guest</p>
             </div>
-        
+            <div className="flex- flex-col mt-16">
+            <h1>{formatDate(landlord.date_joined)}</h1>
+            <p className="text-sm">on Airbnb</p>
+            </div>
           </div>
         </aside>
         

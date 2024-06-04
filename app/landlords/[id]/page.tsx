@@ -111,9 +111,17 @@ const LandlordDetailPage = async ({ params }: { params: { id: string }}) => {
                 height={24}
                 alt="date"
                 />
-                <p>Joined: {landlord.date_joined}</p>
+                <p>Joined: {formatDate(landlord.date_joined)}</p>
               </div>
+              <div className="flex gap-2 ">
+              <Image 
+                src="/login.png"
+                width={24}
+                height={24}
+                alt="login"
+                />
                 <p>Last login: {formatDate(landlord.last_login)}</p>
+              </div>
                  
                 {isOwnProfile && (
             <Link href={`/profile/${params.id}`}>

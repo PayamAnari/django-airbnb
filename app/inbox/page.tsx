@@ -3,6 +3,17 @@ import Conversation from "../components/inbox/conversation";
 import apiService from "../services/apiService";
 import  {useState, useEffect} from 'react';
 
+export type UserType = {
+   id: string;
+   name: string;
+   avatar_url: string;
+}
+
+export type ConversationType = {
+   id: string;
+   users: UserType[];
+}
+
 const InboxPage = async () => {
   const userId = await getUserId();
 

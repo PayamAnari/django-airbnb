@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import apiService from '@/app/services/apiService';
 import { getUserId } from '@/app/lib/actions';
+import { formatDate } from '@/app/components/forms/FormatDate';
 
 
 const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
@@ -117,8 +118,6 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
 
 </label>
        
-        
-
             <div className="flex- flex-col mt-20">
             <h1>{formatDate(landlord.date_joined)}</h1>
             <p className="text-sm">on Airbnb</p>

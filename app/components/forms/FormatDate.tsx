@@ -2,7 +2,7 @@ import { differenceInDays, differenceInMonths, differenceInYears } from 'date-fn
 
 
 
-const formatDate = (date) => {
+export const formatDate = (date) => {
   const now = new Date();
   const inputDate = new Date(date);
 
@@ -19,4 +19,3 @@ const formatDate = (date) => {
   }
 };
 
-export default formatDate;

@@ -86,7 +86,15 @@ const LandlordDetailPage = async ({ params }: { params: { id: string }}) => {
                 />
                 <p>Address: {landlord.address}</p>
               </div>
+              <div className="flex gap-2 ">
+              <Image 
+                src="/about.png"
+                width={24}
+                height={24}
+                alt="about"
+                />
                 <p>About me: {landlord.about_me}</p>
+              </div>
                 <p>Favorite song: {landlord.favorite_song}</p>
                 <p>Joined: {formatDate(landlord.date_joined)}</p>
                 <p>Last login: {formatDate(landlord.last_login)}</p>

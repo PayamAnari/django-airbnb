@@ -2,6 +2,16 @@ import ConversationDetail from "@/app/components/inbox/ConversationDetail";
 import { getUserId } from "@/app/lib/actions";
 import React, { useState, useEffect } from "react";
 import apiService from "@/app/services/apiService";
+import { UserType } from "../page";
+
+export type MessageType = {
+  id: string;
+  name: string;
+  body: string;
+  conversationId: string;
+  sent_to: UserType;
+  created_by: UserType;
+}
 
 const ConversationPage = async () => {
   const userId = getUserId();

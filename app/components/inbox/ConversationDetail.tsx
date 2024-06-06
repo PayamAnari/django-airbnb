@@ -11,11 +11,13 @@ interface ConversationDetailProps {
   token: string;
   userId: string;
   conversation: ConversationType;
+  messages: MessageType[];
 }
 
 const ConversationDetail: React.FC<ConversationDetailProps> = ({
   userId,
   token,
+  messages,
   conversation
 }) => {
   const messagesDiv = useRef<HTMLDivElement>(null);
@@ -44,9 +46,12 @@ useEffect(() => {
         created_by: myUser as UserType,
         conversationId: conversation.id
      }   
+
+     setRealtimeMessages((realtimeMessages) => [...realtimeMessages, message]);
   }
 
-})
+  scrollToBottom();
+},[lastJsonMessage]);
 
 const sendMessage = async() => {
    sendJsonMessage({
@@ -76,15 +81,17 @@ const scrollToBottom = () => {
     <div 
     ref={messagesDiv}
     className="max-h-[400px] overflow-auto flex flex-col space-y-4">
-      <div className="w-[80%] py-4 px-6 rounded-xl bg-purple-900">
-         <p className="font-bold text-gray-400">John Doe</p>
-         <p className="text-white">hgdfvdc tgrfdf thgrfeds hytgrfedws fdf</p>
-      </div>
-      
-      <div className="w-[80%] ml-[20%] py-4 px-6 rounded-xl bg-blue-200">
-         <p className="font-bold text-gray-500">Liam Doe</p>
-         <p>hgdfvdc tgrfdf thgrfeds hytgrfedws fdf</p>
-      </div>
+
+      {messages.map((message, index) => (
+        <div
+          key={index}
+          className={`w-[80%]py-4 px-6 rounded-xl ${message.created_by.name == myUser?.name ? 'ml-[20%] bg-blue-200' : 'bg-gray-200'}`}
+           >
+        <p className="font-bold text-gray-500">{message.created_by.name}</p>
+        <p>{message.body}</p>
+        </div>
+       ))}
+   
     {realtimeMessages.map((message, index) => (
        <div
         key={index}

@@ -5,6 +5,7 @@ import CustomButton from "../forms/CustomButton";
 import { ConversationType } from "@/app/inbox/page";
 import  { useEffect, useState, useRef } from "react";
 import { MessageType } from "@/app/inbox/[id]/page";
+import { UserType } from "@/app/inbox/page";
 
 interface ConversationDetailProps {
   token: string;
@@ -32,6 +33,20 @@ const ConversationDetail: React.FC<ConversationDetailProps> = ({
 useEffect(() => {
    console.log("Connection state changed", readyState);
 }, [readyState])
+
+useEffect(() => {
+   if (lastJsonMessage && typeof lastJsonMessage === "object" && "name" in lastJsonMessage && "body" in lastJsonMessage) {
+     const message: MessageType = {
+        id: "",
+        name: lastJsonMessage.name as string,
+        body: lastJsonMessage.body as string,
+        sent_to: otherUser as UserType,
+        created_by: myUser as UserType,
+        conversationId: conversation.id
+     }   
+  }
+
+})
 
 const sendMessage = async() => {
    sendJsonMessage({
@@ -73,7 +88,7 @@ const scrollToBottom = () => {
     {realtimeMessages.map((message, index) => (
        <div
         key={index}
-        className={`w-[80%] py-4 px-6 rounded-full ${message.name == myUser?.name ? "ml-[20%] bg-blue-200" : "bg-gray-200"}`}
+        className={`w-[80%] py-4 px-6 rounded-full ${message.name == myUser?.name ? "ml-[20%] bg-blue-200" : "bg-purple-900"}`}
        >
        <p className="font-bold text-gray-500">{message.name}</p>
        <p>{message.body}</p>

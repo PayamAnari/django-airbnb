@@ -65,11 +65,20 @@ const scrollToBottom = () => {
          <p className="font-bold text-gray-400">John Doe</p>
          <p className="text-white">hgdfvdc tgrfdf thgrfeds hytgrfedws fdf</p>
       </div>
-
+      
       <div className="w-[80%] ml-[20%] py-4 px-6 rounded-xl bg-blue-200">
          <p className="font-bold text-gray-500">Liam Doe</p>
          <p>hgdfvdc tgrfdf thgrfeds hytgrfedws fdf</p>
       </div>
+    {realtimeMessages.map((message, index) => (
+       <div
+        key={index}
+        className={`w-[80%] py-4 px-6 rounded-full ${message.name == myUser?.name ? "ml-[20%] bg-blue-200" : "bg-gray-200"}`}
+       >
+       <p className="font-bold text-gray-500">{message.name}</p>
+       <p>{message.body}</p>
+       </div>
+    ))}
 
     </div>
 

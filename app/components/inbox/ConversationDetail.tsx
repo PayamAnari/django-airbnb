@@ -59,7 +59,7 @@ const sendMessage = async() => {
        data: {
            body: newMessage,
            name: myUser?.name,
-           sent_to_id: otherUser?.name,
+           sent_to_id: otherUser?.id,
            conversation_id: conversation.id
        }
    });
@@ -82,7 +82,7 @@ const scrollToBottom = () => {
     ref={messagesDiv}
     className="max-h-[400px] overflow-auto flex flex-col space-y-4">
 
-      {messages.map((message, index) => (
+      {/* {messages.map((message, index) => (
         <div
           key={index}
           className={`w-[80%]py-4 px-6 rounded-xl ${message.created_by.name == myUser?.name ? 'ml-[20%] bg-blue-200' : 'bg-gray-200'}`}
@@ -90,7 +90,7 @@ const scrollToBottom = () => {
         <p className="font-bold text-gray-500">{message.created_by.name}</p>
         <p>{message.body}</p>
         </div>
-       ))}
+       ))} */}
    
     {realtimeMessages.map((message, index) => (
        <div

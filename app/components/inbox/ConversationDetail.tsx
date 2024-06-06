@@ -28,6 +28,10 @@ const ConversationDetail: React.FC<ConversationDetailProps> = ({
 useEffect(() => {
    console.log("Connection state changed", readyState);
 }, [readyState])
+
+const sendMessage = async() => {
+
+}
   return (
    <div>
     <div className="max-h-[400px] overflow-auto flex flex-col space-y-4">
@@ -48,11 +52,13 @@ useEffect(() => {
           type="text"
           placeholder="Type a message"
           className="w-full p-2 bg-gray-200 rounded-xl"
+          value={newMessage}
+          onChange={(e) => setNewMessage(e.target.value)}
         />
 
         <CustomButton 
           label="Send"
-          onClick={() => console.log("Clicked")}
+          onClick={sendMessage}
           className="w-[160px]"
         />
     </div>

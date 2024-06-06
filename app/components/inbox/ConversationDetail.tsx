@@ -16,6 +16,7 @@ const ConversationDetail: React.FC<ConversationDetailProps> = ({
   token,
   conversation
 }) => {
+  const [newMessage, setNewMessage] = useState("");
   const myUser = conversation.users?.find((user) => user.id == userId)
   const otherUser = conversation.users?.find((user) => user.id != userId)
 
@@ -30,7 +31,15 @@ useEffect(() => {
 }, [readyState])
 
 const sendMessage = async() => {
-
+   sendJsonMessage({
+       event: "chat_message",
+       data: {
+           body: newMessage,
+           name: myUser?.name,
+           sent_to_id: otherUser?.name,
+           conversation_id: conversation_id
+       }
+   })
 }
   return (
    <div>

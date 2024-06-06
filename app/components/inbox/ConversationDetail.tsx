@@ -12,8 +12,8 @@ interface ConversationDetailProps {
 }
 
 const ConversationDetail: React.FC<ConversationDetailProps> = ({
-  token,
   userId,
+  token,
   conversation
 }) => {
   const myUser = conversation.users?.find((user) => user.id == userId)

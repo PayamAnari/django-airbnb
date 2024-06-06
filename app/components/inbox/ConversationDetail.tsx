@@ -4,6 +4,7 @@ import useWebSocket, {ReadyState} from "react-use-websocket";
 import CustomButton from "../forms/CustomButton";
 import { ConversationType } from "@/app/inbox/page";
 import  { useEffect, useState, useRef } from "react";
+import { MessageType } from "@/app/inbox/[id]/page";
 
 interface ConversationDetailProps {
   token: string;
@@ -18,6 +19,7 @@ const ConversationDetail: React.FC<ConversationDetailProps> = ({
 }) => {
   const messagesDiv = useRef<HTMLDivElement>(null);
   const [newMessage, setNewMessage] = useState("");
+  const [realtimeMessages, setRealtimeMessages] = useState<MessageType[]>([]);
   const myUser = conversation.users?.find((user) => user.id == userId)
   const otherUser = conversation.users?.find((user) => user.id != userId)
 
@@ -56,7 +58,9 @@ const scrollToBottom = () => {
 }
   return (
    <div>
-    <div className="max-h-[400px] overflow-auto flex flex-col space-y-4">
+    <div 
+    ref={messagesDiv}
+    className="max-h-[400px] overflow-auto flex flex-col space-y-4">
       <div className="w-[80%] py-4 px-6 rounded-xl bg-purple-900">
          <p className="font-bold text-gray-400">John Doe</p>
          <p className="text-white">hgdfvdc tgrfdf thgrfeds hytgrfedws fdf</p>

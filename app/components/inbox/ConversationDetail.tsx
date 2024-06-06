@@ -1,5 +1,6 @@
 "use client";
 
+import useWebSocket from "react-use-websocket";
 import CustomButton from "../forms/CustomButton";
 import { ConversationType } from "@/app/inbox/page";
 
@@ -12,7 +13,14 @@ const ConversationDetail: React.FC<ConversationDetailProps> = ({
   conversation,
   userId
 }) => {
-  const othereUser = conversation.users.find((user) => user.id != userId)
+  const myUser = conversation.users.find((user) => user.id == userId)
+  const otherUser = conversation.users.find((user) => user.id != userId)
+
+  const { sendJsonMessage, lastJsonMessage, readyState } = useWebSocket(`ws://127.0.0.1:8000/ws/${conversation.id}/?token=${token}`, {
+      share: false,
+      shouldReconnect: () => true,
+  },
+)
   return (
    <div>
     <div className="max-h-[400px] overflow-auto flex flex-col space-y-4">

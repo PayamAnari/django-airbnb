@@ -4,12 +4,15 @@ import CustomButton from "../forms/CustomButton";
 import { ConversationType } from "@/app/inbox/page";
 
 interface ConversationDetailProps {
-  conversation: ConversationType
+  conversation: ConversationType;
+  userId: string;
 }
 
 const ConversationDetail: React.FC<ConversationDetailProps> = ({
-  conversation
+  conversation,
+  userId
 }) => {
+  const othereUser = conversation.users.find((user) => user.id != userId)
   return (
    <div>
     <div className="max-h-[400px] overflow-auto flex flex-col space-y-4">

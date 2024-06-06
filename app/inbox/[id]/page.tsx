@@ -18,7 +18,7 @@ const ConversationPage = async ({params}: {params: {id: string}}) => {
   const userId = await getUserId();
   const token = await getAccessToken();
 
-  if (!userId) {
+  if (!userId || !token) {
      <main className="max-w-[1500px] max-auto px-6 py-12">
         <p>You need to be authenticated ...</p>
      </main>
@@ -30,6 +30,7 @@ const ConversationPage = async ({params}: {params: {id: string}}) => {
     <main className="max-w-[1500px] mx-auto px-6 pb-6">
       <ConversationDetail
       userId={userId}
+      token={token}
       conversation={conversation}
       />
     </main>

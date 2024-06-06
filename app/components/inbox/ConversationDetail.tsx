@@ -16,6 +16,7 @@ const ConversationDetail: React.FC<ConversationDetailProps> = ({
   token,
   conversation
 }) => {
+  const messagesDiv = useRef<HTMLDivElement>(null);
   const [newMessage, setNewMessage] = useState("");
   const myUser = conversation.users?.find((user) => user.id == userId)
   const otherUser = conversation.users?.find((user) => user.id != userId)
@@ -48,8 +49,10 @@ const sendMessage = async() => {
 }, 50);
 }
 
-const scrollToButtom = () => {
-
+const scrollToBottom = () => {
+    if (messagesDiv.current) {
+        messagesDiv.current.scrollTop = messagesDiv.current.scrollHeight;
+    }
 }
   return (
    <div>

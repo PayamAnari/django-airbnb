@@ -37,9 +37,19 @@ const sendMessage = async() => {
            body: newMessage,
            name: myUser?.name,
            sent_to_id: otherUser?.name,
-           conversation_id: conversation_id
+           conversation_id: conversation.id
        }
-   })
+   });
+
+   setNewMessage("");
+
+   setTimeout(() => {
+    scrollToBottom()
+}, 50);
+}
+
+const scrollToButtom = () => {
+
 }
   return (
    <div>

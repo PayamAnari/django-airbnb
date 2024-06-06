@@ -3,6 +3,7 @@ import { getUserId } from "@/app/lib/actions";
 import React, { useState, useEffect } from "react";
 import apiService from "@/app/services/apiService";
 import { UserType } from "../page";
+import { getAccessToken } from "@/app/lib/actions";
 
 export type MessageType = {
   id: string;
@@ -15,6 +16,7 @@ export type MessageType = {
 
 const ConversationPage = async ({params}: {params: {id: string}}) => {
   const userId = await getUserId();
+  const token = await getAccessToken();
 
   if (!userId) {
      <main className="max-w-[1500px] max-auto px-6 py-12">

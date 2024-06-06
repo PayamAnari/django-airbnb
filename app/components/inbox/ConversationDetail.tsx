@@ -1,16 +1,19 @@
 "use client";
 
-import useWebSocket from "react-use-websocket";
+import useWebSocket, {ReadyState} from "react-use-websocket";
 import CustomButton from "../forms/CustomButton";
 import { ConversationType } from "@/app/inbox/page";
+import  { useEffect, useState, useRef } from "react";
 
 interface ConversationDetailProps {
   conversation: ConversationType;
+  token: string;
   userId: string;
 }
 
 const ConversationDetail: React.FC<ConversationDetailProps> = ({
   conversation,
+  token,
   userId
 }) => {
   const myUser = conversation.users.find((user) => user.id == userId)

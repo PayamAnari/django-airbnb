@@ -136,6 +136,8 @@ const LandlordDetailPage = async ({ params }: { params: { id: string }}) => {
                 <div className="mx-auto w-full md:px-4 lg:px-5 flex justify-start">  
             {!isOwnProfile &&  (
                <ContactButton 
+                userId={userId}
+                landlordId={params.id}
                />
 
             )}

@@ -7,7 +7,7 @@ import  { useEffect, useState, useRef } from "react";
 import { MessageType } from "@/app/inbox/[id]/page";
 import { UserType } from "@/app/inbox/page";
 import Image from "next/image";
-import { formatDate } from '@/app/components/forms/FormatDate';
+import { formatDateTime } from '@/app/components/forms/FormatDate';
 
 
 interface ConversationDetailProps {
@@ -104,7 +104,7 @@ const scrollToBottom = () => {
         <p>{message.body}</p>
        
         </div>
-        <p className="text-xs text-gray-400 mt-2">{message.created_at}</p>
+        <p className="text-xs text-gray-400 mt-2">{formatDateTime(message.created_at)}</p>
 
         </div>
        ))}

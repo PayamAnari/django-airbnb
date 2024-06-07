@@ -2,6 +2,8 @@ import { getUserId } from "../lib/actions";
 import Conversation from "../components/inbox/conversation";
 import apiService from "../services/apiService";
 import React from "react";
+import Image from "next/image";
+
 
 export type UserType = {
    id: string;
@@ -29,7 +31,16 @@ const InboxPage = async () => {
   const conversations = await apiService.get("/api/chat/")
   return (
     <main className="max-w-[800px] mx-auto px-6 pb-8 space-y-4">
+      <div className="flex ">
+      <Image
+          src={user.avatar_url}
+          width={80}
+          height={80}
+          alt="Landlord image"
+          className="rounded-full px-4 py-4 "
+         />
        <h1 className="my-6 text-2xl">{user.name} inbox</h1>
+       </div>
       {conversations.map((conversation: ConversationType) => {
         return (
           <Conversation

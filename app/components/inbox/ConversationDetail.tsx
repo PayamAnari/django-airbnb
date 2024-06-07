@@ -125,6 +125,7 @@ const scrollToBottom = () => {
        <p className="font-bold text-gray-500">{message.name}</p>
        <p>{message.body}</p>
        </div>
+       <p className="text-xs text-gray-400 mt-2">{formatDateTime(message.created_at)}</p>
        </div>
     ))}
 

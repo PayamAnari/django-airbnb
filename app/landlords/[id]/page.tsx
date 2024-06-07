@@ -4,7 +4,7 @@ import ContactButton from "@/app/components/ContactButton";
 import apiService from "@/app/services/apiService";
 import { getUserId } from "@/app/lib/actions";
 import  Link  from "next/link";
-import { formatDate } from '@/app/components/forms/FormatDate';
+import { formatDate, formatDateTime } from '@/app/components/forms/FormatDate';
 
 
 const LandlordDetailPage = async ({ params }: { params: { id: string }}) => {
@@ -122,7 +122,7 @@ const LandlordDetailPage = async ({ params }: { params: { id: string }}) => {
                 height={24}
                 alt="login"
                 />
-                <p>Last login: {formatDate(landlord.last_login)}</p>
+                <p>Last login: {formatDateTime(landlord.last_login)}</p>
               </div>
                  
                 {isOwnProfile && (

@@ -26,6 +26,7 @@ const ConversationPage = async ({ params }: { params: {id: string }}) => {
             </main>
         )
     }
+    
 
     const conversation = await apiService.get(`/api/chat/${params.id}/`)
 

@@ -11,7 +11,8 @@ export type MessageType = {
     body: string;
     conversationId: string;
     sent_to: UserType;
-    created_by: UserType
+    created_by: UserType;
+    created_at: string;
 }
 
 const ConversationPage = async ({ params }: { params: {id: string }}) => {

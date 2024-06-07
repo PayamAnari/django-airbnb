@@ -7,6 +7,8 @@ import  { useEffect, useState, useRef } from "react";
 import { MessageType } from "@/app/inbox/[id]/page";
 import { UserType } from "@/app/inbox/page";
 import Image from "next/image";
+import { formatDate } from '@/app/components/forms/FormatDate';
+
 
 interface ConversationDetailProps {
   token: string;
@@ -46,6 +48,7 @@ useEffect(() => {
         body: lastJsonMessage.body as string,
         sent_to: otherUser as UserType,
         created_by: myUser as UserType,
+        created_at: new Date().toISOString(),
         conversationId: conversation.id
      }   
 
@@ -99,7 +102,10 @@ const scrollToBottom = () => {
          />
         <p className="font-bold text-gray-500">{message.created_by.name}</p>
         <p>{message.body}</p>
+       
         </div>
+        <p className="text-xs text-gray-400 mt-2">{message.created_at}</p>
+
         </div>
        ))}
    

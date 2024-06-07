@@ -16,33 +16,33 @@ const LandlordDetailPage = async ({ params }: { params: { id: string }}) => {
 
   return (
     <main className="max-w-[1500px] mx-auto px-7 p-6 rounded-lg ">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 bg-gray-200 px-12 py-8 ">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-2 bg-gray-200 px-12 py-8 ">
         <aside className="col-span-1 mb-4">
-          <p className="text-2xl mb-4 -ml-4">{isOwnProfile ? `About ${landlord.name}` : "Meet Your host"}</p>
-          <div className="flex gap-10 max-w-[350px] h-[220px] mx-auto justify-center p-4 rounded-2xl bg-white border border-gray-300 shadow-2xl">
+          <p className="text-lg lg:text-2xl mb-4 -ml-4">{isOwnProfile ? `About ${landlord.name}` : "Meet Your host"}</p>
+          <div className="flex gap-5 lg:gap-6 max-w-[350px] h-[220px] mx-auto justify-center items-center p-4 rounded-2xl bg-white border border-gray-300 shadow-2xl">
           
             <div className="flex flex-col">
             <Image
               src={landlord.avatar_url}
-              width={80}
-              height={80}
+              width={50}
+              height={50}
               alt="Landlord name"
               className="rounded-full"
             />
-            <h1 className="text-2xl text-center font-bold mt-2">
+            <h1 className="text-md lg:text-xl text-center font-bold mt-2">
               {landlord.name}
             </h1>
-            <p className="text-md text-center font-bold">Guest</p>
+            <p className="text-sm lg:text-md text-center font-bold">Guest</p>
             </div>
-            <div className="flex- flex-col mt-20">
-            <h1 className="font-bold">{formatDate(landlord.date_joined)}</h1>
+            <div className="flex- flex-col text-sm lg:text-md mt-14 lg:mt-18">
+            <h1 className="font-bold ">{formatDate(landlord.date_joined)}</h1>
             <p className="text-sm">on Airbnb</p>
             </div>
           </div>
         </aside>
         
-          <div className="col-span-1 mt-0 lg:mt-10 md:col-span-2 pl-0 md:pl-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="col-span-1 mt-0 lg:mt-10 md:col-span-3 pl-0 md:pl-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
               <div className="flex gap-2 ">
               <Image 
                 src="/email.png"

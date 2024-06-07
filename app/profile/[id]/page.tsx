@@ -74,7 +74,7 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 bg-gray-200 px-6 py-6">
         <aside className="col-span-1 mb-4">
           <p className="text-xl mb-6">Welcome {landlord.name}</p>
-          <div className="flex gap-10 max-w-[350px] h-[220px] mx-auto justify-center p-4 rounded-2xl bg-white border border-gray-300 shadow-2xl">
+          <div className="flex flex-col items-center gap-4 max-w-[350px] h-[220px] mx-auto justify-center p-4 rounded-2xl bg-white border border-gray-300 shadow-2xl">
           <input
               id="avatar"
               type="file"
@@ -86,8 +86,8 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
       {landlord.avatar_url ? (
     <Image
       src={landlord.avatar_url}
-      width={80}
-      height={80}
+      width={60}
+      height={60}
       alt="Landlord image"
       className="rounded-full mt-6"
     />
@@ -119,7 +119,7 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
 
 </label>
        
-            <div className="flex- flex-col mt-20">
+            <div className="flex- flex-col mt-4 ">
             <h1 className="font-bold">{formatDate(landlord.date_joined)}</h1>
             <p className="text-sm">on Airbnb</p>
             </div> 
@@ -127,7 +127,7 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
           </div>
         </aside>
 
-        <div className="mt-3 flex flex-col gap-2 text-lg px-2 md:px-4 lg:px-6">
+        <div className="mt-3 grid grid-col-3 lg:grid-col-3 gap-2 col-span-2 text-lg px-2 md:px-4 lg:px-6">
           {userId === params.id ? (
             <form onSubmit={handleSubmit} className="flex flex-col gap-2">
               <label>Email:</label>

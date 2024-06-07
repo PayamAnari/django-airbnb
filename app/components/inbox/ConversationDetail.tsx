@@ -6,6 +6,7 @@ import { ConversationType } from "@/app/inbox/page";
 import  { useEffect, useState, useRef } from "react";
 import { MessageType } from "@/app/inbox/[id]/page";
 import { UserType } from "@/app/inbox/page";
+import Image from "next/image";
 
 interface ConversationDetailProps {
   token: string;
@@ -25,7 +26,8 @@ const ConversationDetail: React.FC<ConversationDetailProps> = ({
   const [realtimeMessages, setRealtimeMessages] = useState<MessageType[]>([]);
   const myUser = conversation.users?.find((user) => user.id == userId)
   const otherUser = conversation.users?.find((user) => user.id != userId)
-
+  
+   console.log(myUser)
   const { sendJsonMessage, lastJsonMessage, readyState } = useWebSocket(`ws://127.0.0.1:8000/ws/${conversation.id}/?token=${token}`, {
       share: false,
       shouldReconnect: () => true,
@@ -82,23 +84,41 @@ const scrollToBottom = () => {
     ref={messagesDiv}
     className="max-h-[400px] overflow-auto flex flex-col space-y-4">
 
-      {/* {messages.map((message, index) => (
+      {messages.map((message, index) => (
         <div
           key={index}
-          className={`w-[80%]py-4 px-6 rounded-xl ${message.created_by.name == myUser?.name ? 'ml-[20%] bg-blue-200' : 'bg-gray-200'}`}
+          className={`w-[80%] py-4 px-6 rounded-xl ${message.created_by.name == myUser?.name ? 'ml-[20%] bg-blue-200' : 'bg-purple-400'}`}
            >
+        <div className="flex gap-2">
+        <Image
+            src={message.created_by.avatar_url}
+            width={30}
+            height={30}
+            alt="Landlord image"
+            className="rounded-full "
+         />
         <p className="font-bold text-gray-500">{message.created_by.name}</p>
         <p>{message.body}</p>
         </div>
-       ))} */}
+        </div>
+       ))}
    
     {realtimeMessages.map((message, index) => (
        <div
         key={index}
-        className={`w-[80%] py-4 px-6 rounded-full ${message.name == myUser?.name ? "ml-[20%] bg-blue-200" : "bg-purple-900"}`}
+        className={`w-[80%] py-4 px-6 rounded-xl ${message.name == myUser?.name ? "ml-[20%] bg-blue-200" : "bg-purple-400"}`}
        >
+             <div className="flex gap-2">
+        <Image
+          src={message.created_by.avatar_url}
+          width={30}
+          height={30}
+          alt="Landlord image"
+          className="rounded-full "
+         />
        <p className="font-bold text-gray-500">{message.name}</p>
        <p>{message.body}</p>
+       </div>
        </div>
     ))}
 

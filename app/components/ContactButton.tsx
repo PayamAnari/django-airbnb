@@ -1,3 +1,15 @@
+"use client"
+
+import useLoginModal from "../hooks/useLoginModal";
+import { useRouter } from "next/navigation";
+import apiService from "../services/apiService";
+
+interface ContactButtonProps {
+   userId: string || null;
+   landlordId: string;
+}
+
+
 const ContactButton = () => {
   return (
     <div 

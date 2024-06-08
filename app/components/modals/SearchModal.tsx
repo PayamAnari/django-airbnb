@@ -1,12 +1,21 @@
 "use client"
 
+import SelectCountry,{ SelectCountryValue } from "../forms/SelectCountry";
 import Modal from "./Modal";
+import { useState } from "react";
 import useSearchModal from "@/app/hooks/useSearchModal";
 
 
 const SearchModal = () => {
   let content = (<></>);
   const searchModal = useSearchModal();
+  const[country, setCountry] = useState<SelectCountryValue>();
+ 
+  const contentLocation = (
+     <>
+        <h2 className="mb-6 text-2xl">Where do you want to go?</h2>
+     </>
+  )
 
   return (
      <Modal 

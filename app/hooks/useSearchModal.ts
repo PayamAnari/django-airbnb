@@ -1,5 +1,15 @@
 import { create } from 'zustand';
 
+export type SearchQuery = {
+  country: string;
+  checkIn: Date;
+  checkOut: Date;
+  guests: number;
+  bathrooms: number;
+  bedrooms: number;
+  category: string;
+};
+
 interface SearchModalStore {
   isOpen: boolean;
   open: () => void;

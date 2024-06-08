@@ -71,6 +71,28 @@ const SearchModal = () => {
      </>
   )
 
+  const contentCheckOut = (
+    <>
+       <h2 className="mb-6 text-2xl">When do you want to check out?</h2>
+
+       <DatePicker 
+         value={dateRange}
+         onChange={(value) => _setDateRange(value.selection)}
+       />
+       <div className="mt-6 flex flex-row gap-4">
+        <CustomButton 
+          label="<- Ckeck in"
+          onClick={() => searchModal.open("checkin")}
+        />
+
+        <CustomButton 
+          label="Details ->"
+          onClick={() => searchModal.open("details")}
+        />
+      </div>
+    </>
+ )
+
   if (searchModal.step == "location") {
      content = contentLocation;
   } else if ( searchModal.step == "checkin") {

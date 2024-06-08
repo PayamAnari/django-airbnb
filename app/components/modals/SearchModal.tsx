@@ -81,7 +81,7 @@ const SearchModal = () => {
        />
        <div className="mt-6 flex flex-row gap-4">
         <CustomButton 
-          label="<- Ckeck in"
+          label="<- Check in date"
           onClick={() => searchModal.open("checkin")}
         />
 
@@ -97,6 +97,8 @@ const SearchModal = () => {
      content = contentLocation;
   } else if ( searchModal.step == "checkin") {
      content = contentCheckIn;
+  } else if (searchModal.step === "checkout") {
+     content = contentCheckOut;
   }
 
   return (

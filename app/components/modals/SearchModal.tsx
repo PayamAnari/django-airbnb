@@ -3,9 +3,15 @@
 import SelectCountry,{ SelectCountryValue } from "../forms/SelectCountry";
 import Modal from "./Modal";
 import { useState } from "react";
+import { Calendar } from "react-date-range";
 import useSearchModal from "@/app/hooks/useSearchModal";
 import CustomButton from "../forms/CustomButton";
 
+const initialDateRange = {
+    startDate: new Date(),
+    endDate: new Date(),
+    key: 'selection'
+}
 
 const SearchModal = () => {
   let content = (<></>);
@@ -24,7 +30,7 @@ const SearchModal = () => {
        <div className="mt-6 flex flex-row gap-4">
          <CustomButton 
            label="check in date ->"
-           onClick={() => searchModal.open("checkIn")}
+           onClick={() => searchModal.open("checkin")}
          />
        </div>
      </>
@@ -38,12 +44,19 @@ const SearchModal = () => {
            label="<- Location"
            onClick={() => searchModal.open("location")}
          />
+
+         <CustomButton 
+           label="Check out here ->"
+           onClick={() => searchModal.open("checkout")}
+         />
        </div>
      </>
   )
 
   if (searchModal.step == "location") {
      content = contentLocation;
+  } else if ( searchModal.step == "checkin") {
+     content = contentCheckIn;
   }
 
   return (

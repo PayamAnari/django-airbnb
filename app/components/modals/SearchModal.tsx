@@ -3,7 +3,8 @@
 import SelectCountry,{ SelectCountryValue } from "../forms/SelectCountry";
 import Modal from "./Modal";
 import { useState } from "react";
-import { Calendar, Range } from "react-date-range";
+import DatePicker from "../forms/calendar";
+import {  Range } from "react-date-range";
 import useSearchModal from "@/app/hooks/useSearchModal";
 import CustomButton from "../forms/CustomButton";
 
@@ -26,6 +27,8 @@ const SearchModal = () => {
     } else if ( searchModal.step === "checkout") {
       searchModal.open("details")
     }
+
+    setDateRange(selection);
   }
  
   const contentLocation = (
@@ -49,6 +52,11 @@ const SearchModal = () => {
   const contentCheckIn = (
      <>
         <h2 className="mb-6 text-2xl">When do you want to check in?</h2>
+
+        <DatePicker 
+          value={dateRange}
+          onChange={(value) => _setDateRange(value.selection)}
+        />
         <div className="mt-6 flex flex-row gap-4">
          <CustomButton 
            label="<- Location"

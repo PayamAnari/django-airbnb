@@ -17,6 +17,10 @@ const SearchModal = () => {
      </>
   )
 
+  if (searchModal.step == "location") {
+     content = contentLocation;
+  }
+
   return (
      <Modal 
          label="Search"

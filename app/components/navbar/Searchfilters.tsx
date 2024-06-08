@@ -8,7 +8,7 @@ const SearchFilters = () => {
   const searchModal = useSearchModal();
   return (
     <div 
-    onClick={() => searchModal.open()}
+    onClick={() => searchModal.open("location")}
     className="h-[48px] lg:h-[64] flex flex-row items-center justify-between border rounded-full">
        <div className="hidden lg:block">
         <div className="flex flex-row items-center justify-between">

@@ -28,8 +28,18 @@ const SearchModal = () => {
          />
        </div>
      </>
+  )
 
-   
+  const contentCheckIn = (
+     <>
+        <h2 className="mb-6 text-2xl">When do you want to check in?</h2>
+        <div className="mt-6 flex flex-row gap-4">
+         <CustomButton 
+           label="<- Location"
+           onClick={() => searchModal.open("location")}
+         />
+       </div>
+     </>
   )
 
   if (searchModal.step == "location") {

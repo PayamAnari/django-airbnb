@@ -3,7 +3,7 @@
 import SelectCountry,{ SelectCountryValue } from "../forms/SelectCountry";
 import Modal from "./Modal";
 import { useState } from "react";
-import { Calendar } from "react-date-range";
+import { Calendar, Range } from "react-date-range";
 import useSearchModal from "@/app/hooks/useSearchModal";
 import CustomButton from "../forms/CustomButton";
 
@@ -16,7 +16,17 @@ const initialDateRange = {
 const SearchModal = () => {
   let content = (<></>);
   const searchModal = useSearchModal();
+  const[dateRange, setDateRange] = useState<Range>(initialDateRange);
   const[country, setCountry] = useState<SelectCountryValue>();
+
+
+  const _setDateRange = (selection: Range) => {
+    if (searchModal.step === "checkin") {
+       searchModal.open("checkout");
+    } else if ( searchModal.step === "checkout") {
+      searchModal.open("details")
+    }
+  }
  
   const contentLocation = (
      <>

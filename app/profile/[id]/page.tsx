@@ -74,7 +74,8 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 bg-gray-200 px-6 py-6">
         <aside className="col-span-1 mb-4">
           <p className="text-xl mb-6">Welcome {landlord.name}</p>
-          <div className="flex flex-col items-center gap-4 max-w-[350px] h-[220px] mx-auto justify-center p-4 rounded-2xl bg-white border border-gray-300 shadow-2xl">
+          <div className="flex items-center justify-center gap-8 max-w-[350px] h-[220px] mx-auto p-4 rounded-2xl bg-white border border-gray-300 shadow-2xl">
+          <div className="flex flex-col gap-2">
           <input
               id="avatar"
               type="file"
@@ -82,7 +83,8 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
               className="hidden"
               onChange={(e) => handleFileUpload(e)}
            />
-            <label htmlFor="avatar" className="cursor-pointer">
+     <label htmlFor="avatar" className="cursor-pointer">
+
       {landlord.avatar_url ? (
     <Image
       src={landlord.avatar_url}
@@ -91,43 +93,28 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
       alt="Landlord image"
       className="rounded-full mt-6"
     />
-  
   ) : (
-    <div className="w-24 h-24 bg-gray-200 rounded-full flex justify-center items-center">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-12 w-12 text-gray-400 hover:text-gray-600"
-        viewBox="0 0 20 20"
-        fill="currentColor"
-      >
-        <path
-          fillRule="evenodd"
-          d="M15 7a3 3 0 11-6 0 3 3 0 016 0zM7 9a1 1 0 011-1h4a1 1 0 010 2H8a1 1 0 01-1-1z"
-          clipRule="evenodd"
-        />
-        <path
-          fillRule="evenodd"
-          d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.414a1 1 0 01-.707-.293l-2.293-2.293A1 1 0 0011.414 1H8.586a1 1 0 00-.707.293L5.586 3.586A1 1 0 015.5 4H4zm8 2h2v2h-2V7zm0 4h2v2h-2v-2z"
-          clipRule="evenodd"
-        />
-      </svg>
-
-
+    <div className="w-[60px] h-[60px] rounded-full bg-gray-300 flex items-center justify-center">
+      <span>Upload</span>
     </div>
-    
   )}
+   </label>
 
-</label>
-       
-            <div className="flex- flex-col mt-4 ">
+         <div className="flex flex-col items-center">
+           <p className="text-lg font-bold ">{landlord.name}</p>
+           <p className="text-sm font-bold">Guest</p>
+           </div>
+          </div>
+          <div className="flex- flex-col items-center">
             <h1 className="font-bold">{formatDate(landlord.date_joined)}</h1>
             <p className="text-sm">on Airbnb</p>
             </div> 
-            
           </div>
         </aside>
 
-        <div className="mt-3 grid grid-col-3 lg:grid-col-3 gap-2 col-span-2 text-lg px-2 md:px-4 lg:px-6">
+        <div className="col-span-1 mt-0 lg:mt-10 md:col-span-3 pl-0 md:pl-6">
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
           {userId === params.id ? (
             <form onSubmit={handleSubmit} className="flex flex-col gap-2">
               <label>Email:</label>
@@ -209,6 +196,7 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
               <p>Favorite song: {landlord.favorite_song}</p>
             </>
           )}
+          </div>
         </div>
       </div>
     </main>

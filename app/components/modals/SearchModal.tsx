@@ -17,11 +17,11 @@ const initialDateRange = {
 const SearchModal = () => {
   let content = (<></>);
   const searchModal = useSearchModal();
-  const[dateRange, setDateRange] = useState<Range>(initialDateRange);
   const[country, setCountry] = useState<SelectCountryValue>();
   const[numGuests, setNumGuests] = useState<string>("1");
   const[numBathrooms, setNumBathrooms] = useState<string>("0");
   const[numBedrooms, setNumBedrooms] = useState<string>("0");
+  const[dateRange, setDateRange] = useState<Range>(initialDateRange);
 
 
   const closeAndSearch = () => {
@@ -62,7 +62,7 @@ const SearchModal = () => {
       
        <div className="mt-6 flex flex-row gap-4">
          <CustomButton 
-           label="check in date ->"
+           label="Check in date ->"
            onClick={() => searchModal.open("checkin")}
          />
        </div>

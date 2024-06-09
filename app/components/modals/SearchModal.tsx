@@ -121,6 +121,8 @@ const SearchModal = () => {
      content = contentCheckIn;
   } else if (searchModal.step === "checkout") {
      content = contentCheckOut;
+  } else if (searchModal.step === "details") {
+     content = contentDetails;
   }
 
   return (

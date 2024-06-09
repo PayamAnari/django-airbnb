@@ -24,6 +24,11 @@ const SearchModal = () => {
   const[numBedrooms, setNumBedrooms] = useState<string>("0");
 
 
+  const closeAndSearch = () => {
+    searchModal.close();
+  }
+
+
   const _setDateRange = (selection: Range) => {
     if (searchModal.step === "checkin") {
        searchModal.open("checkout");
@@ -145,7 +150,7 @@ const SearchModal = () => {
 
       <CustomButton 
         label="Search"
-        onClick={() => searchModal.open("details")}
+        onClick={closeAndSearch}
       />
     </div>
   </>
@@ -161,6 +166,8 @@ const SearchModal = () => {
   } else if (searchModal.step === "details") {
      content = contentDetails;
   }
+
+  
 
   return (
      <Modal 

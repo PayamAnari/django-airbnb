@@ -67,15 +67,15 @@ const PropertyList: React.FC<PropertyListProps> = ({
        }
 
        if (numGuests) {
-         urlQuery += "&guests=" + numGuests
+         urlQuery += "&numGuests=" + numGuests
        }
 
         if (numBedrooms) {
-          urlQuery += "&bedrooms=" + numBedrooms
+          urlQuery += "&numBedrooms=" + numBedrooms
         }
 
         if (numBathrooms) {
-          urlQuery += "&bathrooms=" + numBathrooms
+          urlQuery += "&numbBathrooms=" + numBathrooms
         }
 
         if (category) {
@@ -92,7 +92,7 @@ const PropertyList: React.FC<PropertyListProps> = ({
 
         if (urlQuery.length) {
            console.log("Query:", urlQuery)
-            urlQuery += "?" + urlQuery.substring(1);
+            urlQuery = "?" + urlQuery.substring(1);
             url += urlQuery;
         }
     }

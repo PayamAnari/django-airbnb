@@ -133,7 +133,7 @@ const SearchModal = () => {
             <label>Number of bathrooms</label>
             <input 
              type="number"
-             min="0" 
+             min="1" 
              value={numBathrooms} 
              placeholder="Number of bathrooms"
              onChange={(e) => setNumBathrooms(e.target.value)}
@@ -144,7 +144,7 @@ const SearchModal = () => {
             <label>Number of bedrooms</label>
             <input 
              type="number"
-             min="0" 
+             min="1" 
              value={numBedrooms} 
              placeholder="Number of bedrooms"
              onChange={(e) => setNumBedrooms(e.target.value)}

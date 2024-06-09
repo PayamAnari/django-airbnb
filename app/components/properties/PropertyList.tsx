@@ -58,7 +58,34 @@ const PropertyList: React.FC<PropertyListProps> = ({
       url += `?landlord_id=${landlord_id}`;
     } else if (favorites) {
       url += '?is_favorites=true';
+    } else {
+       let urlQuery = "";
+
+       if (country) {
+         urlQuery += "&country=" + country
+       }
+
+       if (numGuests) {
+         urlQuery += "&guests=" + numGuests
+       }
+
+        if (numBedrooms) {
+          urlQuery += "&bedrooms=" + numBedrooms
+        }
+
+        if (numBathrooms) {
+          urlQuery += "&bathrooms=" + numBathrooms
+        }
+
+        if (category) {
+          urlQuery += "&category=" + category
+        }
     }
+
+
+
+
+
     const tmpProperties = await apiService.get(url);
 
     setProperties(tmpProperties.data.map((property: PropertyType) => {

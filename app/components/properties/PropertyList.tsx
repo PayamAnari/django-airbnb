@@ -89,6 +89,12 @@ const PropertyList: React.FC<PropertyListProps> = ({
         if (checkoutDate) {
           urlQuery += "&checkout=" + format(checkoutDate, "yyyy-MM-dd")
         }
+
+        if (urlQuery.length) {
+           console.log("Query:", urlQuery)
+            urlQuery += "?" + urlQuery.substring(1);
+            url += urlQuery;
+        }
     }
 
     const tmpProperties = await apiService.get(url);

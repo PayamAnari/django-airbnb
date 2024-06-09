@@ -123,7 +123,17 @@ const SearchModal = () => {
              className="w-full h-14 px-4 border border-gray-300 rounded-xl"
             />
         </div>
-       
+        <div className="space-y-4">
+            <label>Number of bedrooms</label>
+            <input 
+             type="number"
+             min="0" 
+             value={numBedrooms} 
+             placeholder="Number of bedrooms"
+             onChange={(e) => setNumBedrooms(e.target.value)}
+             className="w-full h-14 px-4 border border-gray-300 rounded-xl"
+            />
+        </div>
      </div>
 
 

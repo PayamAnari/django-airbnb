@@ -103,10 +103,27 @@ const SearchModal = () => {
      <div className="space-y-4">
         <div className="space-y-4">
             <label>Number of guests</label>
-            <input type="number" min="1" value={numGuests} 
+            <input 
+             type="number"
+             min="1" 
+             value={numGuests} 
+             placeholder="Number of guests"
              onChange={(e) => setNumGuests(e.target.value)}
+             className="w-full h-14 px-4 border border-gray-300 rounded-xl"
             />
         </div>
+        <div className="space-y-4">
+            <label>Number of bathrooms</label>
+            <input 
+             type="number"
+             min="0" 
+             value={numBathrooms} 
+             placeholder="Number of bathrooms"
+             onChange={(e) => setNumBathrooms(e.target.value)}
+             className="w-full h-14 px-4 border border-gray-300 rounded-xl"
+            />
+        </div>
+       
      </div>
 
 

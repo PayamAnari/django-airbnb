@@ -32,10 +32,11 @@ const SearchModal = () => {
        checkOut: dateRange.endDate,
        guests: parseInt(numGuests),
        bedrooms: parseInt(numBedrooms),
-       bathrooms: parseInt(numBathrooms)
+       bathrooms: parseInt(numBathrooms),
        category: ""
     }
     
+    searchModal.setQuery(newSearchQuery);
     searchModal.close();
   }
 

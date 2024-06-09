@@ -4,6 +4,7 @@
 import { useEffect, useState } from "react";
 import PropertyListItem from "./PropertyListItem";
 import apiService from "@/app/services/apiService";
+import useSearchModal from "@/app/hooks/useSearchModal";
 
 export type PropertyType = {
      id: string;
@@ -23,6 +24,14 @@ const PropertyList: React.FC<PropertyListProps> = ({
   landlord_id,
   favorites
 }) => {
+  const searchModal = useSearchModal();
+  const country = searchModal.query.country;
+  const numGuests = searchModal.query.guests;
+  const numBedrooms = searchModal.query.bedrooms;
+  const numBathrooms = searchModal.query.bathrooms;
+  const checkinDate = searchModal.query.checkIn;
+  const checkoutDate = searchModal.query.checkOut;
+  const category = searchModal.query.category;
   const [properties, setProperties] = useState<PropertyType[]>([]);
  
   const markFavorite = (id: string, is_favorite: boolean) => {

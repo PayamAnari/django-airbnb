@@ -100,6 +100,16 @@ const SearchModal = () => {
   <>
      <h2 className="mb-6 text-2xl">Details</h2>
 
+     <div className="space-y-4">
+        <div className="space-y-4">
+            <label>Number of guests</label>
+            <input type="number" min="1" value={numGuests} 
+             onChange={(e) => setNumGuests(e.target.value)}
+            />
+        </div>
+     </div>
+
+
      <div className="mt-6 flex flex-row gap-4">
       <CustomButton 
         label="<- Check out date"

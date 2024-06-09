@@ -19,6 +19,9 @@ const SearchModal = () => {
   const searchModal = useSearchModal();
   const[dateRange, setDateRange] = useState<Range>(initialDateRange);
   const[country, setCountry] = useState<SelectCountryValue>();
+  const[numGuests, setNumGuests] = useState<string>("1");
+  const[numBathrooms, setNumBathrooms] = useState<string>("0");
+  const[numBedrooms, setNumBedrooms] = useState<string>("0");
 
 
   const _setDateRange = (selection: Range) => {

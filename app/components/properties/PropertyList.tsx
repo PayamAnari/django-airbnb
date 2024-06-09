@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import PropertyListItem from "./PropertyListItem";
 import apiService from "@/app/services/apiService";
 import useSearchModal from "@/app/hooks/useSearchModal";
+import { format } from 'date-fns';
 
 export type PropertyType = {
      id: string;
@@ -80,11 +81,15 @@ const PropertyList: React.FC<PropertyListProps> = ({
         if (category) {
           urlQuery += "&category=" + category
         }
+
+        if (checkinDate) {
+           urlQuery += "&checkin=" + format(checkinDate, "yyyy-MM-dd")
+        }
+
+        if (checkoutDate) {
+          urlQuery += "&checkout=" + format(checkoutDate, "yyyy-MM-dd")
+        }
     }
-
-
-
-
 
     const tmpProperties = await apiService.get(url);
 

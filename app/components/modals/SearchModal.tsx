@@ -96,6 +96,25 @@ const SearchModal = () => {
     </>
  )
 
+ const contentDetails = (
+  <>
+     <h2 className="mb-6 text-2xl">Details</h2>
+
+     <div className="mt-6 flex flex-row gap-4">
+      <CustomButton 
+        label="<- Check out date"
+        onClick={() => searchModal.open("checkout")}
+      />
+
+      <CustomButton 
+        label="Search"
+        onClick={() => searchModal.open("details")}
+      />
+    </div>
+  </>
+)
+
+
   if (searchModal.step == "location") {
      content = contentLocation;
   } else if ( searchModal.step == "checkin") {

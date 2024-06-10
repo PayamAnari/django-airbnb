@@ -8,10 +8,10 @@ import CategoryData from "./forms/CategoryData";
 const Categories = () => {
 
   const searchModal = useSearchModal();
-  const[category, setCategory] = useState("");
+  const[selectCategory, setSelectCategory] = useState("");
 
-  const _setCategory = (_category: string) => {
-    setCategory(_category);
+  const _setCategory = (category: string) => {
+    setSelectCategory(category);
     
     const query: SearchQuery = {
         country: searchModal.query.country,
@@ -20,14 +20,21 @@ const Categories = () => {
         guests: searchModal.query.guests,
         bedrooms: searchModal.query.bedrooms,
         bathrooms: searchModal.query.bathrooms,
-        category: _category,
+        category: category,
 
     }
+
+    searchModal.setQuery(query);
   }
 
   return (
-    <div className="pt-3 pb-6 mx-10 md:mx-12 lg:mx-16">
-      <Carousel data={CategoryData} />
+    <div 
+    onClick={() => setSelectCategory("")}
+    className={`pt-3 pb-6 mx-10 md:mx-12 lg:mx-16`}>
+      <Carousel data={CategoryData} 
+      setCategory={_setCategory}
+      dataCategory={selectCategory}      
+      />
     </div>
   )
 }

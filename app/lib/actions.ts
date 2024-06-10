@@ -2,6 +2,46 @@
 
 import { cookies } from 'next/headers';
 
+export async function handleRefresh() {
+  console.log('HandleRefresh');
+
+  const refreshToken = await getRefreshToken();
+
+  const token = await fetch('https://localhost:8000/api/auth/token/refresh/', {
+    method: 'POST',
+    body: JSON.stringify({
+      refresh: refreshToken,
+    }),
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((json) => {
+      console.log('Response - Refresh:', json);
+
+      if (json.access) {
+        cookies().set('session_access_token', json.access, {
+          httpOnly: true,
+          secure: process.env.NODE_ENV === 'production',
+          maxAge: 60 * 60,
+          path: '/',
+        });
+
+        return json.access;
+      } else {
+        resetAuthCookies();
+      }
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+      resetAuthCookies();
+    });
+
+  return token;
+}
+
 export async function handleLogin(
   userId: string,
   accessToken: string,

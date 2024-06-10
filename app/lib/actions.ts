@@ -44,3 +44,8 @@ export async function getAccessToken() {
   let accessToken = cookies().get('session_access_token')?.value;
   return accessToken;
 }
+
+export async function getRefreshToken() {
+  let refreshToken = cookies().get('session_refresh_token')?.value;
+  return refreshToken;
+}

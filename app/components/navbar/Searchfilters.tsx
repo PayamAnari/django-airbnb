@@ -9,24 +9,27 @@ const SearchFilters = () => {
   return (
     <div 
     onClick={() => searchModal.open("location")}
-    className="h-[48px] lg:h-[64] flex flex-row items-center justify-between border rounded-full">
+    className="h-[62px] lg:h-[64] flex flex-row items-center justify-between border rounded-full shadow-xl">
        <div className="hidden lg:block">
         <div className="flex flex-row items-center justify-between">
-           <div className="cursor-pointer w-[250px] h-[48px] lg:h-[64] px-8 flex flex-col justify-center rounded-full hover:bg-gray-100">
+           <div className="cursor-pointer w-[250px] h-[62px] lg:h-[64] px-8 flex flex-col justify-center rounded-full hover:bg-gray-100">
               <p className="text-xs font-semibold">Where</p>
-              <p className="text-sm">Wanted location</p>
+              <p className="text-sm text-gray-500">Wanted location</p>
            </div>
-           <div className="cursor-pointer h-[48px] lg:h-[64] px-8 flex flex-col justify-center rounded-full hover:bg-gray-100">
+           <div className="h-[35px] border-l border-gray-300 mx-4"></div>
+           <div className="cursor-pointer h-[62px] lg:h-[64] px-8 flex flex-col justify-center rounded-full hover:bg-gray-100">
               <p className="text-xs font-semibold">Check in</p>
-              <p className="text-sm">Add dates</p>
+              <p className="text-sm text-gray-500">Add dates</p>
            </div>
-           <div className="cursor-pointer h-[48px] lg:h-[64] px-8 flex flex-col justify-center rounded-full hover:bg-gray-100">
+           <div className="h-[35px] border-l border-gray-300 mx-4"></div>
+           <div className="cursor-pointer h-[62px] lg:h-[64] px-8 flex flex-col justify-center rounded-full hover:bg-gray-100">
               <p className="text-xs font-semibold">Check out</p>
-              <p className="text-sm">Add dates</p>
+              <p className="text-sm text-gray-500">Add dates</p>
            </div>
-           <div className="cursor-pointer h-[48px] lg:h-[64] px-8 flex flex-col justify-center rounded-full hover:bg-gray-100">
+           <div className="h-[35px] border-l border-gray-300 mx-4"></div>
+           <div className="cursor-pointer h-[62px] lg:h-[64] px-8 flex flex-col justify-center rounded-full hover:bg-gray-100">
               <p className="text-xs font-semibold">Who</p>
-              <p className="text-sm">Add guests</p>
+              <p className="text-sm text-gray-500">Add guests</p>
            </div>
         </div>
        </div>

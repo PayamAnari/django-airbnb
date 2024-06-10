@@ -82,6 +82,10 @@ export async function getUserId() {
 
 export async function getAccessToken() {
   let accessToken = cookies().get('session_access_token')?.value;
+
+  if (!accessToken) {
+    accessToken = await handleRefresh();
+  }
   return accessToken;
 }
 

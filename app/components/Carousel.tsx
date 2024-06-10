@@ -39,6 +39,7 @@ const Carousel: React.FC<CarouselProps> = ({ data, setCategory, dataCategory }) 
     setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, maxIndex));
   };
 
+
   return (
     <div className="relative flex items-center">
       <button

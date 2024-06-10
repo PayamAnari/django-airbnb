@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import useSearchModal, {SearchQuery} from "../hooks/useSearchModal";
 import Carousel from "./Carousel";
 import CategoryData from "./forms/CategoryData";
@@ -8,10 +8,14 @@ import CategoryData from "./forms/CategoryData";
 const Categories = () => {
 
   const searchModal = useSearchModal();
-  const[selectCategory, setSelectCategory] = useState("");
+  const[selectedCategory, setSelectedCategory] = useState("");
+
+  useEffect(() => {
+    setSelectedCategory(CategoryData[0]?.title || ""); 
+  }, []);
 
   const _setCategory = (category: string) => {
-    setSelectCategory(category);
+    setSelectedCategory(category);
     
     const query: SearchQuery = {
         country: searchModal.query.country,
@@ -29,11 +33,11 @@ const Categories = () => {
 
   return (
     <div 
-    onClick={() => setSelectCategory("")}
+    
     className={`pt-3 pb-6 mx-10 md:mx-12 lg:mx-16`}>
       <Carousel data={CategoryData} 
       setCategory={_setCategory}
-      dataCategory={selectCategory}      
+      dataCategory={selectedCategory}      
       />
     </div>
   )

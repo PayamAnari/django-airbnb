@@ -1,4 +1,5 @@
 const CategoryData = [
+  { image: '/all.jpeg', title: 'Icons' },
   { image: '/nature.jpeg', title: 'National Parks' },
   { image: '/beach.jpeg', title: 'Beach' },
   { image: '/design.jpeg', title: 'Design' },

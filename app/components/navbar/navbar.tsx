@@ -31,7 +31,7 @@ const Navbar = async () => {
           </Link>
 
           
-          <div className="flex items-center space-x-4 md:space-x-0">
+          <div className="flex items-center space-x-2 md:space-x-0">
           <div className="md:hidden">
               <SearchFilters />
             </div>

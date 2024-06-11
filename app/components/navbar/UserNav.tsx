@@ -7,6 +7,7 @@ import useSignupModal from "@/app/hooks/useSignUpModal";
 import LogoutButton from "../LogoutButton";
 import { useRouter } from "next/navigation";
 
+
 interface UserNavProps {
   userId?: string | null;
 }
@@ -19,6 +20,7 @@ const UserNav: React.FC<UserNavProps> = ({
   const signupModal = useSignupModal();
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

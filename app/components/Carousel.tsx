@@ -41,7 +41,7 @@ const Carousel: React.FC<CarouselProps> = ({ data, setCategory, dataCategory }) 
 
 
   return (
-    <div className="relative flex items-center mt-14">
+    <div className="relative flex items-center mt-2 md:mt-16 lg:mt-20">
       <button
         onClick={handlePrev}
         disabled={currentIndex === 0}

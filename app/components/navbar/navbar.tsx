@@ -22,7 +22,7 @@ const Navbar = async () => {
            </div>
            <div className="block md:hidden ">
           <Image
-            src="/airlogo.png"
+            src="/air.png"
             alt="Djangobnb logo"
             width={45}
             height={38}
@@ -31,7 +31,7 @@ const Navbar = async () => {
           </Link>
 
           
-          <div className="flex items-center space-x-2 md:space-x-0">
+          <div className="flex items-center space-x-3 md:space-x-0">
           <div className="md:hidden">
               <SearchFilters />
             </div>

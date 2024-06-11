@@ -34,7 +34,7 @@ const Categories = () => {
   return (
     <div 
     
-    className={`pt-3 pb-6 mx-10 md:mx-12 lg:mx-16`}>
+    className={`pt-3 pb-6 mx-6 md:mx-12 lg:mx-16`}>
       <Carousel data={CategoryData} 
       setCategory={_setCategory}
       dataCategory={selectedCategory}      

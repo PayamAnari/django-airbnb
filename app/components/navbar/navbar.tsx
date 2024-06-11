@@ -12,18 +12,30 @@ const Navbar = async () => {
        <div className="max-w-[1500px] mx-auto px-6">
          <div className="flex justify-between items-center">
           <Link href="/">
+          <div className="hidden md:block">
             <Image
              src="/logo.png"
-             alt="Djangobnb logo"
+             alt="Djangobnb-large-logo"
              width={180}
              height={38}
            />
+           </div>
+           <div className="block md:hidden ">
+          <Image
+            src="/airlogo.png"
+            alt="Djangobnb logo"
+            width={45}
+            height={38}
+          />
+        </div>
           </Link>
 
-          <div className="flex space-x-6">
+          
+          <div className="flex items-center space-x-4 md:space-x-0">
+          <div className="md:hidden">
               <SearchFilters />
-          </div>
-          <div className="flex items-center space-x-6">
+            </div>
+
             <AddPropertyButton
               userId={userId}
             />
@@ -33,6 +45,9 @@ const Navbar = async () => {
              />
           </div>
          </div>
+         <div className="hidden md:flex justify-center space-x-6 ">
+              <SearchFilters />
+          </div>
        </div>
     </nav>
   )

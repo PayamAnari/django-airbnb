@@ -1,6 +1,7 @@
 import Image from "next/image";
 import apiService from "../services/apiService";
 import Link from "next/link";
+import { formatDateTime } from "../components/forms/FormatDate";
 
 const MyReservationsPage = async () => {
     const reservations = await apiService.get('/api/auth/myreservations/')
@@ -27,8 +28,8 @@ const MyReservationsPage = async () => {
                             <div className="col-span-1 md:col-span-3">
                                 <h2 className="mb-4 text-xl">{reservation.property.title}</h2>
 
-                                <p className="mb-2"><strong>Check in date:</strong> {reservation.start_date}</p>
-                                <p className="mb-2"><strong>Check out date:</strong> {reservation.end_date}</p>
+                                <p className="mb-2"><strong>Check in date:</strong> {formatDateTime(reservation.start_date)}</p>
+                                <p className="mb-2"><strong>Check out date:</strong> {formatDateTime(reservation.end_date)}</p>
 
                                 <p className="mb-2"><strong>Number of nights:</strong> {reservation.number_of_nights}</p>
                                 <p className="mb-2"><strong>Total price:</strong> ${reservation.total_price}</p>

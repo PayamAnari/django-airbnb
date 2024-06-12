@@ -7,8 +7,15 @@ import AddPropertyButton from "./AddPropertyButtton";
 import apiService from "@/app/services/apiService";
 
 const Navbar = async () => {
-  const userId = await getUserId();
-  const user = await apiService.get(`/api/auth/${userId}/`)
+  let userId, user;
+
+  try {
+    userId = await getUserId();
+    user = await apiService.get(`/api/auth/${userId}/`);
+  } catch (error) {
+    console.error("Failed to fetch user data:", error);
+    user = null; 
+  }
 
 
   return (

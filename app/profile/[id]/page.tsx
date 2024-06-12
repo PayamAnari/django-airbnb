@@ -70,9 +70,9 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
   
 
   return (
-    <main className="max-w-[1500px] mx-auto px-7 p-6 rounded-lg">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 bg-gray-200 px-6 py-6">
-        <aside className="col-span-1 mb-4">
+    <main className="max-w-[1500px] mx-auto px-7 p-6 mt-0 md:mt-8 rounded-lg">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 bg-gray-200 px-6 py-6 mt-6">
+        <aside className="col-span-1 mt-6 ">
           <p className="text-xl mb-6">Welcome {landlord.name}</p>
           <div className="flex items-center justify-center gap-8 max-w-[350px] h-[220px] mx-auto p-4 rounded-2xl bg-white border border-gray-300 shadow-2xl">
           <div className="flex flex-col gap-2">

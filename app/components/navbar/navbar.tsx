@@ -41,7 +41,12 @@ const Navbar = async () => {
         </div>
           </Link>
 
-          
+          <div className="hidden lg:flex gap-6 text-gray-500">
+            <p className="cursor-pointer hover:text-black">Stays</p>
+            <p className="cursor-pointer hover:text-black">Experiences</p>
+            <p className="cursor-pointer hover:text-black">Online Experiences</p>
+
+          </div>
           <div className="flex items-center space-x-3 md:space-x-0">
           <div className="md:hidden">
               <SearchFilters />

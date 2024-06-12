@@ -39,18 +39,18 @@ const UserNav: React.FC<UserNavProps> = ({
   }, []);
 
   return (
-    <div className="p-2 relative inline-block border rounded-full" ref={menuRef}>
+    <div className="p-2 relative inline-block border rounded-full hover:shadow-lg" ref={menuRef}>
        <button 
        onClick={() => setIsOpen(!isOpen)}
        className="flex items-center">
-       <svg fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+       <svg fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
                 {user?.avatar_url ? (
                   <img
                   src={user.avatar_url}
                   alt="avatar"
-                  className="w-8 h-8 rounded-full"
+                  className="w-7 h-7 rounded-full"
                   />
                 ) : (
                   <svg fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-8 h-8 rounded-full">

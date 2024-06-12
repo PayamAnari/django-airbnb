@@ -4,9 +4,13 @@ import SearchFilters from "./SearchFilters";
 import UserNav from "./UserNav";
 import { getUserId } from "@/app/lib/actions";
 import AddPropertyButton from "./AddPropertyButtton";
+import apiService from "@/app/services/apiService";
 
 const Navbar = async () => {
   const userId = await getUserId();
+  const user = await apiService.get(`/api/auth/${userId}/`)
+
+
   return (
     <nav className="w-full fixed top-0 left-0 py-6 border-b bg-white z-10">
        <div className="max-w-[1500px] mx-auto px-6">
@@ -42,6 +46,7 @@ const Navbar = async () => {
 
              <UserNav
              userId={userId}
+              user={user}
              />
           </div>
          </div>

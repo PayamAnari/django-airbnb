@@ -71,7 +71,7 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
 
   return (
     <main className="max-w-[1500px] mx-auto px-7 p-6 mt-0 md:mt-8 rounded-lg">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 bg-gray-200 px-6 py-6 mt-6">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 bg-gray-100 px-6 py-6 mt-6">
         <aside className="col-span-1 mt-6 ">
           <p className="text-xl mb-6">Welcome {landlord.name}</p>
           <div className="flex items-center justify-center gap-8 max-w-[350px] h-[220px] mx-auto p-4 rounded-2xl bg-white border border-gray-300 shadow-2xl">
@@ -121,14 +121,17 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
               <input
                 type="email"
                 name="email"
+                placeholder="Email"
                 value={formData.email || ''}
                 onChange={handleChange}
                 className="px-4 py-2 border border-gray-300 rounded-lg"
               />
+   
               <label>Name:</label>
               <input
                 type="text"
                 name="name"
+                placeholder="Name"
                 value={formData.name || ''}
                 onChange={handleChange}
                 className="px-4 py-2 border border-gray-300 rounded-lg"
@@ -145,6 +148,7 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
               <input
                 type="text"
                 name="work"
+                placeholder="Your Work"
                 value={formData.work || ''}
                 onChange={handleChange}
                 className="px-4 py-2 border border-gray-300 rounded-lg"
@@ -153,6 +157,7 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
               <input
                 type="text"
                 name="telephone"
+                placeholder="Your Number"
                 value={formData.telephone || ''}
                 onChange={handleChange}
                 className="px-4 py-2 border border-gray-300 rounded-lg"
@@ -161,6 +166,7 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
               <input
                 type="text"
                 name="address"
+                placeholder="Your Address"
                 value={formData.address || ''}
                 onChange={handleChange}
                 className="px-4 py-2 border border-gray-300 rounded-lg"
@@ -168,6 +174,7 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
               <label>About me:</label>
               <textarea
                 name="about_me"
+                placeholder="About me"
                 value={formData.about_me || ''}
                 onChange={handleChange}
                 className="px-4 py-2 border border-gray-300 rounded-lg"
@@ -176,6 +183,7 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
               <input
                 type="text"
                 name="favorite_song"
+                placeholder="Favorite Song"
                 value={formData.favorite_song || ''}
                 onChange={handleChange}
                 className="px-4 py-2 border border-gray-300 rounded-lg"

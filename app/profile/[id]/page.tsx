@@ -117,60 +117,76 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
           {userId === params.id ? (
             <form onSubmit={handleSubmit} className="flex flex-col gap-2">
-              <label>Email:</label>
+              <div className="relative">  
+              <label htmlFor="floating_filled" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-airbnb peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Email:</label>
               <input
                 type="email"
+                id="floating_filled" 
                 name="email"
-                placeholder="Email"
+                placeholder=""
                 value={formData.email || ''}
                 onChange={handleChange}
-                className="px-4 py-2 border border-gray-300 rounded-lg"
+                className="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-airbnb appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-airbnb-dark peer"
               />
-   
-              <label>Name:</label>
+               </div>
+              <div className="relative">
               <input
                 type="text"
+                id="floating_filled"
                 name="name"
-                placeholder="Name"
+                
                 value={formData.name || ''}
                 onChange={handleChange}
-                className="px-4 py-2 border border-gray-300 rounded-lg"
+                className="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-airbnb appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-airbnb-dark peer" placeholder=""
               />
-              <label>Birthday:</label>
+              <label htmlFor="floating_filled" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-airbnb peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Name</label>
+              </div>
+              <div className="relative">
               <input
                 type="date"
                 name="birthday"
                 value={formData.birthday || ''}
                 onChange={handleChange}
-                className="px-4 py-2 border border-gray-300 rounded-lg"
+                className="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-airbnb appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-airbnb-dark peer" placeholder=""
               />
-              <label>Work:</label>
+              <label htmlFor="floating_filled" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-airbnb peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Birthday:</label>
+
+              </div>
+              <div className="relative">
               <input
                 type="text"
                 name="work"
-                placeholder="Your Work"
                 value={formData.work || ''}
                 onChange={handleChange}
-                className="px-4 py-2 border border-gray-300 rounded-lg"
+                className="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-airbnb appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-airbnb-dark peer" placeholder=""
               />
-              <label>Telephone:</label>
+              <label htmlFor="floating_filled" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-airbnb peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Work</label>
+
+              </div>
+
+              <div className="relative">
               <input
                 type="text"
                 name="telephone"
-                placeholder="Your Number"
                 value={formData.telephone || ''}
                 onChange={handleChange}
-                className="px-4 py-2 border border-gray-300 rounded-lg"
+                className="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-airbnb appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-airbnb-dark peer" placeholder=""
               />
-              <label>Address:</label>
+              <label htmlFor="floating_filled" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-airbnb peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Telephone:</label>
+
+              </div>
+
+              <div className="relative">
               <input
                 type="text"
                 name="address"
-                placeholder="Your Address"
                 value={formData.address || ''}
                 onChange={handleChange}
-                className="px-4 py-2 border border-gray-300 rounded-lg"
+                className="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-airbnb appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-airbnb-dark peer" placeholder=""
               />
+              <label htmlFor="floating_filled" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-airbnb peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Address:</label>
+
+              </div>
               <label>About me:</label>
               <textarea
                 name="about_me"
@@ -188,6 +204,13 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
                 onChange={handleChange}
                 className="px-4 py-2 border border-gray-300 rounded-lg"
               />
+
+<div className="relative">
+    <input type="text" id="floating_filled" className="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-airbnb appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-airbnb-dark peer" placeholder=" " />
+    <label htmlFor="floating_filled" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-airbnb peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Floating filled</label>
+</div>
+
+
               <button type="submit" className="mt-4 px-4 py-2 bg-airbnb hover:bg-airbnb-dark text-white rounded-lg">
                 Save Changes
               </button>

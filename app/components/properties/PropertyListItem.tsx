@@ -2,18 +2,24 @@ import Image from "next/image";
 import { PropertyType } from "./PropertyList";
 import { useRouter } from "next/navigation";
 import FavoriteButton from "../FavoriteButton";
+import CustomButton from "../forms/CustomButton";
 
 interface PropertyProps {
   property: PropertyType;
+  loggedInUserId: string;
   markFavorite?: (is_favorite: boolean) => void; 
 
 }
 
 const PropertyListItem: React.FC<PropertyProps> = ({
     property,
-    markFavorite
+    loggedInUserId,
+    markFavorite,
 }) => { 
   const router = useRouter();
+
+  const isOwner = property.landlord_id === loggedInUserId;
+  console.log("Owner",isOwner)
   return (
      <div 
      className="cursor-pointer"
@@ -43,6 +49,18 @@ const PropertyListItem: React.FC<PropertyProps> = ({
         <div className="mt-2">
           <p className="text-sm text-gray-500"><strong>${property.price_per_night}</strong> per night</p>
         </div>
+        {!isOwner && (
+        <div className="flex md:flex-col mt-2 gap-2">
+          <CustomButton 
+            label="Remove Property"
+            className="w-48"
+          />
+          <CustomButton 
+            label="Edit Property"
+            className="w-48"
+          />
+        </div>
+      )}
      </div>
   )
 }

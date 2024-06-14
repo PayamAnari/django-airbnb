@@ -14,17 +14,20 @@ export type PropertyType = {
      image_url: string;
      price_per_night: number;
      is_favorite: boolean;
+     landlord_id: string;
 
 }
 
 interface PropertyListProps {
   landlord_id?: string | null;
   favorites?: boolean | null;
+  loggedInUserId: string;
 }
 
 const PropertyList: React.FC<PropertyListProps> = ({
   landlord_id,
-  favorites
+  favorites,
+  loggedInUserId,
 }) => {
   const params = useSearchParams();
   const searchModal = useSearchModal();
@@ -122,6 +125,7 @@ const PropertyList: React.FC<PropertyListProps> = ({
           <PropertyListItem 
             key={property.id}
             property={property}
+            loggedInUserId={loggedInUserId}
             markFavorite={(is_favorite: any) => markFavorite(property.id, is_favorite)}
           />
         )

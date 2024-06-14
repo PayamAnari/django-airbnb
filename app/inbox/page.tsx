@@ -30,7 +30,7 @@ const InboxPage = async () => {
 
   const conversations = await apiService.get("/api/chat/")
   return (
-    <main className="max-w-[800px] mx-auto px-6 pb-8 space-y-4">
+    <main className="max-w-[800px] mx-auto px-6 pb-8 lg:mt-16 space-y-4">
       <div className="flex ">
       <Image
           src={user.avatar_url}

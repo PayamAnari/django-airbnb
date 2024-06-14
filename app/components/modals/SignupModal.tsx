@@ -7,6 +7,7 @@ import useSignupModal from "@/app/hooks/useSignUpModal";
 import CustomButton from "../forms/CustomButton";
 import apiService from "@/app/services/apiService";
 import { handleLogin } from "@/app/lib/actions";
+import { toast} from 'react-toastify';
 
 
 
@@ -31,6 +32,9 @@ const SignupModal = () => {
     if(response.access) {
 
       handleLogin(response.user.id, response.access, response.refresh);
+      toast.success("Signup successful!", {
+        position: "top-center",
+      });
 
       signupModal.close();
       router.push("/");
@@ -41,6 +45,10 @@ const SignupModal = () => {
       })
 
       setErrors(tmpErrors);
+
+      toast.error("Signup failed. Please try again.", {
+        position: "top-center",
+      });
     }
   }
 

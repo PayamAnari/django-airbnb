@@ -34,6 +34,7 @@ const SignupModal = () => {
       handleLogin(response.user.id, response.access, response.refresh);
       toast.success("Signup successful!", {
         position: "top-center",
+        autoClose: 2000,
       });
 
       signupModal.close();

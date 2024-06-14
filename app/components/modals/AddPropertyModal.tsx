@@ -9,6 +9,8 @@ import Categories from "../addproperty/Categories";
 import SelectCountry, { SelectCountryValue} from "../forms/SelectCountry";
 import apiService from "@/app/services/apiService";
 import { useRouter } from "next/navigation";
+import { toast} from 'react-toastify';
+
 
 
 const AddPropertyModal = () => {
@@ -67,7 +69,10 @@ const submitForm = async () => {
         const response = await apiService.post("/api/properties/create/", formData);
 
         if (response.success) {
-          console.log("Property added successfully");
+          toast.success("Property added successfully!", {
+            position: "top-center",
+            autoClose: 2000,
+          });
           router.push("/?added=true");
           addPropertyModal.close();
         } else {
@@ -79,6 +84,9 @@ const submitForm = async () => {
           })
 
           setErrors(tmpErrors)
+          toast.error("Failed to add property. Please try again.", {
+            position: "top-center",
+          });
 
         }
     }

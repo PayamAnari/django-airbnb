@@ -10,10 +10,9 @@ const LogoutButton: React.FC = () => {
   const router = useRouter()
 
   const submitLogout = async () => {
-    resetAuthCookies()
+    await resetAuthCookies()
     toast.success("Logged out successful!", {
       position: "top-center",
-      autoClose: 2000,
     });
 
     router.push("/")

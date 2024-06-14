@@ -6,6 +6,7 @@ import { getUserId } from "@/app/lib/actions";
 import AddPropertyButton from "./AddPropertyButtton";
 import apiService from "@/app/services/apiService";
 
+
 const Navbar = async () => {
   let userId, user;
 

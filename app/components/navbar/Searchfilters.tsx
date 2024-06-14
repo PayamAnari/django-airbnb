@@ -9,7 +9,7 @@ const SearchFilters = () => {
   return (
     <div 
     onClick={() => searchModal.open("location")}
-    className="h-[62px] lg:h-[64] flex flex-row items-center md:mt-4 justify-between border rounded-full shadow-xl">
+    className="h-[54px] lg:h-[64] flex flex-row items-center md:mt-4 justify-between border rounded-full shadow-xl">
        <div className="hidden md:block lg:block">
         <div className="flex flex-row items-center justify-between ">
            <div className="cursor-pointer w-[250px] md:w-[180px] h-[62px] lg:h-[64] px-8 flex flex-col justify-center rounded-full hover:bg-gray-100">
@@ -34,7 +34,7 @@ const SearchFilters = () => {
         </div>
        </div>
        <div className="p-2">
-         <div className=" cursor-pointer p-2 lg:p-4 bg-airbnb hover:bg-airbnb-dark transition rounded-full text-white">
+         <div className=" cursor-pointer p-2 lg:p-4  bg-airbnb hover:bg-airbnb-dark transition rounded-full text-white">
          <svg 
                         viewBox="0 0 32 32" 
                         style={{display:'block', fill:'none', height: '16px', width: '16px', stroke: 'currentColor', strokeWidth:4, overflow:'visible'}} 

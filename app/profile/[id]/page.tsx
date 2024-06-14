@@ -72,8 +72,17 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
         ...prevLandlord,
         avatar_url: response.avatar_url,
       }));
+
+      toast.success("Profile photo uploaded successfully!", {
+        position: "top-center",
+        autoClose: 2000,
+      });
+
     } catch (error) {
       console.error('Failed to upload avatar', error);
+      toast.error("Failed to upload profile photo", {
+        position: "top-center",
+      });
     }
   };
   

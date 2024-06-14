@@ -6,6 +6,8 @@ import Image from 'next/image';
 import apiService from '@/app/services/apiService';
 import { getUserId } from '@/app/lib/actions';
 import { formatDate } from '@/app/components/forms/FormatDate';
+import { toast} from 'react-toastify';
+
 
 
 const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
@@ -37,9 +39,16 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
     e.preventDefault();
     try {
       await apiService.put(`/api/auth/${params.id}/profile/`, formData);
+      toast.success("Profile updated successfully!", {
+        position: "top-center",
+        autoClose: 2000,
+      });
       router.push(`/landlords/${params.id}`);
     } catch (error) {
       console.error('Failed to update profile', error);
+      toast.error("Failed to update profile", {
+        position: "top-center",
+      });
     }
   };
 

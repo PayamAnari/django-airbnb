@@ -89,7 +89,7 @@ const scrollToBottom = () => {
       {messages.map((message, index) => (
         <div
           key={index}
-          className={`w-[80%] py-4 px-6 rounded-xl ${message.created_by.name == myUser?.name ? 'ml-[20%] bg-blue-300' : 'bg-black'}`}
+          className={`w-[80%] py-4 px-6 rounded-xl ${message.created_by.name == myUser?.name ? 'ml-[20%] bg-blue-200' : 'bg-green-300'}`}
            >
         <div className="flex gap-2">
         <Image
@@ -100,7 +100,7 @@ const scrollToBottom = () => {
             className="rounded-full "
          />
         <p className="font-bold text-gray-500">{message.created_by.name}</p>
-        <p className="text-white">{message.body}</p>
+        <p className="text-black">{message.body}</p>
        
         </div>
         <p className="text-xs text-gray-400 mt-2">{formatDateTime(message.created_at)}</p>
@@ -111,7 +111,7 @@ const scrollToBottom = () => {
     {realtimeMessages.map((message, index) => (
        <div
         key={index}
-        className={`w-[80%] py-4 px-6 rounded-xl ${message.name == myUser?.name ? "ml-[20%] bg-blue-300" : "bg-gray-500"}`}
+        className={`w-[80%] py-4 px-6 rounded-xl ${message.name == myUser?.name ? "ml-[20%] bg-blue-200" : "bg-green-300"}`}
        >
              <div className="flex gap-2">
         <Image
@@ -122,7 +122,7 @@ const scrollToBottom = () => {
           className="rounded-full "
          />
        <p className="font-bold text-gray-500">{message.name}</p>
-       <p className="text-white">{message.body}</p>
+       <p className="text-black">{message.body}</p>
        </div>
        <p className="text-xs text-gray-400 mt-2">{formatDateTime(message.created_at)}</p>
        </div>

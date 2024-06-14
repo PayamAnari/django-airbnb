@@ -12,10 +12,14 @@ const Navbar = async () => {
 
   try {
     userId = await getUserId();
-    user = await apiService.get(`/api/auth/${userId}/`);
+    if (userId) {
+      user = await apiService.get(`/api/auth/${userId}/`);
+    } else {
+      user = null;
+    }
   } catch (error) {
     console.error("Failed to fetch user data:", error);
-    user = null; 
+    user = null;
   }
 
 
@@ -35,7 +39,7 @@ const Navbar = async () => {
            <div className="block md:hidden ">
           <Image
             src="/air.png"
-            alt="Djangobnb logo"
+            alt="Djangobnb-logo"
             width={45}
             height={38}
           />

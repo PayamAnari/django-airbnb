@@ -3,11 +3,11 @@
 import { cookies } from 'next/headers';
 
 export async function handleRefresh() {
-  console.log('HandleRefresh');
+  console.log('handleRefresh');
 
   const refreshToken = await getRefreshToken();
 
-  const token = await fetch('https://localhost:8000/api/auth/token/refresh/', {
+  const token = await fetch('http://localhost:8000/api/auth/token/refresh/', {
     method: 'POST',
     body: JSON.stringify({
       refresh: refreshToken,
@@ -24,7 +24,7 @@ export async function handleRefresh() {
       if (json.access) {
         cookies().set('session_access_token', json.access, {
           httpOnly: true,
-          secure: process.env.NODE_ENV === 'production',
+          secure: false,
           maxAge: 60 * 60,
           path: '/',
         });
@@ -35,7 +35,8 @@ export async function handleRefresh() {
       }
     })
     .catch((error) => {
-      console.error('Error:', error);
+      console.log('error', error);
+
       resetAuthCookies();
     });
 

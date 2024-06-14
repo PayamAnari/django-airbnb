@@ -39,7 +39,12 @@ const InboxPage = async () => {
           alt="Landlord image"
           className="rounded-full px-4 py-4 "
          />
-       <h1 className="my-6 text-2xl">{user.name} inbox</h1>
+       <h1 className="my-6 text-2xl">{user.name ? (
+          user.name
+        ) : (
+          "Guest"
+        
+       )} inbox</h1>
        </div>
       {conversations.map((conversation: ConversationType) => {
         return (

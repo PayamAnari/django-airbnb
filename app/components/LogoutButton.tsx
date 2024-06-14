@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import MenuLink from "./navbar/MenuLink";
 import { resetAuthCookies } from "../lib/actions";
+import { toast} from 'react-toastify';
 
 
 const LogoutButton: React.FC = () => {
@@ -10,6 +11,10 @@ const LogoutButton: React.FC = () => {
 
   const submitLogout = async () => {
     resetAuthCookies()
+    toast.success("Logged out successful!", {
+      position: "top-center",
+      autoClose: 2000,
+    });
 
     router.push("/")
   }

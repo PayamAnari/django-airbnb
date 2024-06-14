@@ -30,6 +30,7 @@ const LoginModal = () => {
       handleLogin(response.user.pk, response.access, response.refresh);
       toast.success("Login successful!", {
         position: "top-center",
+        autoClose: 2000,
       });
       loginModal.close();
       router.push("/");

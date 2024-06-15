@@ -53,3 +53,23 @@ const UpdatePropertyModal = ({ property, isOpen, close }) => {
       if (dataImage) {
         formData.append("image", dataImage);
       }
+
+      const url = `/api/properties/${property.id}/update/`;
+      const response = await apiService.put(url, formData);
+
+      if (response.success) {
+        toast.success("Property updated successfully!", {
+          position: "top-center",
+          autoClose: 2000,
+        });
+        router.push("/?updated=true");
+        close();
+      } else {
+        const tmpErrors: string[] = Object.values(response).map((error: any) => error);
+        setErrors(tmpErrors);
+        toast.error("Failed to update property. Please try again.", {
+          position: "top-center",
+        });
+      }
+    }
+  };

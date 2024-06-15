@@ -23,3 +23,17 @@ const UpdatePropertyModal = ({ property, isOpen, close }) => {
   const [dataGuests, setDataGuests] = useState(property?.guests || "");
   const [dataCountry, setDataCountry] = useState<SelectCountryValue>(property?.country || null);
   const [dataImage, setDataImage] = useState<File | null>(null);
+
+
+  const router = useRouter();
+
+  const setCategory = (category: string) => {
+    setDataCategory(category);
+  };
+
+  const setImage = (event: ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files && event.target.files.length > 0) {
+      const tmpImage = event.target.files[0];
+      setDataImage(tmpImage);
+    }
+  };

@@ -2,16 +2,17 @@
 
 import Image from "next/image";
 import Modal from "./Modal";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import CustomButton from "../forms/CustomButton";
 import Categories from "../addproperty/Categories";
 import SelectCountry, { SelectCountryValue } from "../forms/SelectCountry";
 import apiService from "@/app/services/apiService";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+import useEditPropertyModal from "@/app/hooks/useEditPropertyModal";
 
 
-const UpdatePropertyModal = ({ property, isOpen, close }) => {
+const UpdatePropertyModal = ({ property }) => {
   const [errors, setErrors] = useState<string[]>([]);
   const [currentStep, setCurrentStep] = useState(1);
   const [dataCategory, setDataCategory] = useState(property?.category || "");
@@ -26,6 +27,7 @@ const UpdatePropertyModal = ({ property, isOpen, close }) => {
 
 
   const router = useRouter();
+  const editPropertyModal = useEditPropertyModal();
 
   const setCategory = (category: string) => {
     setDataCategory(category);
@@ -63,7 +65,7 @@ const UpdatePropertyModal = ({ property, isOpen, close }) => {
           autoClose: 2000,
         });
         router.push("/?updated=true");
-        close();
+        editPropertyModal.close();
       } else {
         const tmpErrors: string[] = Object.values(response).map((error: any) => error);
         setErrors(tmpErrors);
@@ -192,7 +194,7 @@ const UpdatePropertyModal = ({ property, isOpen, close }) => {
 
   return (
     <>
-      <Modal isOpen={isOpen} close={close} label="Update Property" content={content} />
+      <Modal isOpen={editPropertyModal.isOpen} close={editPropertyModal.close} label="Update Property" content={content} />
     </>
   );
 };

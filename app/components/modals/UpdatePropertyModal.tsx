@@ -9,3 +9,17 @@ import SelectCountry, { SelectCountryValue } from "../forms/SelectCountry";
 import apiService from "@/app/services/apiService";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
+
+
+const UpdatePropertyModal = ({ property, isOpen, close }) => {
+  const [errors, setErrors] = useState<string[]>([]);
+  const [currentStep, setCurrentStep] = useState(1);
+  const [dataCategory, setDataCategory] = useState(property?.category || "");
+  const [dataTitle, setDataTitle] = useState(property?.title || "");
+  const [dataDescription, setDataDescription] = useState(property?.description || "");
+  const [dataPrice, setDataPrice] = useState(property?.price_per_night || "");
+  const [dataBedrooms, setDataBedrooms] = useState(property?.bedrooms || "");
+  const [dataBathrooms, setDataBathrooms] = useState(property?.bathrooms || "");
+  const [dataGuests, setDataGuests] = useState(property?.guests || "");
+  const [dataCountry, setDataCountry] = useState<SelectCountryValue>(property?.country || null);
+  const [dataImage, setDataImage] = useState<File | null>(null);

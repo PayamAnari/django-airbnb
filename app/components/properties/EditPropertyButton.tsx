@@ -26,9 +26,15 @@ const EditPropertyButton: React.FC<EditPropertyButtonProps> = ({
   }
   return (
     <div 
-    onClick={editProperty}
+    
     className="p-2 cursor-pointer text-sm font-semibold rounded-full hover:bg-gray-200">
-       Edit Property
+          <CustomButton 
+            label="Edit Property"
+            className="w-48"
+            onClick={editProperty}
+          />
     </div>
   )
 }
+
+export default EditPropertyButton;

@@ -12,7 +12,7 @@ import { toast } from "react-toastify";
 import useEditPropertyModal from "@/app/hooks/useEditPropertyModal";
 
 
-const UpdatePropertyModal = ({ property }) => {
+const EditPropertyModal = ({ property }) => {
   const [errors, setErrors] = useState<string[]>([]);
   const [currentStep, setCurrentStep] = useState(1);
   const [dataCategory, setDataCategory] = useState(property?.category || "");
@@ -199,4 +199,4 @@ const UpdatePropertyModal = ({ property }) => {
   );
 };
 
-export default UpdatePropertyModal;
+export default EditPropertyModal;

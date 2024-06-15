@@ -19,7 +19,6 @@ const PropertyListItem: React.FC<PropertyProps> = ({
   const router = useRouter();
 
   const isOwner = property.landlord_id === loggedInUserId;
-  console.log("Owner",isOwner)
   return (
      <div 
      className="cursor-pointer"

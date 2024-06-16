@@ -2,23 +2,24 @@ import Image from "next/image";
 import { PropertyType } from "./PropertyList";
 import { useRouter } from "next/navigation";
 import FavoriteButton from "../FavoriteButton";
-import EditPropertyButton from "./EditPropertyButton";
+import CustomButton from "../forms/CustomButton";
+import EditPropertyButton from "@/app/editproperty/EditPropertyButton";
 
 interface PropertyProps {
   property: PropertyType;
-  loggedInUserId: string;
   markFavorite?: (is_favorite: boolean) => void; 
-
+  landlord_id?: string | null;
 }
 
 const PropertyListItem: React.FC<PropertyProps> = ({
     property,
-    loggedInUserId,
     markFavorite,
+    landlord_id
 }) => { 
+  
   const router = useRouter();
 
-  const isOwner = property.landlord_id === loggedInUserId;
+  
   return (
      <div 
      className="cursor-pointer"
@@ -48,11 +49,23 @@ const PropertyListItem: React.FC<PropertyProps> = ({
         <div className="mt-2">
           <p className="text-sm text-gray-500"><strong>${property.price_per_night}</strong> per night</p>
         </div>
+        <div>
+     {/* {landlord_id && (
+             <CustomButton 
+             label="Edit Property"
+             className="mt-2"
+             onClick={handleEditClick}
 
-        <EditPropertyButton 
-          userId={loggedInUserId}
-        />
-   
+            />
+
+     )} */}
+     {landlord_id && (
+          <EditPropertyButton 
+           userId={landlord_id}
+           property={property}
+          />  
+      )}
+    </div>
      </div>
   )
 }

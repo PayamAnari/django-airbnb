@@ -5,7 +5,6 @@ import Navbar from "./components/navbar/Navbar";
 import LoginModal from "./components/modals/LoginModal";
 import SignupModal from "./components/modals/SignupModal";
 import AddPropertyModal from "./components/modals/AddPropertyModal";
-import EditPropertyModal from "./components/modals/EditPropertyModal";
 import SearchModal from "./components/modals/SearchModal";
 import Footer from "./components/Footer";
 import { ToastContainer } from "react-toastify";
@@ -39,7 +38,6 @@ export default function RootLayout({
       <SearchModal />
       <SignupModal />
       <AddPropertyModal />
-      <EditPropertyModal />
       <Footer />
       <ToastContainer />
       </body>

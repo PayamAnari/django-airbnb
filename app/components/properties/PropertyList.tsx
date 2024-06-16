@@ -2,7 +2,7 @@
 
 
 import { useEffect, useState } from "react";
-import PropertyListItem from "./PropertyListItem";
+import PropertyListItem from "@/app/components/properties/PropertyListItem";
 import apiService from "@/app/services/apiService";
 import { useSearchParams } from "next/navigation";
 import useSearchModal from "@/app/hooks/useSearchModal";
@@ -21,13 +21,11 @@ export type PropertyType = {
 interface PropertyListProps {
   landlord_id?: string | null;
   favorites?: boolean | null;
-  loggedInUserId: string;
 }
 
 const PropertyList: React.FC<PropertyListProps> = ({
   landlord_id,
   favorites,
-  loggedInUserId,
 }) => {
   const params = useSearchParams();
   const searchModal = useSearchModal();
@@ -39,6 +37,7 @@ const PropertyList: React.FC<PropertyListProps> = ({
   const checkoutDate = searchModal.query.checkOut;
   const category = searchModal.query.category;
   const [properties, setProperties] = useState<PropertyType[]>([]);
+
  
   const markFavorite = (id: string, is_favorite: boolean) => {
     const tmpProperties = properties.map((property: PropertyType) => {
@@ -125,7 +124,7 @@ const PropertyList: React.FC<PropertyListProps> = ({
           <PropertyListItem 
             key={property.id}
             property={property}
-            loggedInUserId={loggedInUserId}
+            landlord_id={landlord_id}
             markFavorite={(is_favorite: any) => markFavorite(property.id, is_favorite)}
           />
         )

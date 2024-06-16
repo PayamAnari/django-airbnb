@@ -8,13 +8,13 @@ const MyPropertiesPage = async () => {
     <h1 className="my-6 text-2xl">My properties</h1>
 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+       
         <PropertyList 
          landlord_id={userId}
-         loggedInUserId={userId}
        />
     
     </div>
-    
+   
     
 </main>
   )

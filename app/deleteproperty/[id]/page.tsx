@@ -8,7 +8,7 @@ import apiService from "@/app/services/apiService";
 const deleteProperty = async ({ params }: { params: { id: string } }) => {
 
   const router = useRouter();
-  
+
   try {
     const response = await apiService.deleteProperty(`/api/properties/${params.id}/`);
     if (response.success) {
@@ -28,4 +28,4 @@ const deleteProperty = async ({ params }: { params: { id: string } }) => {
   }
 };
 
-<button onClick={() => deleteProperty(propertyId)}>Delete Property</button>
+export default deleteProperty;

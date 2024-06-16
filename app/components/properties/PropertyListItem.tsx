@@ -2,8 +2,8 @@ import Image from "next/image";
 import { PropertyType } from "./PropertyList";
 import { useRouter } from "next/navigation";
 import FavoriteButton from "../FavoriteButton";
-import CustomButton from "../forms/CustomButton";
 import EditPropertyButton from "@/app/editproperty/EditPropertyButton";
+import DeletePropertyButton from "@/app/deleteproperty/DeletePropertyButton";
 
 interface PropertyProps {
   property: PropertyType;
@@ -50,15 +50,7 @@ const PropertyListItem: React.FC<PropertyProps> = ({
           <p className="text-sm text-gray-500"><strong>${property.price_per_night}</strong> per night</p>
         </div>
         <div>
-     {/* {landlord_id && (
-             <CustomButton 
-             label="Edit Property"
-             className="mt-2"
-             onClick={handleEditClick}
-
-            />
-
-     )} */}
+ 
      {landlord_id && (
           <EditPropertyButton 
            userId={landlord_id}

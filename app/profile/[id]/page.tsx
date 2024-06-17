@@ -7,6 +7,7 @@ import apiService from '@/app/services/apiService';
 import { getUserId } from '@/app/lib/actions';
 import { formatDate } from '@/app/components/forms/FormatDate';
 import { toast} from 'react-toastify';
+import DeleteUserButton from '@/app/deleteuser/DeleteUserButton';
 
 
 
@@ -236,6 +237,9 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
               <button type="submit" className="mt-4 px-4 py-2 bg-airbnb hover:bg-airbnb-dark text-white rounded-lg">
                 Save Changes
               </button>
+             
+              <DeleteUserButton userId={userId} />
+
             </form>
           ) : (
             <>

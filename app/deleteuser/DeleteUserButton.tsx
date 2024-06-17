@@ -21,7 +21,7 @@ const DeleteUserButton: React.FC<DeleteUserButtonProps> = ({
     
     if (userId) {
       try {
-        await deleteUserAccount(userId);
+        await deleteUserAccount(userId.id);
         router.push("/?deleted=true");
       } catch (error) {
         console.error("Failed to delete user", error);

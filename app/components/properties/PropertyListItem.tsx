@@ -52,10 +52,18 @@ const PropertyListItem: React.FC<PropertyProps> = ({
         <div>
  
      {landlord_id && (
+      <>
           <EditPropertyButton 
-           userId={landlord_id}
-           property={property}
+            userId={landlord_id}
+            property={property}
           />  
+
+         <DeletePropertyButton 
+            userId={landlord_id}
+            property={property}
+          />
+
+      </>   
       )}
     </div>
      </div>

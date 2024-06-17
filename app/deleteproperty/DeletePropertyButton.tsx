@@ -4,6 +4,7 @@ import useLoginModal from "@/app/hooks/useLoginModal";
 import { PropertyType } from "../components/properties/PropertyList";
 import CustomButton from "../components/forms/CustomButton";
 import { useRouter } from "next/navigation";
+import deleteProperty from "./[id]/page";
 
 interface DeletePropertyButtonProps {
   userId?: string | null;
@@ -16,30 +17,33 @@ const DeletePropertyButton: React.FC<DeletePropertyButtonProps> = ({
 }) => {
   const loginModal = useLoginModal();
   const router = useRouter();
-
-  const handleDeleteProperty = () => {
+  const handleDeleteClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
+    
     if (userId) {
-      router.push(`/deleteproperty/${property.id}`);
+      try {
+        await deleteProperty(property.id);
+        router.push("/?deleted=true");
+      } catch (error) {
+        console.error("Failed to delete property", error);
+      }
     } else {
       loginModal.open();
-
     }
   };
 
 
+
   return (
-    <div
-      onClick={handleDeleteProperty}
-      className="cursor-pointer"
-    >
+    <div 
+    className="cursor-pointer">
       <CustomButton 
-       label="Delete property"
-       className="mt-2"
+        label="Delete property"
+        className="mt-2 bg-gray-500 hover:bg-gray-700"
+        onClick={handleDeleteClick}
       />
     </div>
   );
-
 };
 
-
-  export default DeletePropertyButton;
+export default DeletePropertyButton;

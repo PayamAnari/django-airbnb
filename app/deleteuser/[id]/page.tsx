@@ -6,20 +6,33 @@ import { useRouter } from "next/navigation";
 import { getUserId } from "@/app/lib/actions";
 
 
-const DeleteUser = async ( id: string) => {
+const deleteUserAccount = async ( id: string) => {
   const router = useRouter();
   const userId = getUserId();
+
   if (!userId) {
     return;
   }
   try {
-    await apiService.delete(`/api/auth/${id}/delete`);
-    toast.success("User deleted successfully");
-    router.push("/users");
+    const response = await apiService.deleteUser(`/api/auth/${id}/delete`);
+    if (response.success) {
+      toast.success("User deleted successfully!", {
+        position: "top-center",
+        autoClose: 2000,
+      });
+      router.push("/?deleted=true");
+    } else {
+      toast.error("Failed to delete user. Please try again.", {
+        position: "top-center",
+      });
+    }
   } catch (error) {
-    toast.error("Failed to delete user");
+    console.error("Failed to delete user", error);
+    toast.error("Failed to delete user. Please try again.");
   }
-}
+
+};
 
 
-export default DeleteUser;
+
+export default deleteUserAccount;

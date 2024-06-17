@@ -147,6 +147,31 @@ const apiService = {
     });
   },
 
+  deleteUser: async function (url: string, data: any): Promise<any> {
+    console.log('delete', url, data);
+
+    const token = await getAccessToken();
+
+    return new Promise((resolve, reject) => {
+      fetch(`${process.env.NEXT_PUBLIC_API_HOST}${url}`, {
+        method: 'DELETE',
+        body: JSON.stringify(data),
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          console.log('Response', json);
+
+          resolve(json);
+        })
+        .catch((error) => {
+          reject(error);
+        });
+    });
+  },
+
   uploadProfilePhoto: async function (
     url: string,
     data: FormData,

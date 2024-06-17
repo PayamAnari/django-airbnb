@@ -234,7 +234,7 @@ const LandlordProfilePage = ({ params }: { params: { id: string }}) => {
 
               </div>
 
-              <button type="submit" className="mt-4 px-4 py-2 bg-airbnb hover:bg-airbnb-dark text-white rounded-lg">
+              <button type="submit" className="w-full mt-2 py-4 bg-airbnb hover:bg-airbnb-dark text-white text-center rounded-xl transition cursor-pointer">
                 Save Changes
               </button>
              

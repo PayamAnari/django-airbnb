@@ -1,5 +1,6 @@
 "use client";
 
+import React from 'react';
 import useLoginModal from "@/app/hooks/useLoginModal";
 import CustomButton from "../components/forms/CustomButton";
 import { useRouter } from "next/navigation";
@@ -21,7 +22,7 @@ const DeleteUserButton: React.FC<DeleteUserButtonProps> = ({
     
     if (userId) {
       try {
-        await deleteUserAccount(userId.id);
+        await deleteUserAccount(userId);
         router.push("/?deleted=true");
       } catch (error) {
         console.error("Failed to delete user", error);

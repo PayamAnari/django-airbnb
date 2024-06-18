@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Carousel from "../Carousel";
 import CategoryData from "../forms/CategoryData";
 

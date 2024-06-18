@@ -50,7 +50,7 @@ const UserNav: React.FC<UserNavProps> = ({
                   <img
                   src={user.avatar_url}
                   alt="avatar"
-                  className="w-7 h-7 rounded-full"
+                  className="w-6 h-6 rounded-full"
                   />
                 ) : (
                   <svg fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 rounded-full">

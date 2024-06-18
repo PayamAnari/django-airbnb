@@ -45,7 +45,7 @@ const Carousel: React.FC<CarouselProps> = ({ data, setCategory, dataCategory }) 
       <button
         onClick={handlePrev}
         disabled={currentIndex === 0}
-        className={`absolute left-0 z-10 px-2 py-1 bg-gray-100 hover:bg-gray-200 transition border border-gray-200 shadow-lg rounded-full ${currentIndex === 0 && 'opacity-50'}`}
+        className={`absolute left-0  px-2 py-1 bg-gray-100 hover:bg-gray-200 transition border border-gray-200 shadow-lg rounded-full ${currentIndex === 0 && 'opacity-50'}`}
       >
         {'<'}
       </button>

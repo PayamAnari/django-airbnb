@@ -4,8 +4,9 @@
 import { useEffect, useState } from "react";
 import PropertyListItem from "@/app/components/properties/PropertyListItem";
 import apiService from "@/app/services/apiService";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import useSearchModal from "@/app/hooks/useSearchModal";
+import Pagination from "./Pagination";
 import { format } from 'date-fns';
 
 export type PropertyType = {
@@ -21,12 +22,17 @@ export type PropertyType = {
 interface PropertyListProps {
   landlord_id?: string | null;
   favorites?: boolean | null;
+  page: number;
+  setTotalPages: (totalPages: number) => void;
 }
 
 const PropertyList: React.FC<PropertyListProps> = ({
   landlord_id,
   favorites,
+  page,
+  setTotalPages,
 }) => {
+  const router = useRouter();
   const params = useSearchParams();
   const searchModal = useSearchModal();
   const country = searchModal.query.country;
@@ -37,10 +43,9 @@ const PropertyList: React.FC<PropertyListProps> = ({
   const checkoutDate = searchModal.query.checkOut;
   const category = searchModal.query.category;
   const [properties, setProperties] = useState<PropertyType[]>([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-  const propertiesPerPage = 10;
+  const [limit, setLimit] = useState<number>(10);
 
+  
  
   const markFavorite = (id: string, is_favorite: boolean) => {
     const tmpProperties = properties.map((property: PropertyType) => {
@@ -60,7 +65,23 @@ const PropertyList: React.FC<PropertyListProps> = ({
     setProperties(tmpProperties)
   }
 
-  const getProperties = async () => {
+  const updateLimit = () => {
+    if (window.innerWidth >= 1024) {
+      setLimit(10);
+    } else if (window.innerWidth >= 768) {
+      setLimit(6);
+    } else {
+      setLimit(6);
+    }
+  };
+
+  useEffect(() => {
+    updateLimit();
+    window.addEventListener('resize', updateLimit);
+    return () => window.removeEventListener('resize', updateLimit);
+  }, []);
+
+  const getProperties = async (page: number, limit: number) => {
     let url = '/api/properties/';
     if (landlord_id) {
       url += `?landlord_id=${landlord_id}`;
@@ -82,7 +103,7 @@ const PropertyList: React.FC<PropertyListProps> = ({
         }
 
         if (numBathrooms) {
-          urlQuery += "&numbBathrooms=" + numBathrooms
+          urlQuery += "&numBathrooms=" + numBathrooms
         }
 
         if (category) {
@@ -97,28 +118,36 @@ const PropertyList: React.FC<PropertyListProps> = ({
           urlQuery += "&checkout=" + format(checkoutDate, "yyyy-MM-dd")
         }
 
+        if (page) {
+          urlQuery += `&page=${page}`;
+        }
+    
+        if (limit) {
+          urlQuery += `&limit=${limit}`;
+        }
+
         if (urlQuery.length) {
             urlQuery = "?" + urlQuery.substring(1);
             url += urlQuery;
         }
     }
 
-    const tmpProperties = await apiService.get(url);
-
-    setProperties(tmpProperties.data.map((property: PropertyType) => {
-      if (tmpProperties.favorites.includes(property.id)) {
-        property.is_favorite = true
-      } else {
-        property.is_favorite = false
-      }
-
-      return property;
-    }));    
+    try {
+      const response = await apiService.get(url);
+      setProperties(response.data.map((property: PropertyType) => {
+        property.is_favorite = response.favorites.includes(property.id);
+        return property;
+      }));
+      setTotalPages(response.totalPages); 
+    } catch (error) {
+      console.error("Failed to fetch properties:", error);
+    }
   };
 
   useEffect(() => {
-    getProperties();
-  }, [category, searchModal.query, params]);
+    getProperties(page, limit);
+  }, [category, searchModal.query, params, page, limit]);
+
 
   return (
     <>
@@ -132,7 +161,7 @@ const PropertyList: React.FC<PropertyListProps> = ({
           />
         )
     })}
-  
+ 
     </>
   )
 }

@@ -24,7 +24,7 @@ const Categories = () => {
         guests: searchModal.query.guests,
         bedrooms: searchModal.query.bedrooms,
         bathrooms: searchModal.query.bathrooms,
-        category: category,
+        category: category === "Icons" ? "" : category,
 
     }
 

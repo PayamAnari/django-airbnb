@@ -37,6 +37,9 @@ const PropertyList: React.FC<PropertyListProps> = ({
   const checkoutDate = searchModal.query.checkOut;
   const category = searchModal.query.category;
   const [properties, setProperties] = useState<PropertyType[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const propertiesPerPage = 10;
 
  
   const markFavorite = (id: string, is_favorite: boolean) => {

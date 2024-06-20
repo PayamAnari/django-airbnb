@@ -18,7 +18,7 @@ const Conversation: React.FC<ConversationProps> = ({
 
   return (
     <div className="px-6 py-4 cursor-pointer border border-gray-300 rounded-xl shadow-lg">  
-        <div className="flex gap-2">
+        <div className="flex gap-2 ">
         {otherUser?.avatar_url && (
 
          <Image
@@ -37,7 +37,7 @@ const Conversation: React.FC<ConversationProps> = ({
     </div>
     <p 
         onClick={() => router.push(`/inbox/${conversation.id}`)}
-        className="text-airbnb-dark"
+        className="text-airbnb-dark "
     >
         Go to conversation
     </p>

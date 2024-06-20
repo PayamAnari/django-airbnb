@@ -7,7 +7,7 @@ const SearchFilters = () => {
 
   const searchModal = useSearchModal();
   return (
-    <div className="h-[54px] lg:h-[64] flex flex-row items-center md:mt-4 justify-between border rounded-full shadow-xl">
+    <div className="h-[54px] lg:h-[70px] flex flex-row items-center md:mt-4 justify-between border rounded-full shadow-xl">
        <div className="hidden md:block lg:block">
         <div className="flex flex-row items-center justify-between ">
            <div className="cursor-pointer w-[250px] md:w-[180px] h-[58px] lg:h-[64] px-8 flex flex-col justify-center rounded-full hover:bg-gray-100"

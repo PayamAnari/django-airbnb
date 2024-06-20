@@ -21,7 +21,7 @@ const LandlordDetailPage = async ({ params }: { params: { id: string }}) => {
           <p className="text-lg lg:text-2xl mb-4 -ml-4">{isOwnProfile ? `About ${landlord.name || "Guest"}` : "Meet Your host"}</p>
           <div className="flex gap-5 lg:gap-6 max-w-[350px] h-[220px] mx-auto justify-center items-center p-4 rounded-2xl bg-white border border-gray-300 shadow-2xl">
           
-            <div className="flex flex-col">
+            <div className="flex flex-col items-center">
             <Image
               src={landlord.avatar_url}
               width={50}

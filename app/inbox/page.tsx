@@ -33,7 +33,7 @@ const InboxPage = async () => {
   return (
     <main className="max-w-[800px] mx-auto px-6 pb-8 md:mt-16 lg:mt-20 space-y-4">
       <Link href={`landlords/${userId}`}>
-      <div className="flex cursor-pointer">
+      <div className="flex cursor-pointer ">
       <Image
           src={user.avatar_url}
           width={80}

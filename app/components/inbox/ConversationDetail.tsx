@@ -99,7 +99,7 @@ const scrollToBottom = () => {
             alt="Landlord image"
             className="rounded-full "
          />
-        <p className="font-bold text-gray-500">{message.created_by.name}</p>
+        <p className="font-bold text-gray-600">{message.created_by.name}</p>
         <p className="text-black">{message.body}</p>
        
         </div>
@@ -113,7 +113,7 @@ const scrollToBottom = () => {
         key={index}
         className={`w-[80%] py-4 px-6 rounded-xl ${message.name == myUser?.name ? "ml-[20%] bg-blue-200" : "bg-green-300"}`}
        >
-             <div className="flex gap-2">
+        <div className="flex gap-2">
         <Image
           src={message.created_by.avatar_url}
           width={30}
@@ -121,7 +121,7 @@ const scrollToBottom = () => {
           alt="Landlord image"
           className="rounded-full "
          />
-       <p className="font-bold text-gray-500">{message.name}</p>
+       <p className="font-bold text-gray-600">{message.name}</p>
        <p className="text-black">{message.body}</p>
        </div>
        <p className="text-xs text-gray-400 mt-2">{formatDateTime(message.created_at)}</p>

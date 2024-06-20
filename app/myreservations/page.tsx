@@ -7,7 +7,7 @@ const MyReservationsPage = async () => {
     const reservations = await apiService.get('/api/auth/myreservations/')
 
     return (
-        <main className="max-w-[1500px] mx-auto px-6 pb-6 mt-6 md:mt-20 lg:mt-20">
+        <main className="max-w-[1500px] mx-auto px-6 pb-6 mt-6 md:mt-20 lg:mt-24">
             <h1 className="my-6 text-2xl">My reservations</h1>
 
             <div className="space-y-4">

@@ -3,6 +3,7 @@ import Conversation from "../components/inbox/conversation";
 import apiService from "../services/apiService";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 
 export type UserType = {
@@ -30,8 +31,9 @@ const InboxPage = async () => {
 
   const conversations = await apiService.get("/api/chat/")
   return (
-    <main className="max-w-[800px] mx-auto px-6 pb-8 lg:mt-16 space-y-4">
-      <div className="flex ">
+    <main className="max-w-[800px] mx-auto px-6 pb-8 md:mt-16 lg:mt-20 space-y-4">
+      <Link href={`landlords/${userId}`}>
+      <div className="flex cursor-pointer">
       <Image
           src={user.avatar_url}
           width={80}
@@ -46,6 +48,7 @@ const InboxPage = async () => {
         
        )} inbox</h1>
        </div>
+       </Link>
       {conversations.map((conversation: ConversationType) => {
         return (
           <Conversation

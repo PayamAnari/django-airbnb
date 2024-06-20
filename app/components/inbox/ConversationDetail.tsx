@@ -84,7 +84,7 @@ const scrollToBottom = () => {
    <div>
     <div 
     ref={messagesDiv}
-    className="max-h-[400px] overflow-auto flex flex-col space-y-4">
+    className="max-h-[400px] overflow-auto flex flex-col space-y-4 md:mt-24 lg:mt-24">
 
       {messages.map((message, index) => (
         <div

@@ -1,5 +1,5 @@
 import { getUserId } from "../../lib/actions";
-import React, {useState, useEffect } from 'react';
+import React from 'react';
 import apiService from "@/app/services/apiService";
 import ConversationDetail from "@/app/components/inbox/ConversationDetail";
 import { UserType } from "../page";

@@ -5,6 +5,8 @@ import FavoriteButton from "../FavoriteButton";
 import EditPropertyButton from "@/app/editproperty/EditPropertyButton";
 import DeletePropertyButton from "@/app/deleteproperty/DeletePropertyButton";
 
+
+
 interface PropertyProps {
   property: PropertyType;
   markFavorite?: (is_favorite: boolean) => void; 
@@ -14,12 +16,11 @@ interface PropertyProps {
 const PropertyListItem: React.FC<PropertyProps> = ({
     property,
     markFavorite,
-    landlord_id
+    landlord_id,
 }) => { 
   
   const router = useRouter();
-
-  
+ 
   return (
      <div 
      className="cursor-pointer"
@@ -45,6 +46,9 @@ const PropertyListItem: React.FC<PropertyProps> = ({
         </div>
         <div className="mt-2">
            <p className="text-lg font-bold">{property.title}</p>
+        </div>
+        <div className="mt-2">
+           <p>Hosted by {property.landlord.name} </p>
         </div>
         <div className="mt-2">
           <p className="text-sm text-gray-500"><strong>${property.price_per_night}</strong> per night</p>

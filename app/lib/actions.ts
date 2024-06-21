@@ -3,8 +3,6 @@
 import { cookies } from 'next/headers';
 
 export async function handleRefresh() {
-  console.log('handleRefresh');
-
   const refreshToken = await getRefreshToken();
 
   const token = await fetch('http://localhost:8000/api/auth/token/refresh/', {

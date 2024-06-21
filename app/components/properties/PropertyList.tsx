@@ -4,9 +4,8 @@
 import { useEffect, useState } from "react";
 import PropertyListItem from "@/app/components/properties/PropertyListItem";
 import apiService from "@/app/services/apiService";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import useSearchModal from "@/app/hooks/useSearchModal";
-import Pagination from "./Pagination";
 import { format } from 'date-fns';
 
 export type PropertyType = {
@@ -16,8 +15,10 @@ export type PropertyType = {
      price_per_night: number;
      is_favorite: boolean;
      landlord_id: string;
-
-}
+     landlord: {
+        name: string;
+     };
+     }
 
 interface PropertyListProps {
   landlord_id?: string | null;
@@ -32,7 +33,6 @@ const PropertyList: React.FC<PropertyListProps> = ({
   page,
   setTotalPages,
 }) => {
-  const router = useRouter();
   const params = useSearchParams();
   const searchModal = useSearchModal();
   const country = searchModal.query.country;
@@ -45,7 +45,6 @@ const PropertyList: React.FC<PropertyListProps> = ({
   const [properties, setProperties] = useState<PropertyType[]>([]);
   const [limit, setLimit] = useState<number>(10);
 
-  
  
   const markFavorite = (id: string, is_favorite: boolean) => {
     const tmpProperties = properties.map((property: PropertyType) => {

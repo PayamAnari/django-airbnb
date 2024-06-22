@@ -12,7 +12,7 @@ const PropertyDetailPage = async ({params}: { params: {id: string}}) => {
 
 
   return (
-    <main className="max-w-[1500px] mx-auto px-6 pb-6">
+    <main className="max-w-[1500px] mx-auto px-6 pb-6 md:mt-20 lg:mt-24">
          <div className="w-full h-[64vh] mb-4 overflow-hidden rounded-xl relative">
                 <Image
                     fill

@@ -29,18 +29,21 @@ const Footer = () => {
               alt="facebook"
               width={30}
               height={30}
+              className="cursor-pointer"
             />
              <Image 
               src="/twitter.png"
               alt="twitter"
               width={30}
               height={30}
+              className="cursor-pointer"
             />
              <Image 
               src="/instagram.png"
               alt="instagram"
               width={30}
               height={30}
+              className="cursor-pointer"
             />
           </div>
         </div>

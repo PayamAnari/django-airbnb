@@ -38,7 +38,7 @@ const MyReservationsPage = async () => {
                                     href={`/properties/${reservation.property.id}`}
                                     className="mt-6 inline-block cursor-pointer py-4 px-6 bg-airbnb text-white rounded-xl"
                                 >
-                                    Go to property
+                                    Purchased
                                 </Link>
                             </div>
                         </div>

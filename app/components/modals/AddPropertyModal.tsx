@@ -91,6 +91,11 @@ const submitForm = async () => {
         }
     }
 }
+const handleCloseModal = () => {
+  addPropertyModal.close();
+  router.push('/');
+};
+  
 
   const content = (
     <>
@@ -287,7 +292,7 @@ const submitForm = async () => {
     <>
        <Modal 
         isOpen={addPropertyModal.isOpen}
-        close={addPropertyModal.close}
+        close={handleCloseModal}
         label="Add Property"
         content={content}
        

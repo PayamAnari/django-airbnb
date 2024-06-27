@@ -114,6 +114,10 @@ const EditPropertyPage = ({ params }: { params: { id: string } }) => {
     }
 }
   
+const handleCloseModal = () => {
+  editPropertyModal.close();
+  router.push('/');
+};
   
 
   const content = (
@@ -257,7 +261,7 @@ const EditPropertyPage = ({ params }: { params: { id: string } }) => {
     <>
        <Modal 
         isOpen={editPropertyModal.isOpen}
-        close={editPropertyModal.close}
+        close={handleCloseModal}
         label="Edit Property"
         content={content}
        

@@ -38,7 +38,7 @@ const MyReservationsPage = async () => {
                                     href={`/payment/${reservation.id}`}
                                     className="mt-6 inline-block cursor-pointer py-4 px-6 bg-airbnb text-white rounded-xl"
                                 >
-                                    Purchase
+                                    Complete Purchase
                                 </Link>
                             </div>
                         </div>

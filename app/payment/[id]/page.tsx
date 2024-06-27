@@ -8,6 +8,12 @@ import CustomButton from "@/app/components/forms/CustomButton";
 import apiService from "@/app/services/apiService";
 import Image from "next/image";
 import { formatDateReserv } from "@/app/components/forms/FormatDate";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import PaymentForm from "../page";
+
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
+
 
 const PaymentService = ({ params }) => {
   const paymentModal = usePaymentModal();
@@ -23,7 +29,6 @@ const PaymentService = ({ params }) => {
         try {
           const data = await apiService.get(`/api/auth/${params.id}/reservation/`);
           setReservation(data);
-
           const serviceFee = (data.total_price / 100) * 5;
           setFee(serviceFee);
           setTotalPriceWithFee(data.total_price + serviceFee);
@@ -37,12 +42,17 @@ const PaymentService = ({ params }) => {
     fetchReservations();
   }, [params.id]);
 
+  const handleCloseModal = () => {
+    paymentModal.close();
+    router.push('/');
+  };
+
   const content = reservation ? (
     <div className="flex flex-col items-center justify-center">
       {currentStep === 1 ? (
         <div className="p-5 grid grid-cols-1 md:grid-cols-4 gap-4 shadow-md border border-gray-300 rounded-xl justify-center items-center">
           <div className="col-span-1">
-            <div className="relative overflow-hidden aspect-square rounded-xl">
+            <div className="relative overflow-hidden aspect-square mt-2 rounded-xl">
               <Image
                 fill
                 src={reservation.property.image_url}
@@ -52,7 +62,7 @@ const PaymentService = ({ params }) => {
             </div>
             <h2 className="mb-4 mt-2 text-xl">{reservation.property.title}</h2>
           </div>
-          <div className="col-span-1 md:col-span-3">
+          <div className="col-span-1 ml-6 md:col-span-3">
             <p><strong>Number of nights:</strong> {reservation.number_of_nights}</p>
             <p><strong>Check in date:</strong> {formatDateReserv(reservation.start_date)}</p>
             <p><strong>Check out date:</strong> {formatDateReserv(reservation.end_date)}</p>
@@ -69,35 +79,31 @@ const PaymentService = ({ params }) => {
             />
           </div>
         </div>
-      ) : currentStep === 2 ? (
-        <div className="w-[600px] p-5 shadow-md border border-gray-300 rounded-xl flex flex-col items-center justify-center">
-          <div className="col-span-1 mt-2 text-center">
-            <h2 className="text-xl mb-2">Payment</h2>
-            <p className="text-sm">You are about to pay <strong>${totalPriceWithFee.toFixed(2)}</strong> for this reservation.</p>
-            <p className="text-sm">You will be charged once you click the button below.</p>
+       ) : currentStep === 2 ? (
+        <Elements stripe={stripePromise}>
+          <PaymentForm
+            reservation={reservation}
+            totalPriceWithFee={totalPriceWithFee}
+            onPrevious={() => setCurrentStep(1)}
+            onPaymentSuccess={() => setCurrentStep(3)}
+          />
+        </Elements>
+         ) : currentStep === 3 ? (
+          <div className="text-center p-6 border">
+            <h2 className="text-2xl font-bold mb-4"> Payment Successful</h2>
+            <p>Your payment was successful and your reservation for <strong>{reservation.property.title}</strong> is complete.</p>
+            <CustomButton label="Go to Reservations" onClick={() => router.push('/myreservations')} className="mt-4" />
           </div>
-          <CustomButton
-         label="Previous"
-         className="mb-2 mt-4 bg-gray-400 hover:bg-gray-500"
-         onClick={() => setCurrentStep(1)}
-       />
-            <CustomButton 
-              label="Purchase"
-              className=""
-              onClick={() => {
-                router.push(`/payment/${reservation.id}`);
-              }}
-            />
-        </div>
       ) : null}
     </div>
+    
   ) : null;
 
   return (
     <>
       <Modal 
         isOpen={paymentModal.isOpen}
-        close={paymentModal.close}
+        close={handleCloseModal}
         label="Payment"
         content={content}
       />

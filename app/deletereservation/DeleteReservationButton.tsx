@@ -39,7 +39,7 @@ const DeleteReservationButton: React.FC<DeleteReservationButtonProps> = ({
     className="cursor-pointer">
       <CustomButton 
         label="Delete reservation"
-        className="mt-2 inline-block bg-gray-500 hover:bg-gray-700"
+        className="mt-2 w-[197px] bg-gray-500 hover:bg-gray-700"
         onClick={handleDeleteClick}
       />
     </div>

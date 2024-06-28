@@ -17,12 +17,14 @@ const MyReservationsPage = async () => {
                         <div className="p-5 grid grid-cols-1 md:grid-cols-4 gap-4 shadow-md border border-gray-300 rounded-xl">
                             <div className="col-span-1">
                                 <div className="relative overflow-hidden aspect-square rounded-xl">
+                                    <Link href={`/properties/${reservation.property.id}`}>
                                     <Image
                                         fill
                                         src={reservation.property.image_url}
                                         className="hover:scale-110 object-cover transition h-full w-full"
                                         alt="Beach house"
                                     />
+                                    </Link>
                                 </div>
                             </div>
 

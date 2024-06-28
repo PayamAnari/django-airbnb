@@ -7,6 +7,7 @@ import useLoginModal from "@/app/hooks/useLoginModal";
 import { differenceInDays, eachDayOfInterval, format } from "date-fns";
 import DatePicker from "../forms/calendar";
 import { toast} from 'react-toastify';
+import { useRouter } from "next/navigation";
 
 
 const initialDateRange = {
@@ -31,6 +32,7 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
   userId
 }) => {
   const loginModal = useLoginModal();
+  const router = useRouter();
 
   const [fee, setFee] = useState<number>(0);
   const [nights, setNights] = useState<number>(1);
@@ -58,6 +60,7 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
             position: "top-center",
             autoClose: 2000,
           });
+          router.push("/myreservations")
         } else {
           toast.error("Booking failed. Please try again.", {
             position: "top-center",

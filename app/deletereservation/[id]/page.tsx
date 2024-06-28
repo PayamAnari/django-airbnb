@@ -8,7 +8,7 @@ const deleteReservation = async ( id: string ) => {
 
 
   try {
-    const response = await apiService.deleteProperty(`/api/properties/${id}reservation//delete`);
+    const response = await apiService.deleteProperty(`/api/properties/${id}/reservation/delete`);
     if (response.success) {
       toast.success("Reservation deleted successfully!", {
         position: "top-center",

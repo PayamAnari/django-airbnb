@@ -2,6 +2,7 @@ import Image from "next/image";
 import apiService from "../services/apiService";
 import Link from "next/link";
 import { formatDateReserv } from "../components/forms/FormatDate";
+import DeleteReservationButton from "../deletereservation/DeleteReservationButton";
 
 const MyReservationsPage = async () => {
     const reservations = await apiService.get('/api/auth/myreservations/')
@@ -40,6 +41,7 @@ const MyReservationsPage = async () => {
                                 >
                                     Complete Purchase
                                 </Link>
+                                <DeleteReservationButton reservation={reservation} />
                             </div>
                         </div>
                     )

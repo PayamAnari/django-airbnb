@@ -88,8 +88,7 @@ const PaymentForm = ({ reservation, totalPriceWithFee, onPrevious, onPaymentSucc
         console.error("Payment confirmation failed", confirmResult.error);
       } else {
         console.log("Payment successful", confirmResult.paymentIntent);
-        // const deleteResponse = await apiService.delete(`/api/properties/${reservation.id}/reservation/delete`);
-        // console.log('Delete reservation response:', deleteResponse);
+        
 
         const confirmPaymentResponse = await apiService.postStripe(`/api/properties/${reservation.id}/confirm_payment/`, {
           payment_intent_id: confirmResult.paymentIntent.id,

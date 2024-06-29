@@ -75,6 +75,7 @@ const submitForm = async () => {
           });
           router.push("/?added=true");
           addPropertyModal.close();
+          window.location.reload();
         } else {
           console.log("Error");
 

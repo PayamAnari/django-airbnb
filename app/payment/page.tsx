@@ -3,13 +3,11 @@
 import { useStripe, useElements, CardElement, IdealBankElement } from "@stripe/react-stripe-js";
 import CustomButton from "@/app/components/forms/CustomButton";
 import apiService from "@/app/services/apiService";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const PaymentForm = ({ reservation, totalPriceWithFee, onPrevious, onPaymentSuccess }) => {
   const stripe = useStripe();
   const elements = useElements();
-  const router = useRouter();
   const [isProcessing, setIsProcessing] = useState(false);
 
   const handleSubmit = async (e, paymentMethodType) => {
@@ -90,8 +88,17 @@ const PaymentForm = ({ reservation, totalPriceWithFee, onPrevious, onPaymentSucc
         console.error("Payment confirmation failed", confirmResult.error);
       } else {
         console.log("Payment successful", confirmResult.paymentIntent);
+        // const deleteResponse = await apiService.delete(`/api/properties/${reservation.id}/reservation/delete`);
+        // console.log('Delete reservation response:', deleteResponse);
+
+        const confirmPaymentResponse = await apiService.postStripe(`/api/properties/${reservation.id}/confirm_payment/`, {
+          payment_intent_id: confirmResult.paymentIntent.id,
+      });
+         console.log('Confirm payment response:', confirmPaymentResponse);
+
+
         onPaymentSuccess();
-       
+        
       }
     } catch (error) {
       console.error("Failed to complete payment", error);
@@ -103,7 +110,7 @@ const PaymentForm = ({ reservation, totalPriceWithFee, onPrevious, onPaymentSucc
 
   return (
     
-    <form className="w-[600px] p-5 shadow-md border border-gray-300 rounded-xl flex flex-col items-center justify-center md:mt-20 lg:mt-24">
+    <form className="w-[600px] p-5 shadow-md border border-gray-300 rounded-xl flex flex-col items-center justify-center">
       <div className="col-span-1 mt-2 text-center">
         <h2 className="text-xl mb-2">Payment</h2>
         <p className="text-sm">

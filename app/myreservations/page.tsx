@@ -36,13 +36,19 @@ const MyReservationsPage = async () => {
 
                                 <p className="mb-2"><strong>Number of nights:</strong> {reservation.number_of_nights}</p>
                                 <p className="mb-2"><strong>Total price:</strong> ${reservation.total_price}</p>
-
-                                <Link 
-                                    href={`/payment/${reservation.id}`}
-                                    className="mt-6 inline-block cursor-pointer py-4 px-6 bg-airbnb text-white rounded-xl"
-                                >
-                                    Complete Purchase
-                                </Link>
+                                <p className="mb-2"><strong>Status:</strong> {reservation.status}</p>
+                                {reservation.status === 'pending' ? (
+                                    <Link 
+                                        href={`/payment/${reservation.id}`}
+                                        className="mt-6 inline-block cursor-pointer py-4 px-6 bg-airbnb text-white rounded-xl"
+                                    >
+                                        Complete Purchase
+                                    </Link>
+                                ) : (
+                                    <p className="mt-6 w-[197px] inline-block py-4 px-6 bg-green-500 text-white rounded-xl">
+                                        Already Purchased
+                                    </p>
+                                )}
                                 <DeleteReservationButton reservation={reservation} />
                             </div>
                         </div>

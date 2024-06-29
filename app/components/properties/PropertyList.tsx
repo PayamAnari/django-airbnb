@@ -15,6 +15,7 @@ export type PropertyType = {
      price_per_night: number;
      is_favorite: boolean;
      landlord_id: string;
+     country: string;
      landlord: {
         name: string;
      };

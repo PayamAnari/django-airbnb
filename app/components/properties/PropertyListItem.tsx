@@ -45,7 +45,7 @@ const PropertyListItem: React.FC<PropertyProps> = ({
               )}
         </div>
         <div className="mt-2">
-           <p className="text-lg font-bold">{property.title}</p>
+           <p className="text-lg font-bold">{property.title}, {property.country}</p>
         </div>
         <div className="mt-2">
            <p>Hosted by {property.landlord.name} </p>

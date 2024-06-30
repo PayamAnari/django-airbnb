@@ -57,7 +57,7 @@ const Carousel: React.FC<CarouselProps> = ({ data, setCategory, dataCategory }) 
           {data.map((item, index) => (
             <div
               key={index}
-              className={`flex flex-col items-center w-16 mx-8 cursor-pointer border-b-2 ${dataCategory === item.title ? 'border-black' : 'border-white'} opacity-60 hover:border-gray-200 hover:opacity-100`}
+              className={`flex flex-col items-center w-16 mx-8 cursor-pointer border-b-2 ${dataCategory === item.title ? ' border-black opacity-100' : 'border-white opacity-60'}  hover:border-gray-700 hover:opacity-100`}
               onClick={() => setCategory(item.title)}
             >
               <Image
@@ -67,7 +67,7 @@ const Carousel: React.FC<CarouselProps> = ({ data, setCategory, dataCategory }) 
                 height={30}
                 className="filter grayscale"
               />
-              <span className="text-xs text-gray-500 mt-2 whitespace-nowrap">{item.title}</span>
+              <span className={`text-xs mt-2 whitespace-nowrap ${dataCategory === item.title ? ' text-black opacity-100' : 'text-gray-500 opacity-100'}`} >{item.title}</span>
             </div>
           ))}
         </div>

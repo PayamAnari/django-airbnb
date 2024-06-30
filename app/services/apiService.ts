@@ -39,7 +39,7 @@ const apiService = {
 
     return new Promise((resolve, reject) => {
       fetch(`${process.env.NEXT_PUBLIC_API_HOST}${url}`, {
-        method: 'PUT',
+        method: 'PATCH',
         body: data,
         headers: headers,
       })
@@ -173,8 +173,6 @@ const apiService = {
         });
     });
   },
-
- 
 
   postStripe: async function (url: string, data: any = {}): Promise<any> {
     console.log('post', url, data);

@@ -67,14 +67,13 @@ const EditPropertyPage = ({ params }: { params: { id: string } }) => {
   };
 
   const submitForm = async () => {
-    
     if (
       dataCategory &&
       dataTitle &&
       dataDescription &&
       dataPrice &&
-      dataCountry &&
-      dataImage 
+      dataCountry 
+      
     ) {
         const formData = new FormData();
         formData.append("category", dataCategory);
@@ -86,7 +85,10 @@ const EditPropertyPage = ({ params }: { params: { id: string } }) => {
         formData.append("guests", dataGuests);
         formData.append("country", dataCountry.label);
         formData.append("country_code", dataCountry.value);
-        formData.append("image", dataImage);
+
+        if (dataImage) {
+          formData.append("image", dataImage);
+        }
 
       
 

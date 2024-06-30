@@ -16,6 +16,7 @@ const DeleteReservationButton: React.FC<DeleteReservationButtonProps> = ({
   const userId = getUserId();
   const loginModal = useLoginModal();
   const router = useRouter();
+
   const handleDeleteClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
 
@@ -39,7 +40,7 @@ const DeleteReservationButton: React.FC<DeleteReservationButtonProps> = ({
     className="cursor-pointer">
       <CustomButton 
         label="Delete reservation"
-        className="mt-2 w-[197px] bg-gray-500 hover:bg-gray-700"
+        className="mt-2 w-[196px] bg-gray-500 hover:bg-gray-700"
         onClick={handleDeleteClick}
       />
     </div>

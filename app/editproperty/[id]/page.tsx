@@ -32,6 +32,7 @@ const EditPropertyPage = ({ params }: { params: { id: string } }) => {
     const fetchProperty = async () => {
       try {
         const property = await apiService.get(`/api/properties/${params.id}/`);
+      
         setDataCategory(property.category);
         setDataTitle(property.title);
         setDataDescription(property.description);

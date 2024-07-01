@@ -8,7 +8,7 @@ interface PaginationProps {
 
 const Pagination: React.FC<PaginationProps> = ({ page, totalPages, onPageChange }) => {
   return (
-    <div className="flex justify-center items-center mt-12">
+    <div className="flex justify-center items-center mt-12 mb-6 md:-mb-10 lg:-mb-12">
       <div className="flex items-center ml-0 lg:ml-12 space-x-6">
         <button 
           className={`px-4 py-2 bg-airbnb hover:bg-airbnb-dark text-white rounded ${page <= 1 ? 'opacity-50 cursor-not-allowed' : ''}`} 

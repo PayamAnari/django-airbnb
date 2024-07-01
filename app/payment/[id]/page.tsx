@@ -7,7 +7,7 @@ import Modal from "@/app/components/modals/Modal";
 import CustomButton from "@/app/components/forms/CustomButton";
 import apiService from "@/app/services/apiService";
 import Image from "next/image";
-import { formatDateReserv } from "@/app/components/forms/FormatDate";
+import { formatDateReserve } from "@/app/components/forms/FormatDate";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import PaymentForm from "../page";
@@ -64,8 +64,8 @@ const PaymentService = ({ params }) => {
           </div>
           <div className="col-span-1 ml-6 md:col-span-3">
             <p><strong>Number of nights:</strong> {reservation.number_of_nights}</p>
-            <p><strong>Check in date:</strong> {formatDateReserv(reservation.start_date)}</p>
-            <p><strong>Check out date:</strong> {formatDateReserv(reservation.end_date)}</p>
+            <p><strong>Check in date:</strong> {formatDateReserve(reservation.start_date)}</p>
+            <p><strong>Check out date:</strong> {formatDateReserve(reservation.end_date)}</p>
             <p><strong>Price per night:</strong> ${reservation.price_per_night} * {reservation.number_of_nights}</p>
             <p><strong>Total price:</strong> ${reservation.total_price}</p>
             <p><strong>Airbnb service fee:</strong> ${fee.toFixed(2)}</p>

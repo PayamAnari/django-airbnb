@@ -1,7 +1,7 @@
 import Image from "next/image";
 import apiService from "../services/apiService";
 import Link from "next/link";
-import { formatDateReserv } from "../components/forms/FormatDate";
+import { formatDateReserve } from "../components/forms/FormatDate";
 import DeleteReservationButton from "../deletereservation/DeleteReservationButton";
 
 const MyReservationsPage = async () => {
@@ -29,10 +29,10 @@ const MyReservationsPage = async () => {
                             </div>
 
                             <div className="col-span-1 md:col-span-3">
-                                <h2 className="mb-4 text-xl">{reservation.property.title}</h2>
+                                <h2 className="mb-4 text-xl">{reservation.property.title}, {reservation.property.country}</h2>
 
-                                <p className="mb-2"><strong>Check in date:</strong> {formatDateReserv(reservation.start_date)}</p>
-                                <p className="mb-2"><strong>Check out date:</strong> {formatDateReserv(reservation.end_date)}</p>
+                                <p className="mb-2"><strong>Check in date:</strong> {formatDateReserve(reservation.start_date)}</p>
+                                <p className="mb-2"><strong>Check out date:</strong> {formatDateReserve(reservation.end_date)}</p>
 
                                 <p className="mb-2"><strong>Number of nights:</strong> {reservation.number_of_nights}</p>
                                 <p className="mb-2"><strong>Total price:</strong> ${reservation.total_price}</p>

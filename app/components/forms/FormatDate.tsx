@@ -25,7 +25,7 @@ export const formatDateTime = (dateString: string): string => {
   return format(date, 'MMMM d, yyyy, hh:mm aa');
 };
 
-export const formatDateReserv = (dateString: string): string => {
+export const formatDateReserve = (dateString: string): string => {
   const date = new Date(dateString);
   return format(date, 'MMMM d, yyyy');
 };

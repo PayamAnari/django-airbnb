@@ -6,14 +6,14 @@ import apiService from "@/app/services/apiService";
 import useLoginModal from "@/app/hooks/useLoginModal";
 import { differenceInDays, eachDayOfInterval, format } from "date-fns";
 import DatePicker from "../forms/calendar";
-import { toast} from 'react-toastify';
+import { toast } from 'react-toastify';
 import { useRouter } from "next/navigation";
 
 
 const initialDateRange = {
    startDate: new Date(),
    endDate: new Date(),
-    key: 'selection'
+   key: 'selection'
 }
 
 export type Property = {
@@ -40,6 +40,7 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
   const [dateRange, setDateRange] = useState<Range>(initialDateRange);
   const [bookedDates, setBookedDates] = useState<Date[]>([]);
   const [guests, setGuests] = useState<string>("1");
+  const [tax, setTax] = useState<number>(0);
 
   const guestsRange = Array.from({length: property.guests}, (_, index) => index + 1);
 
@@ -67,12 +68,10 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
           });
         }
       }
-
     } else {
       loginModal.open();
     }
   }
-  
   
   const _setDateRange = (selection: any) => {
     const newStartDate = new Date(selection.startDate);
@@ -106,46 +105,50 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
     setBookedDates(dates);
   }
 
-  useEffect (() => {
+  useEffect(() => {
     getReservations();
 
     if (dateRange.startDate && dateRange.endDate) {
       const dayCount = differenceInDays(dateRange.endDate, dateRange.startDate);
       
       if (dayCount && property.price_per_night) {
-        const _fee = ((dayCount * property.price_per_night) / 100) * 5;
+        const bookingCost = dayCount * property.price_per_night;
+        const _fee = (bookingCost / 100) * 5;
+        const _tax = bookingCost * 0.10;
 
-        setFee(fee);
-        setTotalPrice((dayCount * property.price_per_night) + _fee);
+        setFee(_fee);
+        setTax(_tax);
+        setTotalPrice(bookingCost + _fee + _tax);
         setNights(dayCount);
       } else {
         const _fee = (property.price_per_night / 100) * 5;
+        const _tax = property.price_per_night * 0.10;
         setFee(_fee);
-        setTotalPrice(property.price_per_night + _fee);
+        setTax(_tax);
+        setTotalPrice(property.price_per_night + _fee + _tax);
         setNights(1)
       }
     }
 
-  },[dateRange])
-
+  }, [dateRange])
 
   return (
     <aside className="mt-6 p-6 col-span-2 rounded-xl border border-gray-300 shadow-xl">
       <h2 className="mb-5 text-2xl">${property.price_per_night} per night</h2>
       
       <div className="relative mb-6 overflow-hidden">
-      <DatePicker
-      value={dateRange}
-      bookedDates={bookedDates}
-      onChange={(value) => _setDateRange(value.selection)}
-      />
+        <DatePicker
+          value={dateRange}
+          bookedDates={bookedDates}
+          onChange={(value) => _setDateRange(value.selection)}
+        />
       </div>
       <div className="mb-6 p-3 border border-gray-400 rounded-xl">
         <label className="mb-2 block font-bold text-xs">Guests</label>
          <select 
-         value={guests}
-         onChange={(e) => setGuests(e.target.value)}
-         className="w-full -ml-1 text-xm">
+           value={guests}
+           onChange={(e) => setGuests(e.target.value)}
+           className="w-full -ml-1 text-xm">
             {guestsRange.map((guest) => (
               <option key={guest} value={guest}>{guest}</option>
             ))}
@@ -153,8 +156,8 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
       </div>
 
       <div 
-      onClick={performBooking}
-      className="w-full mb-6 py-6 cursor-pointer text-center text-white bg-airbnb hover:bg-airbnb-dark rounded-xl ">
+        onClick={performBooking}
+        className="w-full mb-6 py-6 cursor-pointer text-center text-white bg-airbnb hover:bg-airbnb-dark rounded-xl">
         Reserve
       </div>
 
@@ -164,19 +167,22 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
       </div>
       <div className="mb-4 flex justify-between align-center">
          <p>Airbnb service fee</p>
-         <p>${fee}</p>
+         <p>${fee.toFixed(2)}</p>
+      </div>
+      <div className="mb-4 flex justify-between align-center">
+         <p>Taxes</p>
+         <p>${tax.toFixed(2)}</p>
       </div>
 
       <hr />
 
       <div className="mt-4 flex justify-between align-center font-bold">
         <p>Total</p>
-        <p>${totalPrice}</p>
+        <p>${totalPrice.toFixed(2)}</p>
       </div>
 
     </aside>
   );
 }
-
 
 export default ReservationSidebar;

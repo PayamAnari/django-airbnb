@@ -14,12 +14,12 @@ import PaymentForm from "../page";
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
 
-
 const PaymentService = ({ params }) => {
   const paymentModal = usePaymentModal();
   const router = useRouter();
   const [reservation, setReservation] = useState(null);
   const [fee, setFee] = useState(0);
+  const [tax, setTax] = useState(0);
   const [totalPriceWithFee, setTotalPriceWithFee] = useState(0);
   const [currentStep, setCurrentStep] = useState(1);
 
@@ -29,9 +29,15 @@ const PaymentService = ({ params }) => {
         try {
           const data = await apiService.get(`/api/auth/${params.id}/reservation/`);
           setReservation(data);
-          const serviceFee = (data.total_price / 100) * 5;
+
+          
+          const bookingCost = data.total_price / 1.15;
+          const serviceFee = (bookingCost / 100) * 5;
+          const taxAmount = (bookingCost / 100) * 10;
+
           setFee(serviceFee);
-          setTotalPriceWithFee(data.total_price + serviceFee);
+          setTax(taxAmount);
+          setTotalPriceWithFee(data.total_price);
 
           paymentModal.open();
         } catch (err) {
@@ -69,7 +75,8 @@ const PaymentService = ({ params }) => {
             <p><strong>Price per night:</strong> ${reservation.price_per_night} * {reservation.number_of_nights}</p>
             <p><strong>Total price:</strong> ${reservation.total_price}</p>
             <p><strong>Airbnb service fee:</strong> ${fee.toFixed(2)}</p>
-            <p><strong>Total price with fee:</strong> <strong className="text-md">${totalPriceWithFee.toFixed(2)}</strong></p>
+            <p><strong>Taxes:</strong> ${tax.toFixed(2)}</p>
+            <p><strong>Total price with fee and tax:</strong> <strong className="text-md">${totalPriceWithFee.toFixed(2)}</strong></p>
           </div>
           <hr />
           <div className="col-span-1 md:col-span-3 flex justify-center mt-4">
@@ -79,7 +86,7 @@ const PaymentService = ({ params }) => {
             />
           </div>
         </div>
-       ) : currentStep === 2 ? (
+      ) : currentStep === 2 ? (
         <Elements stripe={stripePromise}>
           <PaymentForm
             reservation={reservation}
@@ -88,15 +95,14 @@ const PaymentService = ({ params }) => {
             onPaymentSuccess={() => setCurrentStep(3)}
           />
         </Elements>
-         ) : currentStep === 3 ? (
-          <div className="text-center p-6 border">
-            <h2 className="text-2xl font-bold mb-4"> Payment Successful</h2>
-            <p>Your payment was successful and your reservation for <strong>{reservation.property.title}</strong> is complete.</p>
-            <CustomButton label="Go to Reservations" onClick={() => router.push('/myreservations')} className="mt-4" />
-          </div>
+      ) : currentStep === 3 ? (
+        <div className="text-center p-6 border">
+          <h2 className="text-2xl font-bold mb-4"> Payment Successful</h2>
+          <p>Your payment was successful and your reservation for <strong>{reservation.property.title}</strong> is complete.</p>
+          <CustomButton label="Go to Reservations" onClick={() => router.push('/myreservations')} className="mt-4" />
+        </div>
       ) : null}
     </div>
-    
   ) : null;
 
   return (

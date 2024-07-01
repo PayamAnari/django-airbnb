@@ -40,9 +40,9 @@ const MyReservationsPage = async () => {
                                 {reservation.status === 'pending' ? (
                                     <Link 
                                         href={`/payment/${reservation.id}`}
-                                        className="mt-6 inline-block cursor-pointer py-4 px-6 bg-airbnb text-white rounded-xl"
+                                        className="mt-6 w-[197px] inline-block cursor-pointer py-4 px-6 bg-airbnb text-white rounded-xl"
                                     >
-                                        Complete Purchase
+                                        Confirm and pay
                                     </Link>
                                 ) : (
                                     <p className="mt-6 w-[197px] inline-block py-4 px-6 bg-green-500 text-white rounded-xl">

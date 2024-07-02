@@ -3,6 +3,7 @@ import Link from "next/link";
 import ReservationSidebar from "@/app/components/properties/ReservationSidebar";
 import apiService from "@/app/services/apiService";
 import { getUserId } from "@/app/lib/actions";
+import ReviewPage from "@/app/review/[id]/page";
 
 
 const PropertyDetailPage = async ({params}: { params: {id: string}}) => {
@@ -60,6 +61,8 @@ const PropertyDetailPage = async ({params}: { params: {id: string}}) => {
                 userId={userId}
               />
             </div>
+
+            <ReviewPage propertyId={params.id} />
     </main>
   )
 }

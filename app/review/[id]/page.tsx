@@ -55,7 +55,7 @@ const ReviewPage: React.FC<ReviewsPageProps> = ({
   }, [propertyId]);
 
 return (
-  <div className="max-w-[1100px] mx-auto px-4 pb-4 mt-8">
+  <div className="max-w-3xl mx-auto px-4 pb-4 mt-8">
     <div className="flex flex-col border space-x-4 px-4 py-6 mt-2 gap-2 rounded-xl shadow-2xl">
       <ReviewForm propertyId={propertyId} addReview={(review) => setReviews([...reviews, review])} />
       </div>
@@ -63,14 +63,13 @@ return (
       {reviews.length === 0 ? (
           <p>No reviews yet.</p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="flex flex-col space-x-4 px-4 py-6 mt-2 gap-2 ">
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
           
               {reviews.map((review) => {
                 if (!review) return null; 
                    return (
                   <div key={review.id}
-                   className="bg-white p-4 mb-4 rounded shadow-xl"
+                   className="bg-white p-4 mb-4 rounded shadow-2xl review-item"
                   >
                     <h2 className="text-lg font-bold">{review?.property?.title}</h2>
                     <p className="text-gray-600">{review?.rating}/5 . {formatDate(review.created_at)}</p>
@@ -93,7 +92,6 @@ return (
               )
             })}
           
-        </div>
       
         </div>
       )}

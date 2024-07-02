@@ -200,6 +200,29 @@ const apiService = {
     });
   },
 
+  postReview: async function (url: string, formData: FormData): Promise<any> {
+    console.log('post', url, formData);
+
+    const token = await getAccessToken();
+
+    return fetch(`${process.env.NEXT_PUBLIC_API_HOST}${url}`, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        console.log('Response', json);
+        return json;
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        throw error;
+      });
+  },
+
   uploadProfilePhoto: async function (
     url: string,
     data: FormData,

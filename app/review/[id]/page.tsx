@@ -101,19 +101,25 @@ const ReviewPage: React.FC<ReviewsPageProps> = ({ propertyId }) => {
         <ReviewForm propertyId={propertyId} addReview={addReviewHandler} />
       </div>
       <h1 className="mt-10 mb-6 text-xl font-semibold">Reviews</h1>
-      <div className="flex gap-2">
+     
+      {reviews.length === 0 ? (
+        
+        <p>No reviews yet.</p>
+      ) : (
+        <>
+        <div className="flex gap-2">
         <Image
           src="/star.png"
           width={22}
           height={20}
           alt="Star icon"
         />
+        
         {averageRating !== null && (
           <p className="text-lg font-semibold">{averageRating.toFixed(2)} · {totalReviews} {totalReviews === 1 ? "Review" : "Reviews"}</p>
         )}
       </div>
-      {reviews.length === 0 ? (
-        <p>No reviews yet.</p>
+      
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-1 mt-3 gap-4">
           {reviews.map((review) => (
@@ -148,6 +154,7 @@ const ReviewPage: React.FC<ReviewsPageProps> = ({ propertyId }) => {
             </div>
           ))}
         </div>
+        </>
       )}
     </div>
   );

@@ -2,12 +2,11 @@
 
 
 import apiService from "@/app/services/apiService";
-import { GetServerSideProps } from "next";
-import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { formatDate } from "@/app/components/forms/FormatDate";
 import ReviewForm from "@/app/createreview/[id]/page";
+import { toast } from 'react-toastify';
 
 interface User {
   id: string;
@@ -37,14 +36,14 @@ interface ReviewsPageProps {
 const ReviewPage: React.FC<ReviewsPageProps> = ({
   propertyId,
 }) => {
-  const router = useRouter();
+  
   const [reviews, setReviews] = useState<Review[]>([]);
 
   useEffect(() => {
     const fetchReviews = async () => {
       try {
         const reviews = await apiService.get(`/api/reviews/${propertyId}/reviews/`);
-        
+        console.log("Review", reviews)
         setReviews(reviews);
       } catch (error) {
         console.error('Error fetching reviews:', error);
@@ -54,12 +53,27 @@ const ReviewPage: React.FC<ReviewsPageProps> = ({
     fetchReviews();
   }, [propertyId]);
 
+  const deleteReview = async (reviewId: string) => {
+    try {
+      await apiService.delete(`/api/reviews/${reviewId}/delete/`);
+      setReviews(reviews.filter((review) => review.id !== reviewId));
+      toast.success("Review deleted successfully!", {
+        position: "top-center",
+        autoClose: 2000,
+      });
+    } catch (error) {
+      console.error('Error deleting review:', error);
+      toast.error("Failed to delete review. Please try again.");
+    }
+  };
+         
+
 return (
   <div className="max-w-3xl mx-auto px-4 pb-4 mt-8">
     <div className="flex flex-col border space-x-4 px-4 py-6 mt-2 gap-2 rounded-xl shadow-2xl">
       <ReviewForm propertyId={propertyId} addReview={(review) => setReviews([...reviews, review])} />
       </div>
-    <h1 className="mt-8 text-xl font-semibold">Reviews</h1>
+    <h1 className="mt-10 mb-6 text-xl font-semibold">Reviews</h1>
       {reviews.length === 0 ? (
           <p>No reviews yet.</p>
       ) : (
@@ -69,7 +83,7 @@ return (
                 if (!review) return null; 
                    return (
                   <div key={review.id}
-                   className="bg-white p-4 mb-4 rounded shadow-2xl review-item"
+                   className="bg-white p-4 mb-4 rounded-xl shadow-2xl review-item"
                   >
                     <h2 className="text-lg font-bold">{review?.property?.title}</h2>
                     <p className="text-gray-600">{review?.rating}/5 . {formatDate(review.created_at)}</p>

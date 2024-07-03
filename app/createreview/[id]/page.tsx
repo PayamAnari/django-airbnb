@@ -25,7 +25,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ propertyId, addReview }) => {
       formData.append("comment", comment);
 
       const response = await apiService.postReview(`/api/reviews/${propertyId}/create/`, formData);
-      console.log("Res", response)
+      
       if (response.success) {
         toast.success("Review added successfully!", {
           position: "top-center",
@@ -52,7 +52,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ propertyId, addReview }) => {
         <select
           value={rating}
           onChange={(e) => setRating(Number(e.target.value))}
-          className="mt-1 block w-full border border-gray-300 rounded-lg"
+          className="mt-1 pl-2 block w-full border border-gray-300 rounded-lg"
         >
           <option value="" disabled>Choose a rating</option>
           {[1, 2, 3, 4, 5].map((num) => (
@@ -65,7 +65,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ propertyId, addReview }) => {
         <textarea
           value={comment}
           onChange={(e) => setComment(e.target.value)}
-          className="mt-1 block w-full border border-gray-300 rounded-lg"
+          className="mt-2 pl-2 block w-full border border-gray-300 rounded-lg"
           rows={3}
         />
       </label>

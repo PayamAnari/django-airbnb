@@ -6,6 +6,7 @@ import Image from "next/image";
 import { formatDate } from "@/app/components/forms/FormatDate";
 import ReviewForm from "@/app/createreview/[id]/page";
 import { toast } from 'react-toastify';
+import StarRating from "../StarRating";
 
 interface User {
   id: string;
@@ -104,7 +105,10 @@ const ReviewPage: React.FC<ReviewsPageProps> = ({ propertyId }) => {
                   className="top-3 right-3 absolute cursor-pointer"
                 />
                 <h2 className="text-lg font-bold">{review?.property?.title}</h2>
-                <p className="text-gray-600">{review?.rating} · {formatDate(review?.created_at)}</p>
+                <div className="flex gap-2 mt-2">
+                <StarRating rating={review.rating} />
+                <p className="text-gray-600"> · {formatDate(review?.created_at)}</p>
+                </div>
                 <p className="mt-2 text-gray-600">{review?.comment}</p>
                 <div className="py-6 flex items-center space-x-4 mt-8">
                   <Image

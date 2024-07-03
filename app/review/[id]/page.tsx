@@ -89,7 +89,7 @@ const ReviewPage: React.FC<ReviewsPageProps> = ({ propertyId }) => {
       )}
       </div>
       {reviews.length === 0 ? (
-        <p>No reviews yet.</p>
+        <p className="mt-2">No reviews yet.</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-1 mt-3 gap-4">
           {reviews.map((review) => {

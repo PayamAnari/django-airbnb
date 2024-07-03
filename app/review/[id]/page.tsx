@@ -84,7 +84,7 @@ const ReviewPage: React.FC<ReviewsPageProps> = ({ propertyId }) => {
           alt="Star icon"
           />
       {averageRating !== null && (
-        <p className="text-lg font-semibold">{averageRating.toFixed(2)} / 5 . {totalReviews} Reviews</p>
+        <p className="text-lg font-semibold">{averageRating.toFixed(2)}  . {totalReviews} Reviews</p>
       )}
       </div>
       {reviews.length === 0 ? (
@@ -103,20 +103,20 @@ const ReviewPage: React.FC<ReviewsPageProps> = ({ propertyId }) => {
                   alt="Close icon"
                   className="top-3 right-3 absolute cursor-pointer"
                 />
-                <h2 className="text-lg font-bold">{review.property.title}</h2>
-                <p className="text-gray-600">{review.rating}/5 · {formatDate(review.created_at)}</p>
-                <p className="mt-2 text-gray-600">{review.comment}</p>
+                <h2 className="text-lg font-bold">{review?.property?.title}</h2>
+                <p className="text-gray-600">{review?.rating} · {formatDate(review?.created_at)}</p>
+                <p className="mt-2 text-gray-600">{review?.comment}</p>
                 <div className="py-6 flex items-center space-x-4 mt-8">
                   <Image
-                    src={review.user.avatar_url}
+                    src={review?.user?.avatar_url}
                     width={50}
                     height={50}
                     className="rounded-full border border-gray-500"
-                    alt={review.user.name}
+                    alt={review?.user?.name}
                   />
                   <div className="flex flex-col">
-                    <p><strong>{review.user.name}</strong></p>
-                    <p>{formatDate(review.user.date_joined)} on Airbnb</p>
+                    <p><strong>{review?.user?.name}</strong></p>
+                    <p>{formatDate(review?.user?.date_joined)} on Airbnb</p>
                   </div>
                 </div>
               </div>

@@ -36,6 +36,7 @@ interface ReviewsPageProps {
 const ReviewPage: React.FC<ReviewsPageProps> = ({ propertyId }) => {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [averageRating, setAverageRating] = useState<number | null>(null);
+  const [totalReviews, setTotalReviews] = useState<number>(0);
 
   useEffect(() => {
     const fetchReviews = async () => {
@@ -43,6 +44,7 @@ const ReviewPage: React.FC<ReviewsPageProps> = ({ propertyId }) => {
         const response = await apiService.get(`/api/reviews/${propertyId}/reviews/`);
         setReviews(response.reviews);
         setAverageRating(response.average_rating);
+        setTotalReviews(response.reviews.length);
       } catch (error) {
         console.error('Error fetching reviews:', error);
       }
@@ -68,7 +70,10 @@ const ReviewPage: React.FC<ReviewsPageProps> = ({ propertyId }) => {
   return (
     <div className="max-w-3xl mx-auto px-4 pb-4 mt-8">
       <div className="flex flex-col border space-x-4 px-4 py-6 mt-2 gap-2 rounded-xl shadow-2xl">
-        <ReviewForm propertyId={propertyId} addReview={(review) => setReviews([...reviews, review])} />
+        <ReviewForm propertyId={propertyId} addReview={(review) => {
+          setReviews([...reviews, review]) ;
+          setTotalReviews(totalReviews + 1);
+         }}/>
       </div>
       <h1 className="mt-10 mb-6 text-xl font-semibold">Reviews</h1>
       <div className="flex gap-2">
@@ -79,7 +84,7 @@ const ReviewPage: React.FC<ReviewsPageProps> = ({ propertyId }) => {
           alt="Star icon"
           />
       {averageRating !== null && (
-        <p className="text-lg font-semibold">{averageRating.toFixed(2)} / 5 .</p>
+        <p className="text-lg font-semibold">{averageRating.toFixed(2)} / 5 . {totalReviews} Reviews</p>
       )}
       </div>
       {reviews.length === 0 ? (

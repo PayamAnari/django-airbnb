@@ -3,6 +3,7 @@ import { useState } from "react";
 import { toast } from 'react-toastify';
 import StarRating from "@/app/review/StarRating";
 
+
 interface ReviewFormProps {
   propertyId: string;
   addReview: (review: Review) => void;
@@ -20,6 +21,11 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ propertyId, addReview }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    if (!rating || !comment) {
+      toast.error("Please provide a rating and comment.");
+      return;
+    }
+
     try {
       const formData = new FormData();
       formData.append("rating", rating.toString());
@@ -34,6 +40,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ propertyId, addReview }) => {
         });
         addReview(response);
         resetForm();
+        window.location.reload();
       } else {
         toast.error("Failed to submit review. Please try again.");
         console.log("Error:", response.errors);
@@ -48,17 +55,17 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ propertyId, addReview }) => {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
       <h2 className="text-xl font-semibold">Write a Review</h2>
-      <label className="block">
+      <label className="block" htmlFor="rating">
         <span className="text-gray-700">Rating</span>
-        <StarRating rating={rating} onRatingChange={setRating} />
+        <StarRating  rating={rating} onRatingChange={setRating} />
        
       </label>
-      <label className="block">
+      <label className="block" htmlFor="comment">
         <span className="text-gray-700">Comment</span>
         <textarea
           value={comment}
           onChange={(e) => setComment(e.target.value)}
-          className="mt-2 pl-2 block w-full border border-gray-300 rounded-lg"
+          className="mt-2 pl-2 pt-2 block w-full border border-gray-300 rounded-lg"
           rows={3}
         />
       </label>

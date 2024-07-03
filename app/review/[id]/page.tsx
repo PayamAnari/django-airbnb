@@ -1,6 +1,5 @@
 "use client"
 
-
 import apiService from "@/app/services/apiService";
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -18,6 +17,7 @@ interface User {
 }
 
 interface Property {
+  id: string;
   title: string;
 }
 
@@ -59,10 +59,13 @@ const ReviewPage: React.FC<ReviewsPageProps> = ({ propertyId }) => {
   const deleteReview = async (reviewId: string) => {
     try {
       await apiService.delete(`/api/reviews/${reviewId}/delete/`);
-      setReviews(reviews.filter((review) => review.id !== reviewId));
-      const newAverageRating = calculateAverageRating(reviews.filter((review) => review.id !== reviewId));
-      setAverageRating(newAverageRating);
-      setTotalReviews(totalReviews - 1);
+      setReviews((prevReviews) => {
+        const updatedReviews = prevReviews.filter((review) => review.id !== reviewId);
+        const newAverageRating = calculateAverageRating(updatedReviews);
+        setAverageRating(newAverageRating);
+        return updatedReviews;
+      });
+      setTotalReviews((prevTotal) => prevTotal - 1);
       toast.success("Review deleted successfully!", {
         position: "top-center",
         autoClose: 2000,
@@ -74,17 +77,20 @@ const ReviewPage: React.FC<ReviewsPageProps> = ({ propertyId }) => {
   };
 
   const addReviewHandler = (review: Review) => {
-    setReviews([...reviews, review]);
-    setTotalReviews(totalReviews + 1);
-    const newAverageRating = calculateAverageRating([...reviews, review]);
-    setAverageRating(newAverageRating);
+    setReviews((prevReviews) => {
+      const updatedReviews = [...prevReviews, review];
+      const newAverageRating = calculateAverageRating(updatedReviews);
+      setAverageRating(newAverageRating);
+      return updatedReviews;
+    });
+    setTotalReviews((prevTotal) => prevTotal + 1);
   };
 
   function calculateAverageRating(reviews: Review[]): number {
     if (reviews.length === 0) {
       return 0;
     }
-  
+
     const totalRating = reviews.reduce((acc, curr) => acc + curr.rating, 0);
     return totalRating / reviews.length;
   }
@@ -111,36 +117,35 @@ const ReviewPage: React.FC<ReviewsPageProps> = ({ propertyId }) => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-1 mt-3 gap-4">
           {reviews.map((review) => (
-              <div key={review.id} className="bg-white relative p-4 mb-4 rounded-xl shadow-2xl review-item">
+            <div key={review.id} className="bg-white relative p-4 mb-4 rounded-xl shadow-2xl review-item">
+              <Image
+                onClick={() => deleteReview(review.id)}
+                src="/close.png"
+                width={33}
+                height={33}
+                alt="Close icon"
+                className="top-3 right-3 absolute cursor-pointer"
+              />
+              <h2 className="text-lg font-bold">{review.property.title}</h2>
+              <div className="flex gap-2 mt-2">
+                <StarRating rating={review.rating} />
+                <p className="text-gray-600"> · {formatDate(review.created_at)}</p>
+              </div>
+              <p className="mt-2 text-gray-600">{review.comment}</p>
+              <div className="py-6 flex items-center space-x-4 mt-8">
                 <Image
-                  onClick={() => deleteReview(review.id)}
-                  src="/close.png"
-                  width={33}
-                  height={33}
-                  alt="Close icon"
-                  className="top-3 right-3 absolute cursor-pointer"
+                  src={review.user.avatar_url}
+                  width={50}
+                  height={50}
+                  className="rounded-full border border-gray-500"
+                  alt="user"
                 />
-                <h2 className="text-lg font-bold">{review?.property?.title}</h2>
-                <div className="flex gap-2 mt-2">
-                  <StarRating rating={review?.rating} />
-                  <p className="text-gray-600"> · {formatDate(review?.created_at)}</p>
-                </div>
-                <p className="mt-2 text-gray-600">{review?.comment}</p>
-                <div className="py-6 flex items-center space-x-4 mt-8">
-                  <Image
-                    src={review?.user?.avatar_url}
-                    width={50}
-                    height={50}
-                    className="rounded-full border border-gray-500"
-                    alt="user"
-                  />
-                  <div className="flex flex-col">
-                    <p><strong>{review?.user?.name}</strong></p>
-                    <p>{formatDate(review?.user?.date_joined)} on Airbnb</p>
-                  </div>
+                <div className="flex flex-col">
+                  <p><strong>{review.user.name}</strong></p>
+                  <p>{formatDate(review.user.date_joined)} on Airbnb</p>
                 </div>
               </div>
-           
+            </div>
           ))}
         </div>
       )}

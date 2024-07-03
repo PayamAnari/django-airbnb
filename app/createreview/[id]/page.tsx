@@ -33,16 +33,20 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ propertyId, addReview }) => {
 
       const response = await apiService.postReview(`/api/reviews/${propertyId}/create/`, formData);
       
-      if (response.success) {
+      if (response) {
         toast.success("Review added successfully!", {
           position: "top-center",
           autoClose: 2000,
         });
         addReview(response);
         resetForm();
-        window.location.reload();
+        
       } else {
-        toast.error("Failed to submit review. Please try again.");
+        toast.error("Failed to submit review. Please try again.", {
+          position: "top-center",
+          autoClose: 2000,
+        
+        });
         console.log("Error:", response.errors);
         
       }

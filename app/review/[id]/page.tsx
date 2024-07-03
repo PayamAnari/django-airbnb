@@ -71,13 +71,21 @@ const ReviewPage: React.FC<ReviewsPageProps> = ({ propertyId }) => {
         <ReviewForm propertyId={propertyId} addReview={(review) => setReviews([...reviews, review])} />
       </div>
       <h1 className="mt-10 mb-6 text-xl font-semibold">Reviews</h1>
+      <div className="flex gap-2">
+        <Image
+          src="/star.png"
+          width={22}
+          height={20}
+          alt="Star icon"
+          />
       {averageRating !== null && (
-        <p className="text-lg font-semibold">Average Rating: {averageRating.toFixed(2)} / 5</p>
+        <p className="text-lg font-semibold">{averageRating.toFixed(2)} / 5 .</p>
       )}
+      </div>
       {reviews.length === 0 ? (
         <p>No reviews yet.</p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-1 mt-3 gap-4">
           {reviews.map((review) => {
             if (!review) return null;
             return (

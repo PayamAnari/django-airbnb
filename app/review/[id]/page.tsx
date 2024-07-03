@@ -43,7 +43,6 @@ const ReviewPage: React.FC<ReviewsPageProps> = ({
     const fetchReviews = async () => {
       try {
         const reviews = await apiService.get(`/api/reviews/${propertyId}/reviews/`);
-        console.log("Review", reviews)
         setReviews(reviews);
       } catch (error) {
         console.error('Error fetching reviews:', error);
@@ -83,11 +82,20 @@ return (
                 if (!review) return null; 
                    return (
                   <div key={review.id}
-                   className="bg-white p-4 mb-4 rounded-xl shadow-2xl review-item"
+                   className="bg-white relative p-4 mb-4 rounded-xl shadow-2xl review-item"
                   >
+                  <Image
+                  onClick={() => deleteReview(review.id)}
+                  src="/close.png"
+                  width={33}
+                  height={33}
+                  alt="Close icon"
+                  className="top-3 right-3 absolute "
+                  />
                     <h2 className="text-lg font-bold">{review?.property?.title}</h2>
                     <p className="text-gray-600">{review?.rating}/5 . {formatDate(review.created_at)}</p>
                     <p className="mt-2 text-gray-600">{review?.comment}</p>
+                
                     <div className="py-6 flex items-center space-x-4 mt-8">
                       <Image
                         src={review?.user?.avatar_url}
@@ -101,12 +109,7 @@ return (
                       <p>{formatDate(review?.user?.date_joined)} on Airbnb</p>
                       </div>
                     </div>
-                    <button
-                  onClick={() => deleteReview(review.id)}
-                  className="bg-red-500 text-white px-4 py-2 rounded mt-4"
-                   >
-                    Delete Review
-                   </button>
+                 
                   </div>
               )
             })}

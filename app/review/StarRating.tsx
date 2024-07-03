@@ -8,7 +8,7 @@ const StarRating: React.FC<StarRatingProps> = ({ rating }) => {
   const stars = Array.from({ length: 5 }, (_, index) => (
     <Image
       key={index}
-      src={index < rating ? "/star-filled.png" : "/star-empty.png"}
+      src={index < rating ? "/star.png" : "/star1.png"}
       width={22}
       height={20}
       alt="Star icon"

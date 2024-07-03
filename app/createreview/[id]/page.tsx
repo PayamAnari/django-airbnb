@@ -1,6 +1,7 @@
 import apiService from "@/app/services/apiService";
 import { useState } from "react";
 import { toast } from 'react-toastify';
+import StarRating from "@/app/review/StarRating";
 
 interface ReviewFormProps {
   propertyId: string;
@@ -49,6 +50,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ propertyId, addReview }) => {
       <h2 className="text-xl font-semibold">Write a Review</h2>
       <label className="block">
         <span className="text-gray-700">Rating</span>
+        <StarRating rating={rating} />
         <select
           value={rating}
           onChange={(e) => setRating(Number(e.target.value))}
@@ -56,7 +58,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ propertyId, addReview }) => {
         >
           <option value="" disabled>Choose a rating</option>
           {[1, 2, 3, 4, 5].map((num) => (
-            <option key={num} value={num}>{num}</option>
+            <option key={num} value={num}>{num} star{num > 1 ? 's' : ''}</option>
           ))}
         </select>
       </label>

@@ -111,8 +111,6 @@ const ReviewPage: React.FC<ReviewsPageProps> = ({ propertyId }) => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-1 mt-3 gap-4">
           {reviews.map((review) => (
-           
-          
               <div key={review.id} className="bg-white relative p-4 mb-4 rounded-xl shadow-2xl review-item">
                 <Image
                   onClick={() => deleteReview(review.id)}
@@ -130,7 +128,7 @@ const ReviewPage: React.FC<ReviewsPageProps> = ({ propertyId }) => {
                 <p className="mt-2 text-gray-600">{review?.comment}</p>
                 <div className="py-6 flex items-center space-x-4 mt-8">
                   <Image
-                    src={review.user ? review?.user?.avatar_url : "/user.png"}
+                    src={review?.user?.avatar_url}
                     width={50}
                     height={50}
                     className="rounded-full border border-gray-500"

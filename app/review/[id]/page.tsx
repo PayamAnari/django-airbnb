@@ -8,6 +8,7 @@ import ReviewForm from "@/app/createreview/[id]/page";
 import { toast } from 'react-toastify';
 import StarRating from "../StarRating";
 
+
 interface User {
   id: string;
   name: string;
@@ -120,7 +121,7 @@ const ReviewPage: React.FC<ReviewsPageProps> = ({ propertyId }) => {
         )}
       </div>
       
-      ) : (
+  
         <div className="grid grid-cols-1 md:grid-cols-1 mt-3 gap-4">
           {reviews.map((review) => (
             <div key={review.id} className="bg-white relative p-4 mb-4 rounded-xl shadow-2xl review-item">
@@ -135,7 +136,7 @@ const ReviewPage: React.FC<ReviewsPageProps> = ({ propertyId }) => {
               <h2 className="text-lg font-bold">{review.property.title}</h2>
               <div className="flex gap-2 mt-2">
                 <StarRating rating={review.rating} />
-                <p className="text-gray-600"> · {formatDate(review.created_at)}</p>
+                <p className="text-gray-600"> · {formatDate(review.created_at)} ago</p>
               </div>
               <p className="mt-2 text-gray-600">{review.comment}</p>
               <div className="py-6 flex items-center space-x-4 mt-8">

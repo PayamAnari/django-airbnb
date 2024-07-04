@@ -10,11 +10,14 @@ export const formatDate = (date) => {
   const daysDifference = differenceInDays(now, inputDate);
   const monthsDifference = differenceInMonths(now, inputDate);
   const yearsDifference = differenceInYears(now, inputDate);
-
+  const weeksDifference = Math.floor(daysDifference / 7);
+  
   if (yearsDifference > 0) {
     return `${yearsDifference} year${yearsDifference > 1 ? 's' : ''}`;
   } else if (monthsDifference > 0) {
     return `${monthsDifference} month${monthsDifference > 1 ? 's' : ''}`;
+  } else if (weeksDifference > 0) {
+    return `${weeksDifference} week${weeksDifference > 1 ? 's' : ''}`;
   } else {
     return `${daysDifference} day${daysDifference > 1 ? 's' : ''}`;
   }

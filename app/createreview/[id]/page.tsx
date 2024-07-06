@@ -69,13 +69,13 @@ const ReviewForm: React.FC<ReviewFormProps> = ({ propertyId, addReview }) => {
         <textarea
           value={comment}
           onChange={(e) => setComment(e.target.value)}
-          className="mt-2 pl-2 pt-2 block w-full border border-gray-300 rounded-lg"
+          className="mt-2 pl-2 pt-2 block w-full border border-gray-300 resize-none rounded-lg"
           rows={3}
         />
       </label>
       <button
         type="submit"
-        className="bg-airbnb hover:bg-airbnb-dark text-white py-2 px-4 rounded"
+        className="bg-airbnb hover:bg-airbnb-dark text-white py-2 px-4 rounded "
       >
         Submit Review
       </button>

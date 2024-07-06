@@ -28,7 +28,7 @@ const MyReservationsPage = async () => {
                                 </div>
                             </div>
 
-                            <div className="col-span-1 md:col-span-3">
+                            <div className="col-span-1 relative md:col-span-3">
                                 <h2 className="mb-4 text-xl">{reservation.property.title}, {reservation.property.country}</h2>
 
                                 <p className="mb-2"><strong>Check in date:</strong> {formatDateReserve(reservation.start_date)}</p>

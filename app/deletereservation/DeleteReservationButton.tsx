@@ -5,6 +5,7 @@ import CustomButton from "../components/forms/CustomButton";
 import { useRouter } from "next/navigation";
 import deleteReservation from "./[id]/page";
 import { getUserId } from "../lib/actions";
+import Image from "next/image";
 
 interface DeleteReservationButtonProps {
   reservation: any;
@@ -24,7 +25,7 @@ const DeleteReservationButton: React.FC<DeleteReservationButtonProps> = ({
     if (userId) {
       try {
         await deleteReservation(reservation.id);
-        router.push("/?deleted=true");
+        router.push("/myreservations");
       } catch (error) {
         console.error("Failed to delete reservation", error);
       }
@@ -36,13 +37,15 @@ const DeleteReservationButton: React.FC<DeleteReservationButtonProps> = ({
 
 
   return (
-    <div 
-    className="cursor-pointer">
-      <CustomButton 
-        label="Delete reservation"
-        className="mt-2 w-[196px] bg-gray-500 hover:bg-gray-700"
-        onClick={handleDeleteClick}
-      />
+    <div>
+    <Image
+    onClick={handleDeleteClick}
+    src="/close.png"
+    width={33}
+    height={33}
+    alt="Close icon"
+    className="top-3 right-3 absolute cursor-pointer"
+  />
     </div>
   );
 };

@@ -25,6 +25,17 @@ const SearchModal = () => {
   const[numBedrooms, setNumBedrooms] = useState<string>("0");
   const[dateRange, setDateRange] = useState<Range>(initialDateRange);
 
+  const resetForm = () => {
+    setCountry(undefined);
+    setCity(null);
+    setNumGuests("1");
+    setNumBathrooms("0");
+    setNumBed("0");
+    setNumBedrooms("0");
+    setDateRange(initialDateRange);
+    searchModal.open("location"); 
+  };
+
 
   const closeAndSearch = () => {
     
@@ -39,10 +50,14 @@ const SearchModal = () => {
        bathrooms: parseInt(numBathrooms),
        category: ""
     }
-    
+
     searchModal.setQuery(newSearchQuery);
+    resetForm();
     searchModal.close();
+    
   }
+
+
 
 
   const _setDateRange = (selection: Range) => {
@@ -60,7 +75,7 @@ const SearchModal = () => {
         <h2 className="mb-6 text-2xl">Where do you want to go?</h2>
 
         <SelectCountry 
-       value={country}
+        value={country}
         onChange={(value) => setCountry(value as SelectCountryValue)}
         dataCity={city}
         setDataCity={(value) => setCity(value)}

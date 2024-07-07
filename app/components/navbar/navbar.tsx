@@ -3,7 +3,7 @@ import Image from "next/image";
 import SearchFilters from "./SearchFilters";
 import UserNav from "./UserNav";
 import { getUserId } from "@/app/lib/actions";
-import AddPropertyButton from "./AddPropertyButtton";
+import AddPropertyButton from "./AddPropertyButton";
 import apiService from "@/app/services/apiService";
 
 
@@ -21,6 +21,7 @@ const Navbar = async () => {
     console.error("Failed to fetch user data:", error);
     user = null;
   }
+
 
 
   return (

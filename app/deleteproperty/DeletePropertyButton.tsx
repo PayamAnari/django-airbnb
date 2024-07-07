@@ -23,7 +23,7 @@ const DeletePropertyButton: React.FC<DeletePropertyButtonProps> = ({
     if (userId) {
       try {
         await deleteProperty(property.id);
-        router.push("/?deleted=true");
+        router.push("myproperties?deleted=true");
       } catch (error) {
         console.error("Failed to delete property", error);
       }

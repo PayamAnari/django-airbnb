@@ -16,6 +16,7 @@ export type PropertyType = {
      is_favorite: boolean;
      landlord_id: string;
      country: string;
+     city: string;
      landlord: {
         name: string;
      };
@@ -37,8 +38,10 @@ const PropertyList: React.FC<PropertyListProps> = ({
   const params = useSearchParams();
   const searchModal = useSearchModal();
   const country = searchModal.query.country;
+  const city = searchModal.query.city;
   const numGuests = searchModal.query.guests;
   const numBedrooms = searchModal.query.bedrooms;
+  const numBed = searchModal.query.bed;
   const numBathrooms = searchModal.query.bathrooms;
   const checkinDate = searchModal.query.checkIn;
   const checkoutDate = searchModal.query.checkOut;
@@ -94,12 +97,20 @@ const PropertyList: React.FC<PropertyListProps> = ({
          urlQuery += "&country=" + country
        }
 
+        if (city) {
+          urlQuery += "&city=" + city
+        }
+
        if (numGuests) {
          urlQuery += "&numGuests=" + numGuests
        }
 
         if (numBedrooms) {
           urlQuery += "&numBedrooms=" + numBedrooms
+        }
+
+        if (numBed) {
+          urlQuery += "&numBed=" + numBed
         }
 
         if (numBathrooms) {

@@ -19,9 +19,11 @@ const EditPropertyPage = ({ params }: { params: { id: string } }) => {
   const [dataDescription, setDataDescription] = useState("");
   const [dataPrice, setDataPrice] = useState("");
   const [dataBedrooms, setDataBedrooms] = useState("");
+  const [dataBed, setDataBed] = useState("");
   const [dataBathrooms, setDataBathrooms] = useState("");
   const [dataGuests, setDataGuests] = useState("");
   const [dataCountry, setDataCountry] = useState<SelectCountryValue | null>(null);
+  const [dataCity, setDataCity] = useState<string | null>(null);
   const [dataImage, setDataImage] = useState<File | null>(null);
   const [existingImage, setExistingImage] = useState<string | null>(null);
 
@@ -38,9 +40,11 @@ const EditPropertyPage = ({ params }: { params: { id: string } }) => {
         setDataDescription(property.description);
         setDataPrice(property.price_per_night);
         setDataBedrooms(property.bedrooms);
+        setDataBed(property.bed);
         setDataBathrooms(property.bathrooms);
         setDataGuests(property.guests);
         setDataCountry({ label: property.country, value: property.country_code });
+        setDataCity(property.city);
         setExistingImage(property.image_url);
 
         editPropertyModal.open();
@@ -72,7 +76,8 @@ const EditPropertyPage = ({ params }: { params: { id: string } }) => {
       dataTitle &&
       dataDescription &&
       dataPrice &&
-      dataCountry 
+      dataCountry &&
+      dataCity 
       
     ) {
         const formData = new FormData();
@@ -81,9 +86,11 @@ const EditPropertyPage = ({ params }: { params: { id: string } }) => {
         formData.append("description", dataDescription);
         formData.append("price_per_night", dataPrice);
         formData.append("bedrooms", dataBedrooms);
+        formData.append("bed", dataBed);
         formData.append("bathrooms", dataBathrooms);
         formData.append("guests", dataGuests);
         formData.append("country", dataCountry.label);
+        formData.append("city", dataCity);
         formData.append("country_code", dataCountry.value);
 
         if (dataImage) {
@@ -99,7 +106,7 @@ const EditPropertyPage = ({ params }: { params: { id: string } }) => {
             position: "top-center",
             autoClose: 2000,
           });
-          router.push("/?added=true");
+          router.push("/?edited=true");
           editPropertyModal.close();
         } else {
           console.log("Error");
@@ -183,6 +190,15 @@ const handleCloseModal = () => {
               />
             </div>
             <div className="flex flex-col space-y-2">
+              <label>Beds</label>
+              <input
+                type="number"
+                value={dataBed}
+                onChange={(e) => setDataBed(e.target.value)}
+                className="w-full p-4 border border-gray-600 rounded-xl"
+              />
+              </div>
+            <div className="flex flex-col space-y-2">
               <label>Bathrooms</label>
               <input
                 type="number"
@@ -213,7 +229,10 @@ const handleCloseModal = () => {
           <h2 className="mb-6 text-2xl">Location</h2>
           <div className="pt-3 pb-6 space-y-4">
             <SelectCountry value={dataCountry} 
-             onChange={(value) => setDataCountry(value as SelectCountryValue)} />
+             onChange={(value) => setDataCountry(value as SelectCountryValue)} 
+             dataCity={dataCity}
+             setDataCity={(value) => setDataCity(value)}
+             />
           </div>
           <CustomButton
             label="Previous"

@@ -18,8 +18,10 @@ const SearchModal = () => {
   let content = (<></>);
   const searchModal = useSearchModal();
   const[country, setCountry] = useState<SelectCountryValue>();
+  const[city, setCity] = useState<string | null>(null);
   const[numGuests, setNumGuests] = useState<string>("1");
   const[numBathrooms, setNumBathrooms] = useState<string>("0");
+  const[numBed, setNumBed] = useState<string>("0");
   const[numBedrooms, setNumBedrooms] = useState<string>("0");
   const[dateRange, setDateRange] = useState<Range>(initialDateRange);
 
@@ -28,10 +30,12 @@ const SearchModal = () => {
     
     const newSearchQuery: SearchQuery = {
        country: country?.label,
+       city: city,
        checkIn: dateRange.startDate,
        checkOut: dateRange.endDate,
        guests: parseInt(numGuests),
        bedrooms: parseInt(numBedrooms),
+       bed: parseInt(numBed),
        bathrooms: parseInt(numBathrooms),
        category: ""
     }
@@ -58,6 +62,8 @@ const SearchModal = () => {
         <SelectCountry 
        value={country}
         onChange={(value) => setCountry(value as SelectCountryValue)}
+        dataCity={city}
+        setDataCity={(value) => setCity(value)}
      />
       
        <div className="mt-6 flex flex-row gap-4">
@@ -148,6 +154,17 @@ const SearchModal = () => {
              value={numBedrooms} 
              placeholder="Number of bedrooms"
              onChange={(e) => setNumBedrooms(e.target.value)}
+             className="w-full h-14 px-4 border border-gray-300 rounded-xl"
+            />
+        </div>
+        <div className="space-y-4">
+            <label>Number of beds</label>
+            <input 
+             type="number"
+             min="1" 
+             value={numBed} 
+             placeholder="Number of beds"
+             onChange={(e) => setNumBed(e.target.value)}
              className="w-full h-14 px-4 border border-gray-300 rounded-xl"
             />
         </div>

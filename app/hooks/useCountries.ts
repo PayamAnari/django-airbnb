@@ -1,4 +1,5 @@
 import countries from 'world-countries';
+import { getCities } from 'countries-cities';
 
 const formattedCountries = countries.map((country) => {
   return {
@@ -14,9 +15,18 @@ const useCountries = () => {
     return formattedCountries.find((item) => item.value === value);
   };
 
+  const getCitiesByCountry = (countryValue: string) => {
+    const country = formattedCountries.find((c) => c.value === countryValue);
+    if (country) {
+      return getCities(country.label) || [];
+    }
+    return [];
+  };
+
   return {
     getAll,
     getByValue,
+    getCitiesByCountry,
   };
 };
 

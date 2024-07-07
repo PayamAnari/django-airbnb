@@ -22,8 +22,10 @@ const AddPropertyModal = () => {
   const [dataPrice, setDataPrice] = useState("");
   const [dataBedrooms, setDataBedrooms] = useState("");
   const [dataBathrooms, setDataBathrooms] = useState("");
+  const [dataBed, setDataBed] = useState("");
   const [dataGuests, setDataGuests] = useState("");
   const [dataCountry, setDataCountry] = useState<SelectCountryValue>();
+  const [dataCity, setDataCity] = useState<string | null>(null);
   const [dataImage, setDataImage] = useState<File | null>(null);
   
 
@@ -45,13 +47,13 @@ const AddPropertyModal = () => {
 }
 
 const submitForm = async () => {
-    
     if (
       dataCategory &&
       dataTitle &&
       dataDescription &&
       dataPrice &&
       dataCountry &&
+      dataCity &&
       dataImage 
     ) {
         const formData = new FormData();
@@ -61,9 +63,11 @@ const submitForm = async () => {
         formData.append("price_per_night", dataPrice);
         formData.append("bedrooms", dataBedrooms);
         formData.append("bathrooms", dataBathrooms);
+        formData.append("bed", dataBed);
         formData.append("guests", dataGuests);
         formData.append("country", dataCountry.label);
         formData.append("country_code", dataCountry.value);
+        formData.append("city", dataCity);
         formData.append("image", dataImage);
 
         const response = await apiService.post("/api/properties/create/", formData);
@@ -178,6 +182,15 @@ const handleCloseModal = () => {
                   />
 
              </div>
+              <div className="flex flex-col space-y-2">
+                  <label>Beds</label>
+                  <input
+                    type="number"
+                    value={dataBed}
+                    onChange={(e) => setDataBed(e.target.value)}
+                    className="w-full p-4 border border-gray-600 rounded-xl"
+                    />
+                </div>
 
              <div className="flex flex-col space-y-2">
                 <label>Bathrooms</label>
@@ -222,7 +235,10 @@ const handleCloseModal = () => {
           <SelectCountry 
               value={dataCountry}
               onChange={(value) => setDataCountry(value as SelectCountryValue)}
+              dataCity={dataCity}
+              setDataCity={(value) => setDataCity(value)}
           />
+
         </div>
 
         <CustomButton

@@ -19,6 +19,7 @@ interface SearchModalStore {
   close: () => void;
   query: SearchQuery;
   setQuery: (query: SearchQuery) => void;
+  resetQuery: () => void; // Add this line
 }
 
 const useSearchModal = create<SearchModalStore>((set) => ({
@@ -27,6 +28,19 @@ const useSearchModal = create<SearchModalStore>((set) => ({
   open: (step) => set({ isOpen: true, step: step }),
   close: () => set({ isOpen: false }),
   setQuery: (query: SearchQuery) => set({ query: query }),
+  resetQuery: () => set({ // Add this method
+    query: {
+      country: '',
+      city: '',
+      checkIn: undefined,
+      checkOut: undefined,
+      guests: 1,
+      bathrooms: 0,
+      bedrooms: 0,
+      bed: 0,
+      category: '',
+    },
+  }),
   query: {
     country: '',
     city: '',

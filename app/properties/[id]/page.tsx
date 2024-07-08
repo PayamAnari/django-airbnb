@@ -13,6 +13,13 @@ const PropertyDetailPage = async ({params}: { params: {id: string}}) => {
 
   return (
     <main className="max-w-[1500px] mx-auto px-6 pb-6 md:mt-20 lg:mt-24">
+      
+      <Link href="/">
+      <div className="flex gap-4 mb-10 ml-6 text-3xl hover:underline">
+      <p>⟪</p>
+      <h1>Homes</h1>
+      </div>
+      </Link>
          <div className="w-full h-[64vh] mb-4 overflow-hidden rounded-xl relative">
                 <Image
                     fill

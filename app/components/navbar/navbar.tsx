@@ -10,6 +10,7 @@ import apiService from "@/app/services/apiService";
 const Navbar = async () => {
   let userId, user;
 
+
   try {
     userId = await getUserId();
     if (userId) {
@@ -22,13 +23,13 @@ const Navbar = async () => {
     user = null;
   }
 
-
+  
 
   return (
     <nav className="w-full fixed top-0 left-0 py-6 border-b bg-white z-30">
        <div className="max-w-[1500px] mx-auto px-6">
          <div className="flex justify-between items-center">
-          <Link href="/">
+          <Link href="/" >
           <div className="hidden md:block">
             <Image
              src="/logo.png"

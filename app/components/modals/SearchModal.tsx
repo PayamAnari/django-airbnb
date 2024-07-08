@@ -53,6 +53,7 @@ const SearchModal = () => {
 
     searchModal.setQuery(newSearchQuery);
     resetForm();
+
     searchModal.close();
     
   }

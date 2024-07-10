@@ -36,7 +36,9 @@ interface ReviewsPageProps {
   propertyId: string;
 }
 
-const ReviewPage: React.FC<ReviewsPageProps> = ({ propertyId }) => {
+const ReviewPage: React.FC<ReviewsPageProps> = ({
+  propertyId
+ }) => {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [averageRating, setAverageRating] = useState<number | null>(null);
   const [totalReviews, setTotalReviews] = useState<number>(0);
@@ -97,7 +99,7 @@ const ReviewPage: React.FC<ReviewsPageProps> = ({ propertyId }) => {
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-4 pb-4 mt-8">
+    <div className="max-w-3xl mx-auto px-4 pb-4 mt-10">
       <div className="flex flex-col border space-x-4 px-4 py-6 mt-2 gap-2 rounded-xl shadow-2xl">
         <ReviewForm propertyId={propertyId} addReview={addReviewHandler} />
       </div>
@@ -108,7 +110,7 @@ const ReviewPage: React.FC<ReviewsPageProps> = ({ propertyId }) => {
         <p>No reviews yet.</p>
       ) : (
         <>
-        <div className="flex gap-2">
+        <div className="flex gap-2 mb-6">
         <Image
           src="/star.png"
           width={22}
@@ -138,7 +140,7 @@ const ReviewPage: React.FC<ReviewsPageProps> = ({ propertyId }) => {
                 <StarRating rating={review.rating} />
                 <p className="text-gray-600"> · {formatDate(review.created_at)} ago</p>
               </div>
-              <p className="mt-2 text-gray-600">{review.comment}</p>
+              <p className="mt-4 text-gray-700">{review.comment}</p>
               <div className="py-6 flex items-center space-x-4 mt-8">
                 <Image
                   src={review.user.avatar_url}

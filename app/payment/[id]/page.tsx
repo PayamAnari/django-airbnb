@@ -58,7 +58,7 @@ const PaymentService = ({ params }) => {
       {currentStep === 1 ? (
         <div className="p-5 grid grid-cols-1 md:grid-cols-4 gap-4 shadow-md border border-gray-300 rounded-xl justify-center items-center">
           <div className="col-span-1">
-            <div className="relative overflow-hidden aspect-square mt-2 rounded-xl">
+            <div className="relative overflow-hidden shadow-lg aspect-square mt-10 rounded-xl">
               <Image
                 fill
                 src={reservation.property.image_url}
@@ -73,10 +73,10 @@ const PaymentService = ({ params }) => {
             <p><strong>Check in date:</strong> {formatDateReserve(reservation.start_date)}</p>
             <p><strong>Check out date:</strong> {formatDateReserve(reservation.end_date)}</p>
             <p><strong>Price per night:</strong> ${reservation.price_per_night} * {reservation.number_of_nights}</p>
-            <p><strong>Total price:</strong> ${reservation.total_price}</p>
             <p><strong>Airbnb service fee:</strong> ${fee.toFixed(2)}</p>
             <p><strong>Taxes:</strong> ${tax.toFixed(2)}</p>
-            <p><strong>Total price with fee and tax:</strong> <strong className="text-md">${totalPriceWithFee.toFixed(2)}</strong></p>
+            <p><strong>Total price:</strong> <strong>${reservation.total_price}</strong></p>
+
           </div>
           <hr />
           <div className="col-span-1 md:col-span-3 flex justify-center mt-4">

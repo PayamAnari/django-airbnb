@@ -1,6 +1,7 @@
 import PropertyList from "../components/properties/PropertyList";
 import { getUserId } from "../lib/actions";
 
+
 const MyPropertiesPage = async () => {
   const userId = await getUserId();
   return (

@@ -9,15 +9,15 @@ import ReviewPage from "@/app/review/[id]/page";
 const PropertyDetailPage = async ({params}: { params: {id: string}}) => {
   const property = await apiService.get(`/api/properties/${params.id}`);
   const userId = await getUserId();
-
+  
 
   return (
     <main className="max-w-[1500px] mx-auto px-6 pb-6 md:mt-20 lg:mt-24">
       
       <Link href="/">
-      <div className="flex gap-4 mb-10 ml-6 text-3xl hover:underline">
+      <div className="flex gap-4 mb-10 ml-6 text-3xl ">
       <p>⟪</p>
-      <h1>Homes</h1>
+      <h1 className="hover:underline">Homes</h1>
       </div>
       </Link>
          <div className="w-full h-[64vh] mb-4 overflow-hidden rounded-xl relative">
@@ -68,7 +68,7 @@ const PropertyDetailPage = async ({params}: { params: {id: string}}) => {
                 userId={userId}
               />
             </div>
-
+            
             <ReviewPage propertyId={params.id} />
     </main>
   )

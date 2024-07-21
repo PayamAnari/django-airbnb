@@ -60,6 +60,14 @@ Favorites Management
 - Users can mark properties as favorites, which is reflected in the property list and detail views.
 - The favorite status is toggled easily with a button, allowing users to curate their favorite listings.
 
+<p align="center">
+  <img width="400" src="https://live.staticflickr.com/65535/53871066204_15d80f7bfd_z.jpg" alt="Image 1">
+  
+  <img width="200" src="https://live.staticflickr.com/65535/53870712846_a61243245a_n.jpg" alt="Image 2">
+  
+  <img width="150" src="https://live.staticflickr.com/65535/53871060709_68e6e4efb2_n.jpg" alt="Image 3">
+</p>
+
 ### Responsive Design
 
 - The layout adapts to different screen sizes, ensuring a user-friendly experience on both desktop and mobile devices.
@@ -69,10 +77,11 @@ Favorites Management
 
 - Landlords can edit and delete their property listings directly from the property list.
 - Property details can be updated through a modal that opens with pre-filled data, making the editing process straightforward and efficient.
-Pagination
 
-A pagination component allows users to navigate through multiple pages of property listings.
-Users can easily switch between pages, with the current page and total pages displayed for better navigation.
+### Pagination
+
+- A pagination component allows users to navigate through multiple pages of property listings.
+- Users can easily switch between pages, with the current page and total pages displayed for better navigation.
 Property Reservation
 
 A dedicated sidebar on the property detail page enables users to select dates, number of guests, and view a detailed price breakdown including nightly rate, service fees, and taxes.

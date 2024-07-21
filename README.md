@@ -104,9 +104,9 @@ Favorites Management
 <p align="center">
   <img width="400" src="https://live.staticflickr.com/65535/53871138360_8df5be3f03_z.jpg" alt="Image 1">
   
-  <img width="200" src="https://live.staticflickr.com/65535/53871070539_18d498b59a_n.jpg" alt="Image 2">
+  <img width="200" src="https://live.staticflickr.com/65535/53871075709_ef3e2a9660_n.jpg" alt="Image 2">
   
-  <img width="150" src="https://live.staticflickr.com/65535/53871132955_37d04cbb48_n.jpg" alt="Image 3">
+  <img width="150" src="https://live.staticflickr.com/65535/53870727806_28b8e977b6_n.jpg" alt="Image 3">
 </p>
 
 ### Add Property Modal

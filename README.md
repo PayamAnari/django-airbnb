@@ -207,14 +207,18 @@ The User Section of Djangobnb is designed to provide a seamless and secure exper
 
 - **User Dashboard:** Provides a comprehensive overview of user activities, including recent bookings, messages, and notifications.
 - **Landlord Dashboard:** For landlords, the dashboard includes tools for managing listings, viewing booking requests, and communicating with guests.
-User Experience
+
+### User Experience
 
 The user section is built with a focus on user-friendly design and intuitive navigation. Key aspects include:
 
-Responsive Design: Ensures that the user experience is consistent and enjoyable across all devices, including desktops, tablets, and smartphones.
-Notifications: Real-time notifications keep users informed about important updates, such as booking confirmations, messages from landlords or guests, and profile changes.
-Security: User data is protected using industry-standard security practices, including encrypted passwords and secure communication channels.
-User Interaction
+- **Responsive Design:** Ensures that the user experience is consistent and enjoyable across all devices, including desktops, tablets, and smartphones.
+- **Notifications:** Real-time notifications keep users informed about important updates, such as booking confirmations, messages from landlords or guests, and profile changes.
+- **Security:** User data is protected using industry-standard security practices, including encrypted passwords and secure communication channels.
 
-Messaging System: Allows users to communicate directly within the platform. Guests can contact landlords for more information about listings, and landlords can respond to inquiries and manage booking requests.
-Reviews and Ratings: After a stay, guests can leave reviews and ratings for the properties they booked, helping to build a trustworthy community.
+### User Interaction
+
+- **Messaging System:** Allows users to communicate directly within the platform. Guests can contact landlords for more information about listings, and landlords can respond to inquiries and manage booking requests.
+- **Reviews and Ratings:** After a stay, guests can leave reviews and ratings for the properties they booked, helping to build a trustworthy community.
+
+---

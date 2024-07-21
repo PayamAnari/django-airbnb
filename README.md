@@ -368,9 +368,9 @@ The Payment Section handles the processing of payments for reservations, providi
 
 ## Getting Started
 ### Prerequisites
-**Node.js and npm/yarn**
-**Stripe account for payment integration**
-**Access to a backend server API**
+- **Node.js and npm/yarn**
+- **Stripe account for payment integration**
+- **Access to a backend server API**
 
 ### Installation
 1- **Clone the repository:**

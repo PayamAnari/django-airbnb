@@ -195,6 +195,14 @@ The User Section of Djangobnb is designed to provide a seamless and secure exper
 - **Guests:** Users who are primarily looking to browse and book listings. Guests can view property details, contact landlords, and manage their bookings.
 - **Landlords:** Users who want to list their properties. Landlords can create, update, and manage their property listings, as well as interact with potential guests.
 
+<p align="center">
+  <img width="400" src="https://live.staticflickr.com/65535/53870763821_909730d06f_z.jpg" alt="Image 1">
+  
+  <img width="200" src="https://live.staticflickr.com/65535/53871009978_76556d026a_n.jpg" alt="Image 2">
+  
+  <img width="150" src="https://live.staticflickr.com/65535/53871112544_6317979b15_n.jpg" alt="Image 3">
+</p>
+
 ### Dashboard
 
 - **User Dashboard:** Provides a comprehensive overview of user activities, including recent bookings, messages, and notifications.

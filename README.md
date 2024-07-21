@@ -380,8 +380,19 @@ cd your-repository
 
 ```
 
+
 2- **Install dependencies:**
 ```
 npm install
 
 ```
+
+3- **Set up environment variables:**
+Create a .env.local file in the root directory and add your environment variables, including Stripe public key, API host, etc.
+
+4- **Run the application:**
+```
+npm run dev
+
+```
+

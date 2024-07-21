@@ -82,10 +82,19 @@ Favorites Management
 
 - A pagination component allows users to navigate through multiple pages of property listings.
 - Users can easily switch between pages, with the current page and total pages displayed for better navigation.
-Property Reservation
 
-A dedicated sidebar on the property detail page enables users to select dates, number of guests, and view a detailed price breakdown including nightly rate, service fees, and taxes.
-The booking process is streamlined, with instant feedback on the reservation status.
+<p align="center">
+  <img width="400" src="https://live.staticflickr.com/65535/53871132965_d51544b3fa_z.jpg" alt="Image 1">
+  
+  <img width="200" src="https://live.staticflickr.com/65535/53871128745_1522722b4d_n.jpg" alt="Image 2">
+  
+  <img width="150" src="https://live.staticflickr.com/65535/53870964613_40c65bcb2b_n.jpg" alt="Image 3">
+</p>
+
+### Property Reservation
+
+- A dedicated sidebar on the property detail page enables users to select dates, number of guests, and view a detailed price breakdown including nightly rate, service fees, and taxes.
+- The booking process is streamlined, with instant feedback on the reservation status.
 Calendar and Availability
 
 An integrated calendar component shows available and booked dates, helping users choose their stay dates accurately.

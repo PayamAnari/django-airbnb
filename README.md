@@ -30,6 +30,32 @@
 
 This Airbnb application is a full-featured web application designed for property booking, user management, and interaction. It allows users to search for properties, make reservations, communicate with property owners, and leave reviews. The app is built using Next.js and integrates with Stripe for payment processing.
 
+### Features
+1. **User Management**
+- **Registration and Authentication:** Users can create accounts, log in, and manage their sessions.
+- **Token-Based Authentication:** Secure token-based authentication with access and refresh tokens for maintaining user sessions.
+
+2. **Property Management**
+- **Property Listings:** Users can browse and search for properties listed on the platform.
+- **Property Details:** Detailed view of property features, images, pricing, and availability.
+- **Reservation System:** Users can book properties, view reservation details, and manage their bookings.
+
+3. **Payment Processing**
+- **Stripe Integration:** Handles payments for reservations using Stripe, supporting both card payments and iDEAL.
+- **Payment Flow:** Users review reservation details, enter payment information, and receive confirmation of successful transactions.
+
+4. **Chat System**
+- **Real-Time Communication:** Allows users to chat with property owners or potential guests in real-time.
+- **Message Management:** Users can send and receive messages related to their bookings or inquiries.
+
+5. **Review System**
+- **Leave Reviews:** Users can write and submit reviews for properties they have stayed at.
+- **View Reviews:** Users can read reviews from other guests to help make informed decisions.
+
+6. **Navigation and User Interface**
+- **Responsive Design:** The application features a responsive design to ensure a seamless experience across different devices and screen sizes.
+- **User-Friendly Navigation:** Intuitive navigation with clear calls to action for booking properties, managing reservations, and accessing user profiles.
+
 ---
 
 <p align="center">

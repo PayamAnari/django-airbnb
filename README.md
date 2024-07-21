@@ -53,12 +53,13 @@ Favorites Management
 
 ### Responsive Design
 
-The layout adapts to different screen sizes, ensuring a user-friendly experience on both desktop and mobile devices.
-The number of properties displayed per page adjusts based on screen width, optimizing the browsing experience.
-Property Management for Landlords
+- The layout adapts to different screen sizes, ensuring a user-friendly experience on both desktop and mobile devices.
+- The number of properties displayed per page adjusts based on screen width, optimizing the browsing experience.
 
-Landlords can edit and delete their property listings directly from the property list.
-Property details can be updated through a modal that opens with pre-filled data, making the editing process straightforward and efficient.
+### Property Management for Landlords
+
+- Landlords can edit and delete their property listings directly from the property list.
+- Property details can be updated through a modal that opens with pre-filled data, making the editing process straightforward and efficient.
 Pagination
 
 A pagination component allows users to navigate through multiple pages of property listings.

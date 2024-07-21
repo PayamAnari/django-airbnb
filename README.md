@@ -255,3 +255,26 @@ Components
 - **ConversationDetail:** Displays the full message history of a conversation and allows users to send new messages. Real-time updates are handled seamlessly.
 - **ConversationPage:** Fetches and displays the details and messages of a specific conversation.
 - **InboxPage:** Lists all conversations for the currently logged-in user, including options to view detailed conversations.
+
+---
+
+<p align="center">
+  <img width="400" src="https://live.staticflickr.com/65535/53871123764_a5f0cc3744_z.jpg" alt="Image 1">
+  
+  <img width="200" src="https://live.staticflickr.com/65535/53871123759_986efe8e05_n.jpg" alt="Image 2">
+  
+  <img width="150" src="https://live.staticflickr.com/65535/53869870007_dc17638dc3_n.jpg" alt="Image 3">
+</p>
+
+### Review Section
+
+The Review Section is designed to allow users to view, submit, and manage reviews for properties. It provides a user-friendly interface for both reviewing and reading feedback on properties, making it easy to gather and share experiences.
+
+### Key Features
+
+- **Review Display:** Showcases a list of reviews for a specific property, including the reviewer’s name, rating, comment, and date of the review.
+- **Average Rating:** Calculates and displays the average rating based on the submitted reviews, offering a quick overview of the property’s overall rating.
+- **Review Submission:** Allows users to submit their own reviews with a rating and comment. The form includes a star rating component and a text area for detailed feedback.
+- **Review Deletion:** Provides the ability to delete reviews, with updates to the review list and average rating reflecting the removal.
+- **Real-Time Updates:** Ensures that new reviews and changes are reflected immediately on the page.
+

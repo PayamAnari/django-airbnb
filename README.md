@@ -27,3 +27,8 @@
 ## Description
 
 ### Django-Airbnb
+
+This Airbnb application is a full-featured web application designed for property booking, user management, and interaction. It allows users to search for properties, make reservations, communicate with property owners, and leave reviews. The app is built using Next.js and integrates with Stripe for payment processing.
+
+---
+

@@ -278,3 +278,16 @@ The Review Section is designed to allow users to view, submit, and manage review
 - **Review Deletion:** Provides the ability to delete reviews, with updates to the review list and average rating reflecting the removal.
 - **Real-Time Updates:** Ensures that new reviews and changes are reflected immediately on the page.
 
+---
+
+## Payment Section
+
+The Payment Section handles the processing of payments for reservations, providing users with a streamlined and secure way to complete their transactions. It integrates with Stripe to support various payment methods and ensures a smooth user experience throughout the payment process.
+
+### Key Features
+
+- **Modal-Based Interface:** Displays payment-related content within a modal dialog to ensure a focused and distraction-free payment experience.
+- **Step-by-Step Process:** The payment process is divided into distinct steps to guide users through reservation details, payment information, and confirmation:
+- **Reservation Summary:** Shows a detailed summary of the reservation, including property details, dates, and pricing breakdown.
+- **Payment Form:** Collects payment details through a form that supports multiple payment methods, including credit/debit cards and iDEAL.
+- **Payment Confirmation:** Provides confirmation of successful payment and offers navigation to view reservations or return to the home page.

@@ -86,7 +86,7 @@ Favorites Management
 <p align="center">
   <img width="400" src="https://live.staticflickr.com/65535/53871132965_d51544b3fa_z.jpg" alt="Image 1">
   
-  <img width="200" src="https://live.staticflickr.com/65535/53871128745_1522722b4d_n.jpg" alt="Image 2">
+  <img width="200" src="https://live.staticflickr.com/65535/53871070539_18d498b59a_n.jpg" alt="Image 2">
   
   <img width="150" src="https://live.staticflickr.com/65535/53870964613_40c65bcb2b_n.jpg" alt="Image 3">
 </p>

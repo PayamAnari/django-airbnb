@@ -148,6 +148,14 @@ Property Description
 
 ---
 
+<p align="center">
+  <img width="400" src="https://live.staticflickr.com/65535/53870751706_a26e24c7a4_z.jpg" alt="Image 1">
+  
+  <img width="200" src="https://live.staticflickr.com/65535/53869846232_b97616afef_n.jpg" alt="Image 2">
+  
+  <img width="150" src="https://live.staticflickr.com/65535/53870997793_20763e3f84_n.jpg" alt="Image 3">
+</p>
+
 ## User Section Overview
 
 The User Section of Djangobnb is designed to provide a seamless and secure experience for our users, encompassing everything from account creation to profile management. This section ensures that users can easily navigate through the platform, manage their personal information, and interact with other users in a secure and efficient manner.

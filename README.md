@@ -132,13 +132,16 @@ Property Description
 
 ### Property Details
 
-Users input key details such as price per night, number of bedrooms, beds, bathrooms, and the maximum number of guests.
-Location
+- Users input key details such as price per night, number of bedrooms, beds, bathrooms, and the maximum number of guests.
 
-A country and city selector helps users accurately set the property’s location.
-Image Upload
+### Location
 
-Users can upload images of their property to attract potential guests with visual content.
-Form Submission
+- A country and city selector helps users accurately set the property’s location.
 
-After completing all steps, users can submit the form to add their property to the listing. Error handling ensures that all necessary information is provided before submission.
+### Image Upload
+
+- Users can upload images of their property to attract potential guests with visual content.
+
+### Form Submission
+
+- After completing all steps, users can submit the form to add their property to the listing. Error handling ensures that all necessary information is provided before submission.

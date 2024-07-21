@@ -116,9 +116,9 @@ Favorites Management
 <p align="center">
   <img width="400" src="https://live.staticflickr.com/65535/53871143955_5ffe29c1e6_z.jpg" alt="Image 1">
   
-  <img width="200" src="https://live.staticflickr.com/65535/53871075709_ef3e2a9660_n.jpg" alt="Image 2">
+  <img width="200" src="https://live.staticflickr.com/65535/53870979908_3500a58e6c_n.jpg" alt="Image 2">
   
-  <img width="150" src="https://live.staticflickr.com/65535/53870727806_28b8e977b6_n.jpg" alt="Image 3">
+  <img width="150" src="https://live.staticflickr.com/65535/53871143960_e34654ee9f_n.jpg" alt="Image 3">
 </p>
 
 ### Category Selection

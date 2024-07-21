@@ -37,13 +37,12 @@ This Airbnb application is a full-featured web application designed for property
 The Property Section of the Airbnb Property Management App is designed to facilitate a seamless experience for users looking to browse, manage, and book properties. This section includes comprehensive features to enhance user interaction, providing landlords and guests with the tools they need to efficiently handle property listings and reservations.
 
 <p align="center">
-  <img width="400" src="https://live.staticflickr.com/65535/53871123350_7caa5581bd_z.jpg" alt="Image 1">
+  <img width="400" src="https://live.staticflickr.com/65535/53871143955_5ffe29c1e6_z.jpg" alt="Image 1">
   
-  <img width="200" src="https://live.staticflickr.com/65535/53870712846_a61243245a_n.jpg" alt="Image 2">
+  <img width="200" src="https://live.staticflickr.com/65535/53870979908_3500a58e6c_n.jpg" alt="Image 2">
   
-  <img width="150" src="https://live.staticflickr.com/65535/53871060709_68e6e4efb2_n.jpg" alt="Image 3">
+  <img width="150" src="https://live.staticflickr.com/65535/53871143960_e34654ee9f_n.jpg" alt="Image 3">
 </p>
-
 
 ### Features
 
@@ -113,13 +112,6 @@ Favorites Management
 
 - The Add Property Modal is an essential component that allows landlords to easily add new property listings through a guided step-by-step process. Here’s a breakdown of its features:
 
-<p align="center">
-  <img width="400" src="https://live.staticflickr.com/65535/53871143955_5ffe29c1e6_z.jpg" alt="Image 1">
-  
-  <img width="200" src="https://live.staticflickr.com/65535/53870979908_3500a58e6c_n.jpg" alt="Image 2">
-  
-  <img width="150" src="https://live.staticflickr.com/65535/53871143960_e34654ee9f_n.jpg" alt="Image 3">
-</p>
 
 ### Category Selection
 
@@ -127,6 +119,14 @@ Favorites Management
 Property Description
 
 - Users provide a title and detailed description of their property, helping potential guests understand what the property offers.
+
+<p align="center">
+  <img width="400" src="https://live.staticflickr.com/65535/53871123350_7caa5581bd_z.jpg" alt="Image 1">
+  
+  <img width="200" src="https://live.staticflickr.com/65535/53870712846_a61243245a_n.jpg" alt="Image 2">
+  
+  <img width="150" src="https://live.staticflickr.com/65535/53871060709_68e6e4efb2_n.jpg" alt="Image 3">
+</p>
 
 
 

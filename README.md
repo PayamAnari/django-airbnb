@@ -299,3 +299,6 @@ The Payment Section handles the processing of payments for reservations, providi
 - **Reservation Summary:** Shows a detailed summary of the reservation, including property details, dates, and pricing breakdown.
 - **Payment Form:** Collects payment details through a form that supports multiple payment methods, including credit/debit cards and iDEAL.
 - **Payment Confirmation:** Provides confirmation of successful payment and offers navigation to view reservations or return to the home page.
+
+---
+

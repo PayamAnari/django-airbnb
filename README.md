@@ -32,16 +32,24 @@ This Airbnb application is a full-featured web application designed for property
 
 ---
 
-## Property Section
-
-The Property Section of the Airbnb Property Management App is designed to facilitate a seamless experience for users looking to browse, manage, and book properties. This section includes comprehensive features to enhance user interaction, providing landlords and guests with the tools they need to efficiently handle property listings and reservations.
-
 <p align="center">
   <img width="400" src="https://live.staticflickr.com/65535/53871143955_5ffe29c1e6_z.jpg" alt="Image 1">
   
   <img width="200" src="https://live.staticflickr.com/65535/53870979908_3500a58e6c_n.jpg" alt="Image 2">
   
   <img width="150" src="https://live.staticflickr.com/65535/53871143960_e34654ee9f_n.jpg" alt="Image 3">
+</p>
+
+## Property Section
+
+The Property Section of the Airbnb Property Management App is designed to facilitate a seamless experience for users looking to browse, manage, and book properties. This section includes comprehensive features to enhance user interaction, providing landlords and guests with the tools they need to efficiently handle property listings and reservations.
+
+<p align="center">
+  <img width="400" src="https://live.staticflickr.com/65535/53870794821_1eab9b311b_z.jpg" alt="Image 1">
+  
+  <img width="200" src="https://live.staticflickr.com/65535/53869889612_2d3e3f678f_n.jpg" alt="Image 2">
+  
+  <img width="150" src="https://live.staticflickr.com/65535/53870794796_1b9101aec0_n.jpg" alt="Image 3">
 </p>
 
 ### Features

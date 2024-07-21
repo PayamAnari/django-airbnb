@@ -336,3 +336,16 @@ The Payment Section handles the processing of payments for reservations, providi
 
 ---
 
+## Technologies Used
+
+
+- **Next.js:** A React framework for building server-side rendered and static web applications, used for creating the application’s user interface and handling routing.
+- **React:** A JavaScript library for building user interfaces, enabling the creation of reusable UI components.
+- **TypeScript:** A typed superset of JavaScript that enhances code quality and maintainability through static type checking.
+- **Tailwind CSS:** A utility-first CSS framework for styling the application, providing a modern and responsive design system.
+- **Zustand:** A state management library for handling global state, used for managing the search modal state.
+- **React-Toastify:** A library for displaying notifications (toasts) in a React application, used to provide user feedback and alerts in a non-intrusive manner.
+- **PostgreSQL:** A powerful, open-source relational database management system, used for storing application data.
+- **WebSockets:** A protocol for full-duplex communication channels over a single TCP connection, used for real-time data exchange and live updates, such as in chat applications.
+- **JWT (JSON Web Tokens):** A compact, URL-safe token format used for securely transmitting information between parties, utilized for handling authentication and authorization.
+- **Cookies:** Employed for storing authentication tokens and user sessions on the client side.

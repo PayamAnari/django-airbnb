@@ -175,11 +175,20 @@ The User Section of Djangobnb is designed to provide a seamless and secure exper
 - **Sign Up:** New users can create an account using a simple and secure registration process. Required information includes a valid email address, password, and basic profile details.
 - **Login:** Registered users can log in using their email and password. The authentication system ensures secure access to user accounts.
 - **Logout:** Users can securely log out from their accounts with a single click, ensuring their session is safely terminated.
-Profile Management
 
-View Profile: Users can view their profile information, including their name, email, profile picture, and other personal details.
-Edit Profile: Users have the ability to update their profile information. This includes changing their profile picture, updating contact information, and modifying personal details to keep their profile current.
-Password Management: Users can change their password to ensure their account remains secure. The system includes validation to ensure strong passwords.
+<p align="center">
+  <img width="400" src="https://live.staticflickr.com/65535/53871007448_efde2766a5_z.jpg" alt="Image 1">
+  
+  <img width="200" src="https://live.staticflickr.com/65535/53871109934_392cf23aa5_n.jpg" alt="Image 2">
+  
+  <img width="150" src="https://live.staticflickr.com/65535/53869855927_fc86287c8c_n.jpg" alt="Image 3">
+</p>
+
+### Profile Management
+
+- **View Profile:** Users can view their profile information, including their name, email, profile picture, and other personal details.
+- **Edit Profile:** Users have the ability to update their profile information. This includes changing their profile picture, updating contact information, and modifying personal details to keep their profile current.
+- **Password Management:** Users can change their password to ensure their account remains secure. The system includes validation to ensure strong passwords.
 User Roles
 
 Guests: Users who are primarily looking to browse and book listings. Guests can view property details, contact landlords, and manage their bookings.

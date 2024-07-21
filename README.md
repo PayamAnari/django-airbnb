@@ -222,3 +222,28 @@ The user section is built with a focus on user-friendly design and intuitive nav
 - **Reviews and Ratings:** After a stay, guests can leave reviews and ratings for the properties they booked, helping to build a trustworthy community.
 
 ---
+
+<p align="center">
+  <img width="400" src="https://live.staticflickr.com/65535/53871122434_c6a721edb2_z.jpg" alt="Image 1">
+  
+  <img width="200" src="https://live.staticflickr.com/65535/53870773621_1c8c1eb1ef_n.jpg" alt="Image 2">
+  
+  <img width="150" src="https://live.staticflickr.com/65535/53871019348_12487607ab_n.jpg" alt="Image 3">
+</p>
+
+## Chat System
+
+This project is a real-time chat application built with React and Next.js. It allows users to engage in conversations through a dynamic interface that updates in real-time.
+
+### Features
+
+- **Real-Time Messaging:** Utilizes WebSocket for instant message delivery and updates.
+- **Conversation Overview:** Displays a list of conversations with user avatars and names.
+Detailed Conversation View: Provides a detailed view of messages within a conversation, including the ability to send and receive messages in real-time.
+- **Responsive Design:** Optimized for various screen sizes to ensure a smooth user experience across devices.
+Components
+
+- **Conversation:** Shows a summary of each chat conversation, including the other user's details. Users can navigate to the detailed view of any conversation.
+- **ConversationDetail:** Displays the full message history of a conversation and allows users to send new messages. Real-time updates are handled seamlessly.
+- **ConversationPage:** Fetches and displays the details and messages of a specific conversation.
+- **InboxPage:** Lists all conversations for the currently logged-in user, including options to view detailed conversations.

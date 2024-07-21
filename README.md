@@ -164,6 +164,14 @@ The User Section of Djangobnb is designed to provide a seamless and secure exper
 
 **User Authentication**
 
+<p align="center">
+  <img width="400" src="https://live.staticflickr.com/65535/53871003338_bb377ba4f4_z.jpg" alt="Image 1">
+  
+  <img width="200" src="https://live.staticflickr.com/65535/53871105449_17970ec173_n.jpg" alt="Image 2">
+  
+  <img width="150" src="https://live.staticflickr.com/65535/53871166740_dbfb2c9a64_n.jpg" alt="Image 3">
+</p>
+
 - **Sign Up:** New users can create an account using a simple and secure registration process. Required information includes a valid email address, password, and basic profile details.
 - **Login:** Registered users can log in using their email and password. The authentication system ensures secure access to user accounts.
 - **Logout:** Users can securely log out from their accounts with a single click, ensuring their session is safely terminated.

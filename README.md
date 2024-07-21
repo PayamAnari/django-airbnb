@@ -280,6 +280,14 @@ The Review Section is designed to allow users to view, submit, and manage review
 
 ---
 
+<p align="center">
+  <img width="400" src="https://live.staticflickr.com/65535/53870786341_199c4e5926.jpg" alt="Image 1">
+  
+  <img width="200" src="https://live.staticflickr.com/65535/53871135324_35246dbfd5_n.jpg" alt="Image 2">
+  
+  <img width="150" src="https://live.staticflickr.com/65535/53871196445_2633ba5c1c_n.jpg" alt="Image 3">
+</p>
+
 ## Payment Section
 
 The Payment Section handles the processing of payments for reservations, providing users with a streamlined and secure way to complete their transactions. It integrates with Stripe to support various payment methods and ensures a smooth user experience throughout the payment process.

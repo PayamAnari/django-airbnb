@@ -32,3 +32,64 @@ This Airbnb application is a full-featured web application designed for property
 
 ---
 
+## Property Section
+
+The Property Section of the Airbnb Property Management App is designed to facilitate a seamless experience for users looking to browse, manage, and book properties. This section includes comprehensive features to enhance user interaction, providing landlords and guests with the tools they need to efficiently handle property listings and reservations.
+
+### Features
+
+**Dynamic Property Listing**
+
+- Users can view a list of properties with essential details such as title, image, price per night, location (country and city), and the landlord's name.
+- Each property is displayed as a clickable item that navigates to the property’s detailed view page.
+Advanced Filtering and Search
+
+- Users can filter properties based on various criteria including country, city, number of guests, bedrooms, beds, bathrooms, category, and availability (check-in and check-out dates).
+- Search parameters are dynamically fetched from a search modal, providing real-time filtering of properties.
+Favorites Management
+
+- Users can mark properties as favorites, which is reflected in the property list and detail views.
+- The favorite status is toggled easily with a button, allowing users to curate their favorite listings.
+
+### Responsive Design
+
+The layout adapts to different screen sizes, ensuring a user-friendly experience on both desktop and mobile devices.
+The number of properties displayed per page adjusts based on screen width, optimizing the browsing experience.
+Property Management for Landlords
+
+Landlords can edit and delete their property listings directly from the property list.
+Property details can be updated through a modal that opens with pre-filled data, making the editing process straightforward and efficient.
+Pagination
+
+A pagination component allows users to navigate through multiple pages of property listings.
+Users can easily switch between pages, with the current page and total pages displayed for better navigation.
+Property Reservation
+
+A dedicated sidebar on the property detail page enables users to select dates, number of guests, and view a detailed price breakdown including nightly rate, service fees, and taxes.
+The booking process is streamlined, with instant feedback on the reservation status.
+Calendar and Availability
+
+An integrated calendar component shows available and booked dates, helping users choose their stay dates accurately.
+Booked dates are dynamically fetched to prevent overlapping reservations.
+Add Property Modal
+
+The Add Property Modal is an essential component that allows landlords to easily add new property listings through a guided step-by-step process. Here’s a breakdown of its features:
+
+Category Selection
+
+Users start by choosing a category for their property, ensuring it’s listed in the appropriate section.
+Property Description
+
+Users provide a title and detailed description of their property, helping potential guests understand what the property offers.
+Property Details
+
+Users input key details such as price per night, number of bedrooms, beds, bathrooms, and the maximum number of guests.
+Location
+
+A country and city selector helps users accurately set the property’s location.
+Image Upload
+
+Users can upload images of their property to attract potential guests with visual content.
+Form Submission
+
+After completing all steps, users can submit the form to add their property to the listing. Error handling ensures that all necessary information is provided before submission.

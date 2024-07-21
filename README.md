@@ -396,3 +396,9 @@ npm run dev
 
 ```
 
+5- **Open the application in your browser:**
+```
+Visit http://localhost:3000 to view the application.
+```
+
+

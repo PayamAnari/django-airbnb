@@ -41,7 +41,7 @@ The Property Section of the Airbnb Property Management App is designed to facili
   
   <img width="200" src="https://live.staticflickr.com/65535/53870712846_a61243245a_n.jpg" alt="Image 2">
   
-  <img width="150" src="https://live.staticflickr.com/65535/53474179781_8b1a378ff6_w.jpg" alt="Image 3">
+  <img width="150" src="https://live.staticflickr.com/65535/53871060709_68e6e4efb2_n.jpg" alt="Image 3">
 </p>
 
 

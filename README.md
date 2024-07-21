@@ -145,3 +145,41 @@ Property Description
 ### Form Submission
 
 - After completing all steps, users can submit the form to add their property to the listing. Error handling ensures that all necessary information is provided before submission.
+
+---
+
+## User Section Overview
+
+The User Section of Djangobnb is designed to provide a seamless and secure experience for our users, encompassing everything from account creation to profile management. This section ensures that users can easily navigate through the platform, manage their personal information, and interact with other users in a secure and efficient manner.
+
+### Key Features
+
+**User Authentication**
+
+- **Sign Up:** New users can create an account using a simple and secure registration process. Required information includes a valid email address, password, and basic profile details.
+- **Login:** Registered users can log in using their email and password. The authentication system ensures secure access to user accounts.
+- **Logout:** Users can securely log out from their accounts with a single click, ensuring their session is safely terminated.
+Profile Management
+
+View Profile: Users can view their profile information, including their name, email, profile picture, and other personal details.
+Edit Profile: Users have the ability to update their profile information. This includes changing their profile picture, updating contact information, and modifying personal details to keep their profile current.
+Password Management: Users can change their password to ensure their account remains secure. The system includes validation to ensure strong passwords.
+User Roles
+
+Guests: Users who are primarily looking to browse and book listings. Guests can view property details, contact landlords, and manage their bookings.
+Landlords: Users who want to list their properties. Landlords can create, update, and manage their property listings, as well as interact with potential guests.
+Dashboard
+
+User Dashboard: Provides a comprehensive overview of user activities, including recent bookings, messages, and notifications.
+Landlord Dashboard: For landlords, the dashboard includes tools for managing listings, viewing booking requests, and communicating with guests.
+User Experience
+
+The user section is built with a focus on user-friendly design and intuitive navigation. Key aspects include:
+
+Responsive Design: Ensures that the user experience is consistent and enjoyable across all devices, including desktops, tablets, and smartphones.
+Notifications: Real-time notifications keep users informed about important updates, such as booking confirmations, messages from landlords or guests, and profile changes.
+Security: User data is protected using industry-standard security practices, including encrypted passwords and secure communication channels.
+User Interaction
+
+Messaging System: Allows users to communicate directly within the platform. Guests can contact landlords for more information about listings, and landlords can respond to inquiries and manage booking requests.
+Reviews and Ratings: After a stay, guests can leave reviews and ratings for the properties they booked, helping to build a trustworthy community.

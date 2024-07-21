@@ -95,11 +95,21 @@ Favorites Management
 
 - A dedicated sidebar on the property detail page enables users to select dates, number of guests, and view a detailed price breakdown including nightly rate, service fees, and taxes.
 - The booking process is streamlined, with instant feedback on the reservation status.
-Calendar and Availability
 
-An integrated calendar component shows available and booked dates, helping users choose their stay dates accurately.
-Booked dates are dynamically fetched to prevent overlapping reservations.
-Add Property Modal
+### Calendar and Availability
+
+- An integrated calendar component shows available and booked dates, helping users choose their stay dates accurately.
+- Booked dates are dynamically fetched to prevent overlapping reservations.
+
+<p align="center">
+  <img width="400" src="https://live.staticflickr.com/65535/53871138360_8df5be3f03_z.jpg" alt="Image 1">
+  
+  <img width="200" src="https://live.staticflickr.com/65535/53871070539_18d498b59a_n.jpg" alt="Image 2">
+  
+  <img width="150" src="https://live.staticflickr.com/65535/53871132955_37d04cbb48_n.jpg" alt="Image 3">
+</p>
+
+### Add Property Modal
 
 The Add Property Modal is an essential component that allows landlords to easily add new property listings through a guided step-by-step process. Here’s a breakdown of its features:
 

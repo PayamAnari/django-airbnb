@@ -189,14 +189,16 @@ The User Section of Djangobnb is designed to provide a seamless and secure exper
 - **View Profile:** Users can view their profile information, including their name, email, profile picture, and other personal details.
 - **Edit Profile:** Users have the ability to update their profile information. This includes changing their profile picture, updating contact information, and modifying personal details to keep their profile current.
 - **Password Management:** Users can change their password to ensure their account remains secure. The system includes validation to ensure strong passwords.
-User Roles
 
-Guests: Users who are primarily looking to browse and book listings. Guests can view property details, contact landlords, and manage their bookings.
-Landlords: Users who want to list their properties. Landlords can create, update, and manage their property listings, as well as interact with potential guests.
-Dashboard
+### User Roles
 
-User Dashboard: Provides a comprehensive overview of user activities, including recent bookings, messages, and notifications.
-Landlord Dashboard: For landlords, the dashboard includes tools for managing listings, viewing booking requests, and communicating with guests.
+- **Guests:** Users who are primarily looking to browse and book listings. Guests can view property details, contact landlords, and manage their bookings.
+- **Landlords:** Users who want to list their properties. Landlords can create, update, and manage their property listings, as well as interact with potential guests.
+
+### Dashboard
+
+- **User Dashboard:** Provides a comprehensive overview of user activities, including recent bookings, messages, and notifications.
+- **Landlord Dashboard:** For landlords, the dashboard includes tools for managing listings, viewing booking requests, and communicating with guests.
 User Experience
 
 The user section is built with a focus on user-friendly design and intuitive navigation. Key aspects include:

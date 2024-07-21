@@ -237,6 +237,14 @@ This project is a real-time chat application built with React and Next.js. It al
 
 ### Features
 
+<p align="center">
+  <img width="400" src="https://live.staticflickr.com/65535/53871123764_a5f0cc3744_z.jpg" alt="Image 1">
+  
+  <img width="200" src="https://live.staticflickr.com/65535/53871123759_986efe8e05_n.jpg" alt="Image 2">
+  
+  <img width="150" src="https://live.staticflickr.com/65535/53869870007_dc17638dc3_n.jpg" alt="Image 3">
+</p>
+
 - **Real-Time Messaging:** Utilizes WebSocket for instant message delivery and updates.
 - **Conversation Overview:** Displays a list of conversations with user avatars and names.
 Detailed Conversation View: Provides a detailed view of messages within a conversation, including the ability to send and receive messages in real-time.

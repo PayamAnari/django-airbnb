@@ -363,3 +363,19 @@ The Payment Section handles the processing of payments for reservations, providi
   <img src="https://img.shields.io/badge/github-bf00ff?style=for-the-badge&logo=github&logoColor=white"/>
 
 </p>
+
+---
+
+## Getting Started
+### Prerequisites
+**Node.js and npm/yarn**
+**Stripe account for payment integration**
+**Access to a backend server API**
+
+### Installation
+1- **Clone the repository:**
+```
+git clone https://github.com/PayamAnari/django-airbnb.git
+cd your-repository
+
+```

@@ -6,3 +6,11 @@
 </h1>
 
 ---
+
+<h3 align="center">
+  <strong>
+      ✈️ Django-Airbnb ✈️
+  </strong>
+</h3>
+
+---

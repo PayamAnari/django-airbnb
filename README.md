@@ -111,11 +111,19 @@ Favorites Management
 
 ### Add Property Modal
 
-The Add Property Modal is an essential component that allows landlords to easily add new property listings through a guided step-by-step process. Here’s a breakdown of its features:
+- The Add Property Modal is an essential component that allows landlords to easily add new property listings through a guided step-by-step process. Here’s a breakdown of its features:
 
-Category Selection
+<p align="center">
+  <img width="400" src="https://live.staticflickr.com/65535/53871143955_5ffe29c1e6_z.jpg" alt="Image 1">
+  
+  <img width="200" src="https://live.staticflickr.com/65535/53871075709_ef3e2a9660_n.jpg" alt="Image 2">
+  
+  <img width="150" src="https://live.staticflickr.com/65535/53870727806_28b8e977b6_n.jpg" alt="Image 3">
+</p>
 
-Users start by choosing a category for their property, ensuring it’s listed in the appropriate section.
+### Category Selection
+
+- Users start by choosing a category for their property, ensuring it’s listed in the appropriate section.
 Property Description
 
 Users provide a title and detailed description of their property, helping potential guests understand what the property offers.

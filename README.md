@@ -379,3 +379,9 @@ git clone https://github.com/PayamAnari/django-airbnb.git
 cd your-repository
 
 ```
+
+2- **Install dependencies:**
+```
+npm install
+
+```

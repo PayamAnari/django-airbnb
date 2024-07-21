@@ -60,13 +60,7 @@ Favorites Management
 - Users can mark properties as favorites, which is reflected in the property list and detail views.
 - The favorite status is toggled easily with a button, allowing users to curate their favorite listings.
 
-<p align="center">
-  <img width="400" src="https://live.staticflickr.com/65535/53871066204_15d80f7bfd_z.jpg" alt="Image 1">
-  
-  <img width="200" src="https://live.staticflickr.com/65535/53871128745_1522722b4d_n.jpg" alt="Image 2">
-  
-  <img width="150" src="https://live.staticflickr.com/65535/53870964613_40c65bcb2b_n.jpg" alt="Image 3">
-</p>
+
 
 ### Responsive Design
 
@@ -126,8 +120,17 @@ Favorites Management
 - Users start by choosing a category for their property, ensuring it’s listed in the appropriate section.
 Property Description
 
-Users provide a title and detailed description of their property, helping potential guests understand what the property offers.
-Property Details
+- Users provide a title and detailed description of their property, helping potential guests understand what the property offers.
+
+<p align="center">
+  <img width="400" src="https://live.staticflickr.com/65535/53871066204_15d80f7bfd_z.jpg" alt="Image 1">
+  
+  <img width="200" src="https://live.staticflickr.com/65535/53871128745_1522722b4d_n.jpg" alt="Image 2">
+  
+  <img width="150" src="https://live.staticflickr.com/65535/53870964613_40c65bcb2b_n.jpg" alt="Image 3">
+</p>
+
+### Property Details
 
 Users input key details such as price per night, number of bedrooms, beds, bathrooms, and the maximum number of guests.
 Location

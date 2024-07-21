@@ -357,7 +357,7 @@ The Payment Section handles the processing of payments for reservations, providi
   <img src="https://img.shields.io/badge/stripe-85EA2D?style=for-the-badge&logo=stripe&logoColor=white"/>
   <img src="https://img.shields.io/badge/WebSockets-ffa500?style=for-the-badge&logo=websockets&logoColor=white"/>
   <img src="https://img.shields.io/badge/postgresql-ff0000?style=for-the-badge&logo=postgresql&logoColor=white"/>
-  <img src="https://img.shields.io/badge/tailwindcss-FF7F50?style=for-the-badge&logo=tailwindcss&logoColor=white"/>
+  <img src="https://img.shields.io/badge/tailwindcss-0000FF?style=for-the-badge&logo=tailwindcss&logoColor=white"/>
    <img src="https://img.shields.io/badge/jwt-008000?style=for-the-badge&logo=jwt&logoColor=white"/>
   <img src="https://img.shields.io/badge/git-ffff00?style=for-the-badge&logo=git&logoColor=white"/>
   <img src="https://img.shields.io/badge/github-bf00ff?style=for-the-badge&logo=github&logoColor=white"/>
